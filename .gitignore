@@ -1,0 +1,19 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+
+# Temporary files & scratch directories
+scratch/
+.system_generated/
+
+# Environment
+.env
+venv/
+env/
+
+# OS specific
+Thumbs.db
+.DS_Store

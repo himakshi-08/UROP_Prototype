@@ -1,0 +1,5 @@
+System               EER        FAR        FRR        Template Protected   ZKP      Proof Time     
+--------------------------------------------------------------------------------
+Baseline             33.10%     33.33%     32.86%     No                   No       —              
+Protected            43.65%     0.00%      100.00%    Yes                  No       —              
+Protected + ZKP      50.00%     0.00%      100.00%    Yes                  Yes      0.50 ms        
