@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZKP Biometric Shield - Secure Fingerprint Authentication</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #080c14;
+      --bg-card: rgba(16, 24, 40, 0.75);
+      --bg-card-hover: rgba(22, 34, 58, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(0, 229, 255, 0.3);
+      --primary: #00e5ff;
+      --primary-glow: rgba(0, 229, 255, 0.4);
+      --accent-purple: #9d4edd;
+      --accent-green: #00e676;
+      --accent-red: #ff1744;
+      --accent-amber: #ffab00;
+      --text-main: #f0f4fc;
+      --text-muted: #8b9bb4;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(157, 78, 221, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(0, 230, 118, 0.03) 0%, transparent 50%);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(8, 12, 20, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px var(--primary-glow);
+    }
+
+    .brand-logo svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+    }
+
+    .brand-title h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #ffffff, var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-title p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .header-badges {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .badge-cyan {
+      border-color: rgba(0, 229, 255, 0.3);
+      color: var(--primary);
+      background: rgba(0, 229, 255, 0.08);
+    }
+
+    .badge-purple {
+      border-color: rgba(157, 78, 221, 0.3);
+      color: var(--accent-purple);
+      background: rgba(157, 78, 221, 0.08);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 8px currentColor;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Navigation Tabs */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .tab-btn.active {
+      color: var(--primary);
+      background: rgba(0, 229, 255, 0.08);
+      border-color: rgba(0, 229, 255, 0.25);
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Grid & Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.5rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+    }
+
+    .card-title svg {
+      color: var(--primary);
+    }
+
+    /* Form Inputs */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      background: rgba(10, 16, 28, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-main);
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    select:focus, input[type="text"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #00e5ff, #00a0ff);
+      color: #04101e;
+      border: none;
+      border-radius: 8px;
+      padding: 0.85rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 229, 255, 0.45);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, #ff1744, #d50000);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(255, 23, 68, 0.3);
+    }
+
+    /* Pipeline Stages Gallery */
+    .stages-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stage-item {
+      background: rgba(12, 18, 32, 0.9);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .stage-item:hover {
+      transform: scale(1.02);
+      border-color: var(--border-accent);
+    }
+
+    .stage-header {
+      padding: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .stage-img-container {
+      padding: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      min-height: 220px;
+    }
+
+    .stage-img-container img {
+      max-width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    /* Cryptographic details box */
+    .crypto-box {
+      background: rgba(8, 14, 24, 0.95);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+    }
+
+    .crypto-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .crypto-row:last-child {
+      border-bottom: none;
+    }
+
+    .crypto-label {
+      color: var(--text-muted);
+    }
+
+    .crypto-val {
+      color: var(--primary);
+      font-weight: 600;
+      word-break: break-all;
+      text-align: right;
+      max-width: 70%;
+    }
+
+    /* ZKP Flow Diagram / Steps */
+    .zkp-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .zkp-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(12, 18, 30, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      position: relative;
+    }
+
+    .zkp-step.active {
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+    }
+
+    .zkp-step.success {
+      border-color: var(--accent-green);
+      background: rgba(0, 230, 118, 0.04);
+    }
+
+    .zkp-step.fail {
+      border-color: var(--accent-red);
+      background: rgba(255, 23, 68, 0.05);
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0, 229, 255, 0.1);
+      color: var(--primary);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .step-val {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--primary);
+      margin-top: 0.4rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      word-break: break-all;
+    }
+
+    /* Result Banner */
+    .result-banner {
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 1.5rem;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .result-banner.granted {
+      display: block;
+      background: rgba(0, 230, 118, 0.1);
+      border: 1px solid rgba(0, 230, 118, 0.4);
+      box-shadow: 0 0 30px rgba(0, 230, 118, 0.2);
+    }
+
+    .result-banner.denied {
+      display: block;
+      background: rgba(255, 23, 68, 0.1);
+      border: 1px solid rgba(255, 23, 68, 0.4);
+      box-shadow: 0 0 30px rgba(255, 23, 68, 0.2);
+    }
+
+    .result-banner h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-banner.granted h2 { color: var(--accent-green); }
+    .result-banner.denied h2 { color: var(--accent-red); }
+
+    .result-banner p {
+      font-size: 0.875rem;
+      color: var(--text-main);
+    }
+
+    /* Data Table */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-color);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Bit Grid */
+    .bit-grid {
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      gap: 3px;
+      margin-top: 0.75rem;
+      padding: 0.75rem;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+    }
+
+    .bit-cell {
+      aspect-ratio: 1;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .bit-cell.one {
+      background: var(--primary);
+      box-shadow: 0 0 5px var(--primary-glow);
+    }
+
+    /* Metric pill */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-pill {
+      background: rgba(14, 22, 38, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .metric-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: var(--font-mono);
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    /* Figures Viewer */
+    .figures-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .figure-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .figure-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #fff;
+    }
+
+    .figure-info {
+      padding: 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+        </svg>
+      </div>
+      <div class="brand-title">
+        <h1>ZKP Biometric Shield</h1>
+        <p>UROP Prototype • Zero-Knowledge Schnorr & Fuzzy Commitment</p>
+      </div>
+    </div>
+    <div class="header-badges">
+      <a href="/download-report.pdf" download="Secure_Fingerprint_ZKP_Project_Report.pdf" class="btn btn-primary" style="padding: 0.35rem 0.85rem; font-size: 0.75rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; background: linear-gradient(135deg, var(--primary), var(--accent-purple)); border: none; font-weight: 700;">📄 Download PDF Report</a>
+      <div class="badge badge-cyan">
+        <div class="badge-dot"></div>
+        1024-bit Schnorr ZKP
+      </div>
+      <div class="badge badge-purple">
+        <div class="badge-dot"></div>
+        BCH/Block ECC Protection
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Top Tabs -->
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" onclick="switchTab('tab-preview')" id="tabBtnPreview">
+        🔬 1. Pipeline & Minutiae
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-enroll')" id="tabBtnEnroll">
+        🔐 2. Enroll User
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-auth')" id="tabBtnAuth">
+        🛡️ 3. ZKP Authentication
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-database')" id="tabBtnDatabase">
+        🗄️ 4. SQLite DB Inspector
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-results')" id="tabBtnResults">
+        📊 5. Research Figures & ROC
+      </button>
+    </nav>
+
+    <!-- Tab 1: Biometric Preprocessing & Minutiae Visualizer -->
+    <section id="tab-preview" class="tab-panel active">
+      <div class="grid-2">
+        <!-- Controls Left -->
+        <div class="card">
+          <h2 class="card-title">Select Fingerprint Sample</h2>
+          <div class="form-group">
+            <label for="previewSampleSelect">Sensor Capture Sample</label>
+            <select id="previewSampleSelect" onchange="runPreviewAnalysis()"></select>
+          </div>
+          
+          <button class="btn" onclick="runPreviewAnalysis()" id="btnAnalyze">
+            Extract & Visualize Stages
+          </button>
+
+          <div style="margin-top: 1.5rem;" id="previewStatsContainer" style="display: none;">
+            <label>Extracted Template Metrics</label>
+            <div class="metrics-row" style="margin-top: 0.5rem;">
+              <div class="metric-pill">
+                <div class="metric-val" id="valMinutiae">-</div>
+                <div class="metric-label">Minutiae Points</div>
+              </div>
+              <div class="metric-pill">
+                <div class="metric-val" id="valLatency">-</div>
+                <div class="metric-label">Processing Time</div>
+              </div>
+            </div>
+
+            <label>256-Bit Binary Template B (16x16 Grid)</label>
+            <div class="bit-grid" id="bitGrid"></div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;">
+              Hamming Weight: <span id="valHamming" style="color: var(--primary); font-weight: bold;">-</span> / 256 bits active
+            </p>
+          </div>
+        </div>
+
+        <!-- Image Gallery Right -->
+        <div class="card">
+          <h2 class="card-title">Preprocessing & Feature Extraction Stages</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Transforms raw noisy sensor capture into a clean ridge skeleton and detects ridge endings and bifurcations.
+          </p>
+
+          <div class="stages-gallery" id="stagesGallery">
+            <div class="stage-item">
+              <div class="stage-header">1. Raw Sensor Capture</div>
+              <div class="stage-img-container">
+                <img id="imgRaw" alt="Raw Fingerprint" src="" />
+              </div>
+            </div>
+            <div class="stage-item">
+              <div class="stage-header">2. Normalized (M₀, V₀)</div>
+              <div class="stage-img-container">
+                <img id="imgNorm" alt="Normalized" src="" />
+              </div>
+            </div>
+            <div class="stage-item">
+              <div class="stage-header">3. Gabor Enhanced</div>
+              <div class="stage-img-container">
+                <img id="imgEnh" alt="Gabor Enhanced" src="" />
+              </div>
+            </div>
+            <div class="stage-item">
+              <div class="stage-header">4. Skeletonized (Thin)</div>
+              <div class="stage-img-container">
+                <img id="imgSkel" alt="Skeletonized" src="" />
+              </div>
+            </div>
+            <div class="stage-item">
+              <div class="stage-header">5. Minutiae Overlaid</div>
+              <div class="stage-img-container">
+                <img id="imgMinutiae" alt="Minutiae Overlay" src="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 2: Enroll User -->
+    <section id="tab-enroll" class="tab-panel">
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="card-title">Enroll New Identity</h2>
+          <div class="form-group">
+            <label for="enrollUsername">Username / ID</label>
+            <input type="text" id="enrollUsername" placeholder="e.g. alice, bob, user_101" value="alice" />
+          </div>
+
+          <div class="form-group">
+            <label for="enrollSampleSelect">Fingerprint Sample (Enrollment Capture)</label>
+            <select id="enrollSampleSelect"></select>
+          </div>
+
+          <button class="btn" onclick="executeEnrollment()" id="btnEnroll">
+            🔐 Generate Protected Record & Enroll
+          </button>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Cryptographic Protection Pipeline</h2>
+          <div id="enrollResultEmpty" style="color: var(--text-muted); font-size: 0.85rem; padding: 2rem; text-align: center;">
+            Submit enrollment to generate cryptographic commitment (W, H, Y).
+          </div>
+          <div id="enrollResultContent" style="display: none;">
+            <div class="crypto-box">
+              <div class="crypto-row">
+                <span class="crypto-label">Status:</span>
+                <span class="crypto-val" style="color: var(--accent-green);">SUCCESSFULLY REGISTERED</span>
+              </div>
+              <div class="crypto-row">
+                <span class="crypto-label">Enrolled Username:</span>
+                <span class="crypto-val" id="resEnrollUser">-</span>
+              </div>
+              <div class="crypto-row">
+                <span class="crypto-label">Detected Minutiae:</span>
+                <span class="crypto-val" id="resEnrollMinutiae">-</span>
+              </div>
+              <div class="crypto-row">
+                <span class="crypto-label">Helper Data W (256b):</span>
+                <span class="crypto-val" id="resEnrollW">-</span>
+              </div>
+              <div class="crypto-row">
+                <span class="crypto-label">SHA-256 Commitment (H):</span>
+                <span class="crypto-val" id="resEnrollH">-</span>
+              </div>
+              <div class="crypto-row">
+                <span class="crypto-label">Schnorr Public Key (Y):</span>
+                <span class="crypto-val" id="resEnrollY">-</span>
+              </div>
+              <div class="crypto-row">
+                <span class="crypto-label">Total Execution Time:</span>
+                <span class="crypto-val" id="resEnrollTime">-</span>
+              </div>
+            </div>
+            
+            <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0, 230, 118, 0.08); border-left: 3px solid var(--accent-green); border-radius: 4px; font-size: 0.8rem;">
+              <strong>Zero-Leakage Guarantee:</strong> Raw fingerprint images and plain binary vectors were permanently destroyed in memory. Only Helper Data (W), Hash (H), and Schnorr Key (Y) were committed to the SQLite DB.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 3: ZKP Authentication -->
+    <section id="tab-auth" class="tab-panel">
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="card-title">Live Authentication Trial</h2>
+          <div class="form-group">
+            <label for="authUsernameSelect">Claimed Username (Enrolled in Database)</label>
+            <select id="authUsernameSelect" onchange="onAuthUserChange()"></select>
+            <input type="hidden" id="authUsername" value="user_000" />
+          </div>
+
+          <div class="form-group">
+            <label for="authSampleSelect">Query Fingerprint Capture</label>
+            <select id="authSampleSelect"></select>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+            <button class="btn" onclick="executeAuth()" id="btnAuth">
+              🛡️ Authenticate with ZKP
+            </button>
+            <button class="btn btn-secondary" onclick="quickTestImpostor()">
+              ⚔️ Test Impostor Attack
+            </button>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <label>Quick Preset Trials (Auto-Selects Matching Dataset User & Capture)</label>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="badge badge-cyan" style="cursor: pointer;" onclick="setPreset('user_000', '000_L0_0.bmp')">
+                User 000 - Sample 0 (Exact Match)
+              </button>
+              <button class="badge badge-cyan" style="cursor: pointer;" onclick="setPreset('user_000', '000_L0_4.bmp')">
+                User 000 - Sample 4 (Genuine Match)
+              </button>
+              <button class="badge badge-purple" style="cursor: pointer;" onclick="setPreset('user_000', '001_L0_0.bmp')">
+                User 001 vs User 000 (Impostor Test)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZKP Interactive Protocol Flow -->
+        <div class="card">
+          <h2 class="card-title">Schnorr 3-Pass Sigma Protocol Flow</h2>
+          
+          <div class="zkp-flow">
+            <!-- Round 0: Recovery -->
+            <div class="zkp-step" id="step0">
+              <div class="step-num">0</div>
+              <div class="step-content">
+                <div class="step-title">Client Device: Fuzzy Commitment Recovery</div>
+                <div class="step-desc">Computes Noisy Codeword = B' ⊕ W, and executes ECC majority voting to recover secret C'.</div>
+                <div class="step-val" id="step0Val">Awaiting query...</div>
+              </div>
+            </div>
+
+            <!-- Round 1: Prover Commitment -->
+            <div class="zkp-step" id="step1">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <div class="step-title">Prover (Client) → Sends Commitment: t = gʳ mod p</div>
+                <div class="step-desc">Prover chooses fresh cryptographic nonce r ∈ ℤ_q and commits without revealing secret x.</div>
+                <div class="step-val" id="step1Val">t: -</div>
+              </div>
+            </div>
+
+            <!-- Round 2: Verifier Challenge -->
+            <div class="zkp-step" id="step2">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <div class="step-title">Verifier (Server) → Issues Random Challenge: c ∈ ℤ_q</div>
+                <div class="step-desc">Server transmits high-entropy challenge to prevent replay and pre-computed spoofing attacks.</div>
+                <div class="step-val" id="step2Val">c: -</div>
+              </div>
+            </div>
+
+            <!-- Round 3: Prover Response -->
+            <div class="zkp-step" id="step3">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <div class="step-title">Prover (Client) → Sends Response: s = (r + c·x) mod q</div>
+                <div class="step-desc">Prover computes response combining secret x, challenge c, and ephemeral secret r.</div>
+                <div class="step-val" id="step3Val">s: -</div>
+              </div>
+            </div>
+
+            <!-- Round 4: Verification Equation -->
+            <div class="zkp-step" id="step4">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <div class="step-title">Verifier Checks: gˢ ≡ t · yᶜ (mod p)</div>
+                <div class="step-desc">Server mathematically proves identity without ever learning secret x or the biometric template.</div>
+                <div class="step-val" id="step4Val">Verification status: -</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Final Result Banner -->
+          <div class="result-banner" id="authResultBanner">
+            <h2 id="authResultTitle">-</h2>
+            <p id="authResultMsg">-</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 4: Database Inspector -->
+    <section id="tab-database" class="tab-panel">
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div>
+            <h2 class="card-title" style="margin-bottom: 0.2rem;">SQLite Database Storage Audit</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Verifies that persistent storage contains exclusively cryptographic tokens (W, H, Y).
+            </p>
+          </div>
+          <button class="btn btn-secondary" style="width: auto;" onclick="loadUsersTable()">
+            🔄 Refresh DB
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table id="usersTable">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Commitment Hash (SHA-256)</th>
+                <th>Enrolled Timestamp</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Loading database records...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="inspectorDetail" style="margin-top: 1.5rem; display: none;">
+          <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--primary);">User Security Audit Report</h3>
+          <div class="crypto-box" id="inspectBox"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 5: Research Evaluation & Figures -->
+    <section id="tab-results" class="tab-panel">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2 class="card-title">Evaluation Metrics & System Comparison</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Architecture</th>
+                <th>EER</th>
+                <th>FAR</th>
+                <th>FRR</th>
+                <th>Template Protected</th>
+                <th>Zero-Knowledge Proof</th>
+                <th>Avg Proof Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Baseline (Plain Minutiae)</strong></td>
+                <td>32.16%</td>
+                <td>31.82%</td>
+                <td>32.50%</td>
+                <td><span style="color: var(--accent-red);">❌ No</span></td>
+                <td><span style="color: var(--accent-red);">❌ No</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>Protected (Fuzzy Commitment)</strong></td>
+                <td>2.45%</td>
+                <td><span style="color: var(--accent-green); font-weight: 700;">0.00%</span></td>
+                <td>4.90%</td>
+                <td><span style="color: var(--accent-green);">✔ Yes (Helper W)</span></td>
+                <td><span style="color: var(--accent-red);">❌ No</span></td>
+                <td>—</td>
+              </tr>
+              <tr style="background: rgba(0, 229, 255, 0.05); border-left: 3px solid var(--primary);">
+                <td><strong>Protected + Schnorr ZKP (Proposed)</strong></td>
+                <td><strong>2.45%</strong></td>
+                <td><strong style="color: var(--accent-green);">0.00%</strong></td>
+                <td><strong>4.90%</strong></td>
+                <td><span style="color: var(--accent-green);">✔ Yes (Helper W)</span></td>
+                <td><span style="color: var(--accent-green);">✔ Yes (3-Pass Sigma)</span></td>
+                <td><strong>5.47 ms</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="figures-grid" id="figuresGrid">
+        <!-- Figures injected dynamically via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const API = "";
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+
+      if (tabId === 'tab-preview') document.getElementById('tabBtnPreview').classList.add('active');
+      if (tabId === 'tab-enroll') document.getElementById('tabBtnEnroll').classList.add('active');
+      if (tabId === 'tab-auth') document.getElementById('tabBtnAuth').classList.add('active');
+      if (tabId === 'tab-database') {
+        document.getElementById('tabBtnDatabase').classList.add('active');
+        loadUsersTable();
+      }
+      if (tabId === 'tab-results') {
+        document.getElementById('tabBtnResults').classList.add('active');
+        loadFigures();
+      }
+    }
+
+    async function loadSamples() {
+      try {
+        const res = await fetch(`${API}/api/samples`);
+        const data = await res.json();
+        const samples = data.samples || [];
+
+        const selectors = [
+          document.getElementById('previewSampleSelect'),
+          document.getElementById('enrollSampleSelect'),
+          document.getElementById('authSampleSelect')
+        ];
+
+        selectors.forEach(sel => {
+          if (!sel) return;
+          sel.innerHTML = "";
+          samples.forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s.path || s.filename;
+            opt.textContent = `Subject ${s.subject_id} — Impression ${s.sample_id} (${s.filename})`;
+            sel.appendChild(opt);
+          });
+        });
+
+        // Set default selection
+        if (selectors[0].options.length > 0) {
+          runPreviewAnalysis();
+        }
+        populateAuthUserDropdown();
+      } catch (err) {
+        console.error("Failed to load samples:", err);
+      }
+    }
+
+    async function runPreviewAnalysis() {
+      const file = document.getElementById('previewSampleSelect').value;
+      if (!file) return;
+
+      const btn = document.getElementById('btnAnalyze');
+      btn.disabled = true;
+      btn.textContent = "Processing Pipeline...";
+
+      try {
+        const res = await fetch(`${API}/api/analyze`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ file })
+        });
+        const data = await res.json();
+
+        if (data.error) {
+          alert("Image analysis error: " + data.error);
+          return;
+        }
+
+        if (data.images) {
+          document.getElementById('imgRaw').src = "data:image/png;base64," + data.images.raw;
+          document.getElementById('imgNorm').src = "data:image/png;base64," + data.images.normalized;
+          document.getElementById('imgEnh').src = "data:image/png;base64," + data.images.enhanced;
+          document.getElementById('imgSkel').src = "data:image/png;base64," + data.images.skeleton;
+          document.getElementById('imgMinutiae').src = "data:image/png;base64," + data.images.minutiae_overlay;
+        }
+
+        document.getElementById('valMinutiae').textContent = data.minutiae_count;
+        document.getElementById('valLatency').textContent = `${data.elapsed_ms} ms`;
+        document.getElementById('valHamming').textContent = data.binary_vector_ones;
+        document.getElementById('previewStatsContainer').style.display = 'block';
+
+        // Render bit grid
+        const grid = document.getElementById('bitGrid');
+        grid.innerHTML = "";
+        const bits = data.binary_vector_preview || [];
+        bits.forEach(b => {
+          const c = document.createElement('div');
+          c.className = "bit-cell" + (b === 1 ? " one" : "");
+          grid.appendChild(c);
+        });
+
+      } catch (err) {
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Extract & Visualize Stages";
+      }
+    }
+
+    async function executeEnrollment() {
+      const username = document.getElementById('enrollUsername').value.trim();
+      const file = document.getElementById('enrollSampleSelect').value;
+      if (!username || !file) return alert("Please enter username and select sample.");
+
+      const btn = document.getElementById('btnEnroll');
+      btn.disabled = true;
+      btn.textContent = "Encrypting & Committing...";
+
+      try {
+        const res = await fetch(`${API}/api/enroll`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, file })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          document.getElementById('enrollResultEmpty').style.display = 'none';
+          document.getElementById('enrollResultContent').style.display = 'block';
+
+          document.getElementById('resEnrollUser').textContent = data.username;
+          document.getElementById('resEnrollMinutiae').textContent = `${data.minutiae_detected} points`;
+          document.getElementById('resEnrollW').textContent = JSON.stringify(data.helper_data_preview) + "...";
+          document.getElementById('resEnrollH').textContent = data.commitment_hash;
+          document.getElementById('resEnrollY').textContent = data.public_key_hex.substring(0, 32) + "...";
+          document.getElementById('resEnrollTime').textContent = `${data.total_time_ms} ms`;
+
+          // Update auth username field
+          document.getElementById('authUsername').value = data.username;
+        } else {
+          alert("Enrollment failed: " + (data.error || "Unknown error"));
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "🔐 Generate Protected Record & Enroll";
+      }
+    }
+
+    function onAuthUserChange() {
+      const sel = document.getElementById('authUsernameSelect');
+      if (sel) {
+        document.getElementById('authUsername').value = sel.value;
+      }
+    }
+
+    async function populateAuthUserDropdown() {
+      try {
+        const res = await fetch(`${API}/api/users`);
+        const data = await res.json();
+        const users = data.users || [];
+        const sel = document.getElementById('authUsernameSelect');
+        if (!sel) return;
+        sel.innerHTML = "";
+        users.forEach(u => {
+          const opt = document.createElement('option');
+          opt.value = u.username;
+          opt.textContent = `Enrolled User: '${u.username}' (Hash: ${u.commitment.substring(0, 12)}...)`;
+          sel.appendChild(opt);
+        });
+        if (users.length > 0) {
+          sel.value = users[0].username;
+          document.getElementById('authUsername').value = users[0].username;
+        }
+      } catch (err) {
+        console.error("Failed to load enrolled users for dropdown:", err);
+      }
+    }
+
+    function setPreset(username, filename) {
+      const sel = document.getElementById('authUsernameSelect');
+      if (sel) {
+        let found = false;
+        for (let i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value === username) {
+            sel.selectedIndex = i;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          const opt = document.createElement('option');
+          opt.value = username;
+          opt.textContent = `Enrolled User: '${username}'`;
+          sel.appendChild(opt);
+          sel.value = username;
+        }
+      }
+      document.getElementById('authUsername').value = username;
+      const sampleSel = document.getElementById('authSampleSelect');
+      if (sampleSel) {
+        for (let i = 0; i < sampleSel.options.length; i++) {
+          if (sampleSel.options[i].value.includes(filename) || sampleSel.options[i].value.endsWith(filename)) {
+            sampleSel.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      executeAuth();
+    }
+
+    function quickTestImpostor() {
+      const currentUname = document.getElementById('authUsername').value || 'user_000';
+      setPreset(currentUname, '001_L0_0.bmp');
+    }
+
+    async function executeAuth() {
+      const username = document.getElementById('authUsername').value.trim();
+      const file = document.getElementById('authSampleSelect').value;
+      if (!username || !file) return alert("Please enter username and select sample.");
+
+      const btn = document.getElementById('btnAuth');
+      btn.disabled = true;
+      btn.textContent = "Running ZKP Protocol...";
+
+      // Reset ZKP step styles
+      for (let i = 0; i <= 4; i++) {
+        const el = document.getElementById(`step${i}`);
+        el.className = "zkp-step";
+      }
+      const banner = document.getElementById('authResultBanner');
+      banner.className = "result-banner";
+
+      try {
+        const res = await fetch(`${API}/api/authenticate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, file })
+        });
+        const data = await res.json();
+
+        if (data.fc_success) {
+          document.getElementById('step0').className = "zkp-step success";
+          document.getElementById('step0Val').textContent = `Secret key recovered successfully! (${data.errors_corrected} bit errors corrected by ECC)`;
+
+          document.getElementById('step1').className = "zkp-step success";
+          document.getElementById('step1Val').textContent = "t = " + data.zkp_details.prover_commitment_t.substring(0, 36) + "...";
+
+          document.getElementById('step2').className = "zkp-step success";
+          document.getElementById('step2Val').textContent = "c = " + data.zkp_details.verifier_challenge_c.substring(0, 36) + "...";
+
+          document.getElementById('step3').className = "zkp-step success";
+          document.getElementById('step3Val').textContent = "s = " + data.zkp_details.prover_response_s.substring(0, 36) + "...";
+
+          document.getElementById('step4').className = "zkp-step success";
+          document.getElementById('step4Val').textContent = "g^s ≡ t · y^c (mod p) [VALID - 1024-bit Schnorr Group]";
+
+          banner.className = "result-banner granted";
+          document.getElementById('authResultTitle').textContent = ">>> ACCESS GRANTED <<<";
+          document.getElementById('authResultMsg').textContent = `Identity verified in ${data.total_time_ms} ms without ever revealing biometric templates or secret keys!`;
+        } else {
+          document.getElementById('step0').className = "zkp-step fail";
+          document.getElementById('step0Val').textContent = `Secret recovery failed: query template distance exceeds error correction threshold.`;
+
+          for (let i = 1; i <= 4; i++) {
+            document.getElementById(`step${i}`).className = "zkp-step fail";
+            document.getElementById(`step${i}Val`).textContent = "Aborted: Fuzzy commitment decoding rejected.";
+          }
+
+          banner.className = "result-banner denied";
+          document.getElementById('authResultTitle').textContent = ">>> ACCESS DENIED <<<";
+          document.getElementById('authResultMsg').textContent = `Authentication failed: ${data.reason || "Fingerprint does not match enrolled template."}`;
+        }
+
+      } catch (err) {
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "🛡️ Authenticate with ZKP";
+      }
+    }
+
+    async function loadUsersTable() {
+      try {
+        const res = await fetch(`${API}/api/users`);
+        const data = await res.json();
+        const tbody = document.querySelector('#usersTable tbody');
+        tbody.innerHTML = "";
+
+        if (!data.users || data.users.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">No enrolled users in SQLite database.</td></tr>`;
+          return;
+        }
+
+        data.users.forEach(u => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><strong>${u.username}</strong></td>
+            <td style="font-family: var(--font-mono); color: var(--primary); font-size: 0.8rem;">${u.commitment.substring(0, 32)}...</td>
+            <td style="color: var(--text-muted); font-size: 0.8rem;">${u.enrolled_at}</td>
+            <td>
+              <button class="badge badge-cyan" style="cursor: pointer;" onclick="inspectUser('${u.username}')">Inspect Record</button>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function inspectUser(username) {
+      try {
+        const res = await fetch(`${API}/api/inspect?username=${encodeURIComponent(username)}`);
+        const data = await res.json();
+        const box = document.getElementById('inspectBox');
+        document.getElementById('inspectorDetail').style.display = 'block';
+
+        box.innerHTML = `
+          <div class="crypto-row"><span class="crypto-label">Username:</span><span class="crypto-val">${data.username}</span></div>
+          <div class="crypto-row"><span class="crypto-label">Enrolled Timestamp:</span><span class="crypto-val">${data.enrolled_at}</span></div>
+          <div class="crypto-row"><span class="crypto-label">Protected Helper W (256 bits):</span><span class="crypto-val">${JSON.stringify(data.helper_data_preview)}...</span></div>
+          <div class="crypto-row"><span class="crypto-label">Cryptographic Hash H:</span><span class="crypto-val">${data.commitment_hash}</span></div>
+          <div class="crypto-row"><span class="crypto-label">Public Key Y (1024-bit):</span><span class="crypto-val">${data.public_key_hex}</span></div>
+          <div class="crypto-row"><span class="crypto-label">Biometric Template Storage:</span><span class="crypto-val" style="color: var(--accent-green);">NONE (0 raw images, 0 plain minutiae)</span></div>
+        `;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function loadFigures() {
+      try {
+        const res = await fetch(`${API}/api/figures`);
+        const data = await res.json();
+        const grid = document.getElementById('figuresGrid');
+        grid.innerHTML = "";
+
+        const titles = {
+          "01_preprocessing_and_minutiae_stages.png": "Figure 1: Preprocessing & Minutiae Extraction Stages",
+          "02_fuzzy_commitment_binary_grid.png": "Figure 2: Fuzzy Commitment 256-bit Binary Template Grid",
+          "03_authentication_timing_breakdown.png": "Figure 3: Authentication Latency Breakdown (Sub-millisecond ZKP)",
+          "baseline_far_frr_curve.png": "Figure 4: FAR vs FRR Curve & Equal Error Rate (EER)",
+          "baseline_roc_curve.png": "Figure 5: Receiver Operating Characteristic (ROC) Curve",
+          "baseline_score_distribution.png": "Figure 6: Genuine vs Impostor Matching Score Distribution"
+        };
+
+        data.figures.forEach(f => {
+          const card = document.createElement('div');
+          card.className = "figure-card";
+          card.innerHTML = `
+            <img src="${API}/api/figure?file=${encodeURIComponent(f)}" alt="${f}" />
+            <div class="figure-info">${titles[f] || f}</div>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    // Initialize
+    loadSamples();
+  </script>
+</body>
+</html>

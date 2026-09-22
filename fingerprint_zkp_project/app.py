@@ -14,7 +14,7 @@ if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
 from preprocessing import preprocess_fingerprint
-from features import extract_minutiae, BiometricTemplate
+from features import extract_minutiae, build_template
 from template_protection import FuzzyCommitment
 from zkp import SchnorrGroup, UserDeviceProver, ServerVerifier
 from database import SQLiteAuthDatabase
@@ -22,7 +22,7 @@ from database import SQLiteAuthDatabase
 class BiometricZKPApp:
     def __init__(self, db_path=None):
         self.db = SQLiteAuthDatabase(db_path=db_path)
-        self.fc = FuzzyCommitment(secret_bits=64, vector_bits=256)
+        self.fc = FuzzyCommitment(secret_bits=32, vector_bits=256)
         self.group = SchnorrGroup()
 
     def enroll_user(self, username, image_path):
@@ -47,7 +47,7 @@ class BiometricZKPApp:
         t0 = time.perf_counter()
         prep = preprocess_fingerprint(img)
         minutiae = extract_minutiae(prep["skeleton"], orientations=prep["orientations"], mask=prep["mask"])
-        template = BiometricTemplate(minutiae, image_shape=img.shape, vector_bits=256)
+        template = build_template(img, prep, minutiae, vector_bits=256)
         print(f"[+] Feature Extraction Complete: {len(minutiae)} minutiae detected.")
 
         # 2. Template Protection (Fuzzy Commitment)
@@ -97,7 +97,7 @@ class BiometricZKPApp:
         t_start = time.perf_counter()
         prep = preprocess_fingerprint(query_img)
         minutiae = extract_minutiae(prep["skeleton"], orientations=prep["orientations"], mask=prep["mask"])
-        query_template = BiometricTemplate(minutiae, image_shape=query_img.shape, vector_bits=256)
+        query_template = build_template(query_img, prep, minutiae, vector_bits=256)
         print(f"[+] Client Device: Extracted {len(minutiae)} minutiae -> Query Binary Vector B'")
 
         # Step 2: Fuzzy Commitment Secret Recovery

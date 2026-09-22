@@ -5,15 +5,22 @@ __pycache__/
 .pytest_cache/
 .coverage
 
-# Temporary files & scratch directories
+# Extracted Datasets & Zips
+fingerprint_zkp_project/data/fp_testing/
+fingerprint_zkp_project/data/fp_training/
+*.zip
+
+# Temporary files & scratch scripts
 scratch/
+scratch_*.py
+_diag_*.py
+fingerprint_zkp_project/scratch_*.py
+fingerprint_zkp_project/_diag_*.py
 .system_generated/
 
-# Environment
+# Environment & OS
 .env
 venv/
 env/
-
-# OS specific
 Thumbs.db
 .DS_Store

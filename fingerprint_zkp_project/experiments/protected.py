@@ -12,19 +12,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-from data import FingerprintDataset
+from data import FingerprintDataset, default_split_dirs
 from preprocessing import preprocess_fingerprint
-from features import extract_minutiae, BiometricTemplate
+from features import extract_minutiae, BiometricTemplate, build_template
 from template_protection import FuzzyCommitment
 from evaluation import compute_eer
 
-def run_protected_experiment():
+def run_protected_experiment(max_subjects=12):
     print("=" * 70)
     print("  RUNNING EXPERIMENT 3: BIOMETRIC TEMPLATE PROTECTION (FUZZY COMMITMENT)")
     print("=" * 70)
 
-    loader = FingerprintDataset()
-    dataset = loader.load_dataset()
+    splits = default_split_dirs()
+    loader = FingerprintDataset(splits["test"])
+    dataset = loader.load_dataset(max_subjects=max_subjects)
 
     print("\n[Step 1] Preprocessing and generating binary templates B for Fuzzy Commitment...")
     templates = {}
@@ -33,59 +34,54 @@ def run_protected_experiment():
         for sample_id, img in samples.items():
             prep = preprocess_fingerprint(img)
             minutiae = extract_minutiae(prep["skeleton"], orientations=prep["orientations"], mask=prep["mask"])
-            tmpl = BiometricTemplate(minutiae, image_shape=img.shape, vector_bits=256)
+            tmpl = build_template(img, prep, minutiae, vector_bits=256)
             templates[subject_id][sample_id] = tmpl
 
-    fc = FuzzyCommitment(secret_bits=64, vector_bits=256)
+    from authentication import SecureBiometricPipeline
+
+    pipeline = SecureBiometricPipeline(secret_bits=32, vector_bits=256)
     
-    # Enroll all subjects (using first sample)
-    enrolled_data = {}
-    for s_id in templates:
-        sample_1 = list(templates[s_id].keys())[0]
-        t1 = templates[s_id][sample_1]
-        enrolled_data[s_id] = fc.enroll(t1.binary_vector)
+    # Enroll all subjects (sample 1)
+    for s_id, samples in dataset.items():
+        sample_1_img = samples[list(samples.keys())[0]]
+        pipeline.enroll(s_id, sample_1_img)
 
     print("\n[Step 2] Testing Genuine Secret Recovery (same subject, sample 2+)...")
     genuine_successes = 0
     total_genuine = 0
     genuine_scores = []
 
-    for s_id in templates:
-        helper = enrolled_data[s_id]["helper_data"]
-        commitment = enrolled_data[s_id]["commitment"]
-        samples = list(templates[s_id].keys())
-
-        for sample_id in samples[1:]:
-            t_query = templates[s_id][sample_id]
-            res = fc.recover_secret(t_query.binary_vector, helper, commitment)
+    for s_id, samples in dataset.items():
+        sample_ids = list(samples.keys())
+        for sample_id in sample_ids[1:]:
+            query_img = samples[sample_id]
+            res = pipeline.authenticate(s_id, query_img)
             total_genuine += 1
-            if res["success"]:
+            if res.get("authenticated", False) or res.get("secret_recovered", False):
                 genuine_successes += 1
-            
-            # Score as 1.0 - (corrected_errors / total_bits)
-            score = 1.0 - (res["errors_corrected"] / 256.0)
-            genuine_scores.append(score)
+                score = 1.0 - (res.get("errors_corrected", 0) / 256.0)
+            else:
+                score = 0.5 - (res.get("errors_corrected", 64) / 256.0)
+            genuine_scores.append(float(score))
 
     print("\n[Step 3] Testing Impostor Secret Recovery (different subjects)...")
     impostor_successes = 0
     total_impostor = 0
     impostor_scores = []
-    subjects = list(templates.keys())
+    subjects = list(dataset.keys())
 
     for i in range(len(subjects)):
         for j in range(i + 1, len(subjects)):
             s1, s2 = subjects[i], subjects[j]
-            helper = enrolled_data[s1]["helper_data"]
-            commitment = enrolled_data[s1]["commitment"]
-
-            t_impostor = templates[s2][list(templates[s2].keys())[0]]
-            res = fc.recover_secret(t_impostor.binary_vector, helper, commitment)
+            impostor_img = dataset[s2][list(dataset[s2].keys())[0]]
+            res = pipeline.authenticate(s1, impostor_img)
             total_impostor += 1
-            if res["success"]:
+            if res.get("authenticated", False) or res.get("secret_recovered", False):
                 impostor_successes += 1
-            
-            score = 1.0 - (res["errors_corrected"] / 256.0)
-            impostor_scores.append(score)
+                score = 1.0 - (res.get("errors_corrected", 0) / 256.0)
+            else:
+                score = 0.5 - (res.get("errors_corrected", 64) / 256.0)
+            impostor_scores.append(float(score))
 
     genuine_rec_rate = (genuine_successes / max(1, total_genuine)) * 100.0
     impostor_rec_rate = (impostor_successes / max(1, total_impostor)) * 100.0

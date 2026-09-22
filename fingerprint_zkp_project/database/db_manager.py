@@ -72,6 +72,9 @@ class SQLiteAuthDatabase:
         helper_hex, commitment_hash, pk_hex, timestamp = row
         helper_bytes = bytes.fromhex(helper_hex)
         helper_vector = np.unpackbits(np.frombuffer(helper_bytes, dtype=np.uint8))
+        # packbits/unpackbits is byte-aligned; keep the original 256-bit helper.
+        if len(helper_vector) > 256:
+            helper_vector = helper_vector[:256]
         public_key_int = int(pk_hex, 16)
 
         return {

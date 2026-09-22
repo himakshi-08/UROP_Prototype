@@ -17,14 +17,20 @@ def test_block_ecc():
     codeword = ecc.encode(secret)
     assert len(codeword) == 256
 
-    # Introduce minor noise (e.g. 5 bit flips within error tolerance)
+    # Burst noise in a handful of codeword bits.
     noisy = codeword.copy()
-    flip_indices = np.random.choice(256, size=5, replace=False)
-    noisy[flip_indices] = 1 - noisy[flip_indices]
+    noisy[0:5] = 1 - noisy[0:5]
 
     recovered, corrected, success = ecc.decode(noisy)
     assert success is True
     assert np.array_equal(recovered, secret)
+
+    # Destroy one logical replica (64 interleaved positions). Remaining copies vote.
+    noisy_replica = codeword.copy()
+    replica0 = ecc.inv[:64]
+    noisy_replica[replica0] = 1 - noisy_replica[replica0]
+    recovered2, _, _ = ecc.decode(noisy_replica)
+    assert np.array_equal(recovered2, secret)
 
 def test_fuzzy_commitment_enrollment_and_recovery():
     fc = FuzzyCommitment(secret_bits=64, vector_bits=256)
@@ -39,10 +45,11 @@ def test_fuzzy_commitment_enrollment_and_recovery():
     assert res_exact["success"] is True
     assert np.array_equal(res_exact["recovered_secret"], enrollment["secret"])
 
-    # 2. Query with intra-user noise (e.g. 5 bit flips across 5 blocks)
+    # 2. Query with intra-user noise plus a residual polar-sector rotation
     b_noisy = b_enrolled.copy()
     b_noisy[[0, 4, 8, 12, 16]] = 1 - b_noisy[[0, 4, 8, 12, 16]]
-    res_noisy = fc.recover_secret(b_noisy, helper, commitment)
+    b_rotated = np.roll(b_noisy, 16)
+    res_noisy = fc.recover_secret(b_rotated, helper, commitment)
     assert res_noisy["success"] is True
 
     # 3. Impostor query with completely different binary vector

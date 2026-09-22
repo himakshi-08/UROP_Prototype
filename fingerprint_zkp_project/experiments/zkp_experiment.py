@@ -13,24 +13,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-from data import FingerprintDataset
+from data import FingerprintDataset, default_split_dirs
 from authentication import SecureBiometricPipeline
 from experiments.baseline import run_baseline_experiment
 from experiments.protected import run_protected_experiment
 
-def run_full_zkp_experiment():
+def run_full_zkp_experiment(max_subjects=12):
     print("=" * 70)
     print("  RUNNING EXPERIMENT 4: INTEGRATED FUZZY COMMITMENT + SCHNORR ZKP EVALUATION")
     print("=" * 70)
 
     # 1. Run Baseline & Protected Experiments to collect comparisons
-    baseline_res = run_baseline_experiment()
-    protected_res = run_protected_experiment()
+    baseline_res = run_baseline_experiment(max_subjects=max_subjects)
+    protected_res = run_protected_experiment(max_subjects=max_subjects)
 
     # 2. Run Integrated Pipeline Evaluation
-    loader = FingerprintDataset()
-    dataset = loader.load_dataset()
-    pipeline = SecureBiometricPipeline(secret_bits=64, vector_bits=256)
+    splits = default_split_dirs()
+    loader = FingerprintDataset(splits["test"])
+    dataset = loader.load_dataset(max_subjects=max_subjects)
+    pipeline = SecureBiometricPipeline(secret_bits=32, vector_bits=256)
 
     # Enroll subjects (sample 1)
     for s_id, samples in dataset.items():

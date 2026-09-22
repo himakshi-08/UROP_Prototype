@@ -38,7 +38,9 @@ def generate_visual_artifacts():
     loader = FingerprintDataset()
     dataset = loader.load_dataset()
 
-    sample_img = dataset[1][1]
+    first_subj = sorted(dataset.keys())[0]
+    first_sample = sorted(dataset[first_subj].keys())[0]
+    sample_img = dataset[first_subj][first_sample]
 
     # Preprocessing stages
     prep = preprocess_fingerprint(sample_img)

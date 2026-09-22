@@ -14,20 +14,21 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-from data import FingerprintDataset
+from data import FingerprintDataset, default_split_dirs
 from preprocessing import preprocess_fingerprint
-from features import extract_minutiae, BiometricTemplate
+from features import extract_minutiae, BiometricTemplate, build_template
 from matching import FingerprintMatcher
 from evaluation import compute_far_frr, compute_roc, compute_eer
 
-def run_baseline_experiment():
+def run_baseline_experiment(max_subjects=12):
     print("=" * 70)
     print("  RUNNING EXPERIMENT 1 & 2: BASELINE BIOMETRIC MATCHING EVALUATION")
     print("=" * 70)
 
     # 1. Load Dataset
-    loader = FingerprintDataset()
-    dataset = loader.load_dataset()
+    splits = default_split_dirs()
+    loader = FingerprintDataset(splits["test"])
+    dataset = loader.load_dataset(max_subjects=max_subjects)
 
     # Preprocess all images and extract templates
     print("\n[Step 1] Preprocessing fingerprint dataset and extracting templates...")
@@ -38,7 +39,7 @@ def run_baseline_experiment():
         for sample_id, img in samples.items():
             prep = preprocess_fingerprint(img)
             minutiae = extract_minutiae(prep["skeleton"], orientations=prep["orientations"], mask=prep["mask"])
-            tmpl = BiometricTemplate(minutiae, image_shape=img.shape, vector_bits=256)
+            tmpl = build_template(img, prep, minutiae, vector_bits=256)
             templates[subject_id][sample_id] = tmpl
 
     matcher = FingerprintMatcher(mode="combined")
