@@ -18,11 +18,17 @@ from template_protection.fuzzy_commitment import FuzzyCommitment
 
 def find_dataset_images(dataset_root):
     """
-    Finds and numerically sorts all 60 fingerprint images (1 to 60).
+    Finds and numerically sorts fingerprint images from subject-numbered subfolders.
+    Searches the given dataset_root, its Fingerprint_dataset subfolder,
+    and the external fp_testing / fp_training folders in ~/Downloads.
     """
+    _downloads = os.path.join(os.path.expanduser("~"), "Downloads")
     possible_roots = [
         os.path.join(dataset_root, "Fingerprint_dataset"),
-        dataset_root
+        dataset_root,
+        # External fp_testing / fp_training in ~/Downloads
+        os.path.join(_downloads, "fp_testing", "fp_testing"),
+        os.path.join(_downloads, "fp_training", "fp_training"),
     ]
     
     subject_map = {}
@@ -35,6 +41,8 @@ def find_dataset_images(dataset_root):
             if os.path.isdir(folder_path):
                 try:
                     subj_num = int(folder_name)
+                    if subj_num in subject_map:
+                        continue  # keep first found
                     img_files = []
                     for ext in ('*.bmp', '*.png', '*.jpg', '*.jpeg', '*.tif'):
                         img_files.extend(glob.glob(os.path.join(folder_path, ext)))
@@ -53,7 +61,8 @@ def run_verification(secret_bits=128):
     print("=" * 95)
 
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    dataset_dir = os.path.join(base_dir, "Fingerprint_dataset")
+    _ext = os.path.join(os.path.expanduser("~"), "Downloads", "fp_testing", "fp_testing")
+    dataset_dir = _ext if os.path.isdir(_ext) else os.path.join(base_dir, "Fingerprint_dataset")
     
     subject_images = find_dataset_images(dataset_dir)
     print(f"[*] Found {len(subject_images)} subjects in {dataset_dir} (sorted numerically 1 to {len(subject_images)})")

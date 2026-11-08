@@ -16,7 +16,7 @@ def generate_secret_key(bit_length=128):
     Returns:
         tuple: (secret_bytes, secret_binary_vector)
     """
-    num_bytes = bit_length // 8
+    num_bytes = (bit_length + 7) // 8
     secret_bytes = secrets.token_bytes(num_bytes)
     
     # Convert bytes to binary numpy array of 0s and 1s

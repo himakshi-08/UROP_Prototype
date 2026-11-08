@@ -15,7 +15,8 @@ from experiments.verify_resnet_fuzzy_commitment import find_dataset_images
 def run_binarization_comparison(dataset_path=None):
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if dataset_path is None:
-        dataset_path = os.path.join(base_dir, "Fingerprint_dataset")
+        _ext = os.path.join(os.path.expanduser("~"), "Downloads", "fp_testing", "fp_testing")
+        dataset_path = _ext if os.path.isdir(_ext) else os.path.join(base_dir, "Fingerprint_dataset")
 
     print(f"[*] Comparing Binarization Strategies & Secret Sizes on: {dataset_path}")
 

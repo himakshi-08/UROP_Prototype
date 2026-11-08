@@ -275,8 +275,11 @@ def evaluate_multi_capture_dataset(multi_dir, extractor, output_csv_rows):
 
 def run_all_evaluations():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    dataset_dir = os.path.join(base_dir, "Fingerprint_dataset")
-    multi_dir = os.path.join(base_dir, "data", "raw")
+    _downloads = os.path.join(os.path.expanduser("~"), "Downloads")
+    _ext_test = os.path.join(_downloads, "fp_testing", "fp_testing")
+    _ext_train = os.path.join(_downloads, "fp_training", "fp_training")
+    dataset_dir = _ext_test if os.path.isdir(_ext_test) else os.path.join(base_dir, "Fingerprint_dataset")
+    multi_dir = _ext_train if os.path.isdir(_ext_train) else os.path.join(base_dir, "data", "raw")
     results_dir = os.path.join(base_dir, "results")
     os.makedirs(results_dir, exist_ok=True)
     csv_path = os.path.join(results_dir, "evaluation_results.csv")

@@ -1,7 +1,12 @@
 """
 Dataset Loader for UROP Project.
 Handles loading real fingerprint datasets (e.g. FVC format {subject_id}_{sample_id}.ext,
-subject subfolders in Fingerprint_dataset, or provided train/test zips).
+subject subfolders in Fingerprint_dataset, or provided train/test folders).
+
+Dataset locations (resolved in order):
+  1. Explicit path passed to FingerprintDataset(data_dir=...)
+  2. External fp_testing / fp_training folders in ~/Downloads
+  3. Project-local data/fp_testing, data/fp_training, Fingerprint_dataset, data/raw
 """
 import os
 import glob
@@ -12,6 +17,26 @@ import cv2
 
 SUBJECT_L0_RE = re.compile(r"^(\d+)_L\d+_(\d+)$", re.IGNORECASE)
 SUBJECT_SAMPLE_RE = re.compile(r"^(\d+)_(\d+)$")
+
+# ---------------------------------------------------------------------------
+# Canonical paths to the fp_testing and fp_training folders in ~/Downloads.
+# The zip archives extract with a nested folder of the same name, so the
+# actual images live one level deeper (e.g. fp_testing/fp_testing/000/...).
+# ---------------------------------------------------------------------------
+_DOWNLOADS_DIR = os.path.join(os.path.expanduser("~"), "Downloads")
+_EXTERNAL_FP_TESTING = os.path.join(_DOWNLOADS_DIR, "fp_testing", "fp_testing")
+_EXTERNAL_FP_TRAINING = os.path.join(_DOWNLOADS_DIR, "fp_training", "fp_training")
+
+
+def _dir_has_images(path):
+    """Return True if *path* exists and contains at least one image file."""
+    if not os.path.isdir(path):
+        return False
+    for _root, _dirs, files in os.walk(path):
+        for f in files:
+            if f.lower().endswith((".bmp", ".tif", ".tiff", ".png", ".jpg", ".jpeg")):
+                return True
+    return False
 
 
 def parse_fingerprint_stem(stem):
@@ -31,13 +56,18 @@ class FingerprintDataset:
     def __init__(self, data_dir=None):
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         if data_dir is None:
-            # Check candidate dataset directories: Fingerprint_dataset first, then data/raw
+            # Priority order for automatic dataset discovery:
+            #   1. External fp_testing in ~/Downloads  (largest real dataset)
+            #   2. Project-local Fingerprint_dataset
+            #   3. Project-local data/raw
+            #   4. default_split_dirs() test split
             candidate_dirs = [
+                _EXTERNAL_FP_TESTING,
                 os.path.join(base_dir, "Fingerprint_dataset"),
                 os.path.join(base_dir, "data", "raw"),
             ]
             for candidate in candidate_dirs:
-                if os.path.exists(candidate) and len(os.listdir(candidate)) > 0:
+                if _dir_has_images(candidate):
                     data_dir = candidate
                     break
             if data_dir is None:
@@ -50,7 +80,7 @@ class FingerprintDataset:
         Loads fingerprint images from self.data_dir (recursive).
         Supports:
         - Direct flat directory with files named {subject_id}_{sample_id}.ext
-        - Nested subject directories (e.g. Fingerprint_dataset/1/108_L0_0.bmp)
+        - Nested subject directories (e.g. fp_testing/000/000_L0_0.bmp)
         Returns:
             dict: {subject_id: {sample_id: image_matrix}}
         """
@@ -149,59 +179,40 @@ class FingerprintDataset:
         print(f"[DatasetLoader] Synthetic dataset successfully written to {self.data_dir}")
 
 
-def ensure_split_extracted():
-    """
-    Extracts fp_training.zip / fp_testing.zip from the project root if needed.
-    """
-    import zipfile
-
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    repo_root = os.path.dirname(base_dir)
-    mapping = {
-        "fp_training": ["fp_training.zip"],
-        "fp_testing": ["fp_testing.zip"],
-    }
-    for folder, zip_names in mapping.items():
-        dest = os.path.join(base_dir, "data", folder)
-        has_images = False
-        if os.path.isdir(dest):
-            for _root, _dirs, files in os.walk(dest):
-                if any(f.lower().endswith((".bmp", ".tif", ".png", ".jpg")) for f in files):
-                    has_images = True
-                    break
-        if has_images:
-            continue
-        os.makedirs(dest, exist_ok=True)
-        zip_path = None
-        for name in zip_names:
-            for candidate in (
-                os.path.join(base_dir, name),
-                os.path.join(repo_root, name),
-                os.path.join(os.path.dirname(repo_root), name),
-            ):
-                if os.path.isfile(candidate):
-                    zip_path = candidate
-                    break
-            if zip_path:
-                break
-        if zip_path is None:
-            continue
-        print(f"[DatasetLoader] Extracting {zip_path} -> {dest}")
-        with zipfile.ZipFile(zip_path, "r") as zf:
-            zf.extractall(dest)
-
-
 def default_split_dirs():
-    ensure_split_extracted()
+    """
+    Returns the canonical train/test/raw split directories.
+
+    Resolution order for each split:
+      1. External folders in ~/Downloads (fp_training/fp_training, fp_testing/fp_testing)
+      2. Project-local data/fp_training, data/fp_testing
+    Falls back to project-local paths even if empty (callers create synthetics).
+    """
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    local_train = os.path.join(base_dir, "data", "fp_training")
+    local_test = os.path.join(base_dir, "data", "fp_testing")
+    local_raw = os.path.join(base_dir, "data", "raw")
+
+    # Prefer external Downloads folders when they contain real images
+    train_dir = _EXTERNAL_FP_TRAINING if _dir_has_images(_EXTERNAL_FP_TRAINING) else local_train
+    test_dir = _EXTERNAL_FP_TESTING if _dir_has_images(_EXTERNAL_FP_TESTING) else local_test
+
     return {
-        "train": os.path.join(base_dir, "data", "fp_training"),
-        "test": os.path.join(base_dir, "data", "fp_testing"),
-        "raw": os.path.join(base_dir, "data", "raw"),
+        "train": train_dir,
+        "test": test_dir,
+        "raw": local_raw,
     }
 
 if __name__ == "__main__":
+    print("=== Dataset Discovery ===")
+    splits = default_split_dirs()
+    for name, path in splits.items():
+        exists = os.path.isdir(path)
+        has_img = _dir_has_images(path) if exists else False
+        print(f"  {name:>5}: {path}  (exists={exists}, has_images={has_img})")
+    print()
     loader = FingerprintDataset()
     ds = loader.load_dataset()
     print("Dataset subjects count:", len(ds.keys()))
-
+    for sid in sorted(ds.keys())[:5]:
+        print(f"  Subject {sid}: {len(ds[sid])} samples")

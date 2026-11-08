@@ -54,9 +54,14 @@ class BiometricBackend:
                     self.enroll_user(uname, fname)
 
     def get_samples(self):
+        _downloads = os.path.join(os.path.expanduser("~"), "Downloads")
         pattern = re.compile(r'(\d+)(?:_L\d+)?_(\d+)\.(tif|tiff|png|jpg|bmp)', re.IGNORECASE)
         samples = []
         dirs = [
+            # External fp_testing / fp_training folders in ~/Downloads
+            os.path.join(_downloads, "fp_testing", "fp_testing"),
+            os.path.join(_downloads, "fp_training", "fp_training"),
+            # Project-local fallbacks
             os.path.join(BASE_DIR, "data", "fp_testing"),
             os.path.join(BASE_DIR, "data", "fp_training"),
             os.path.join(BASE_DIR, "data", "raw"),
@@ -68,12 +73,17 @@ class BiometricBackend:
                 for fname in sorted(files):
                     m = pattern.match(fname)
                     if m:
-                        rel = os.path.relpath(os.path.join(root, fname), BASE_DIR).replace("\\", "/")
+                        abs_path = os.path.join(root, fname)
+                        # Use absolute path for external dirs, relative for project dirs
+                        if abs_path.startswith(BASE_DIR):
+                            display_path = os.path.relpath(abs_path, BASE_DIR).replace("\\", "/")
+                        else:
+                            display_path = abs_path.replace("\\", "/")
                         samples.append({
                             "filename": fname,
                             "subject_id": int(m.group(1)),
                             "sample_id": int(m.group(2)),
-                            "path": rel
+                            "path": display_path
                         })
                         if len(samples) >= 120:
                             break
@@ -87,6 +97,7 @@ class BiometricBackend:
         if not file_param:
             return None, "Empty file parameter"
 
+        _downloads = os.path.join(os.path.expanduser("~"), "Downloads")
         path = None
         if os.path.isabs(file_param) and os.path.exists(file_param):
             path = file_param
@@ -96,18 +107,31 @@ class BiometricBackend:
             if os.path.exists(candidate1):
                 path = candidate1
             else:
-                # 2. Try raw_data_dir with basename
                 fname = os.path.basename(file_param)
+                # 2. Try raw_data_dir with basename
                 candidate2 = os.path.join(self.raw_data_dir, fname)
                 if os.path.exists(candidate2):
                     path = candidate2
                 else:
-                    # 3. Recursive search in data/ directory
+                    # 3. Recursive search in project data/ directory
                     data_dir = os.path.join(BASE_DIR, "data")
                     if os.path.exists(data_dir):
                         for root, _, files in os.walk(data_dir):
                             if fname in files:
                                 path = os.path.join(root, fname)
+                                break
+                    # 4. Recursive search in external ~/Downloads fp_testing & fp_training
+                    if not path:
+                        for ext_dir in [
+                            os.path.join(_downloads, "fp_testing", "fp_testing"),
+                            os.path.join(_downloads, "fp_training", "fp_training"),
+                        ]:
+                            if os.path.isdir(ext_dir):
+                                for root, _, files in os.walk(ext_dir):
+                                    if fname in files:
+                                        path = os.path.join(root, fname)
+                                        break
+                            if path:
                                 break
 
         if not path or not os.path.exists(path):

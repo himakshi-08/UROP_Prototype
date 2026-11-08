@@ -24,3 +24,6 @@ venv/
 env/
 Thumbs.db
 .DS_Store
+*.code-workspace
+fingerprint_zkp_project/data/synth_test/
+

@@ -44,11 +44,13 @@ class SecureBiometricPipeline:
         self.group = SchnorrGroup()
         self.db = AuthenticationDatabase()
 
-    def enroll(self, user_id, fingerprint_img):
+    def enroll(self, user_id, fingerprint_img, auxiliary_img=None):
         """
         Executes Enrollment Workflow.
+        Supports single-impression enrollment and dual-impression consensus helper binding
+        where both impressions lock the same cryptographic secret C and public key Y.
         """
-        # Step 1: Preprocessing & Minutiae Feature Extraction
+        # Step 1: Preprocessing & Minutiae Feature Extraction (Primary Impression)
         prep = preprocess_fingerprint(fingerprint_img)
         minutiae = extract_minutiae(prep["skeleton"], orientations=prep["orientations"], mask=prep["mask"])
         template = build_template(fingerprint_img, prep, minutiae, vector_bits=self.vector_bits)
@@ -61,20 +63,36 @@ class SecureBiometricPipeline:
 
         # Store prominent reference minutiae for alignment
         step = max(1, len(minutiae) // 6)
-        minutiae_refs = minutiae[::step][:6] if minutiae else []
+        minutiae_refs = list(minutiae[::step][:6]) if minutiae else []
+        enrolled_minutiae = list(minutiae)
+
+        # Step 2b: Multi-Impression Auxiliary Helper Binding (locks the same secret C)
+        if auxiliary_img is not None:
+            prep_aux = preprocess_fingerprint(auxiliary_img)
+            minutiae_aux = extract_minutiae(prep_aux["skeleton"], orientations=prep_aux["orientations"], mask=prep_aux["mask"])
+            tmpl_aux = build_template(auxiliary_img, prep_aux, minutiae_aux, vector_bits=self.vector_bits)
+            codeword = self.fc.ecc.encode(secret)
+            helper_data_2 = np.bitwise_xor(tmpl_aux.binary_vector, codeword)
+            helper_data = [helper_data, helper_data_2]
+
+            step_aux = max(1, len(minutiae_aux) // 6)
+            if minutiae_aux:
+                minutiae_refs.extend(minutiae_aux[::step_aux][:6])
+                enrolled_minutiae.extend(minutiae_aux)
 
         # Step 3: Compute Schnorr ZKP Public Key Y = g^secret mod p
         prover_temp = UserDeviceProver(secret, group=self.group)
         public_key = prover_temp.public_key
 
         # Step 4: Store protected record in Database
-        self.db.store_enrollment(user_id, helper_data, commitment, public_key, minutiae_refs=minutiae_refs, enrolled_minutiae=minutiae)
+        self.db.store_enrollment(user_id, helper_data, commitment, public_key, minutiae_refs=minutiae_refs, enrolled_minutiae=enrolled_minutiae)
 
         return {
             "user_id": user_id,
             "status": "ENROLLED",
             "num_minutiae": len(minutiae),
-            "commitment": commitment
+            "commitment": commitment,
+            "multi_impression": auxiliary_img is not None
         }
 
     def authenticate(self, user_id, query_fingerprint_img):
@@ -96,6 +114,8 @@ class SecureBiometricPipeline:
         enrolled_refs = record.get("minutiae_refs", [])
         enrolled_minutiae = record.get("enrolled_minutiae", [])
 
+        helpers = helper_data if isinstance(helper_data, (list, tuple)) else [helper_data]
+
         # Step 1: Preprocess query image & extract binary template B'
         t0 = time.perf_counter()
         prep = preprocess_fingerprint(query_fingerprint_img)
@@ -103,36 +123,46 @@ class SecureBiometricPipeline:
         query_template = build_template(query_fingerprint_img, prep, minutiae, vector_bits=self.vector_bits)
         t_biometric = time.perf_counter() - t0
 
-        # Step 2: Attempt Fuzzy Commitment Secret Recovery
+        # Step 2: Attempt Fuzzy Commitment Secret Recovery across helper records
         t0 = time.perf_counter()
-        fc_res = self.fc.recover_secret(query_template.binary_vector, helper_data, stored_commitment)
-        
+        fc_res = {"success": False, "errors_corrected": self.vector_bits}
+        for h_curr in helpers:
+            res_trial = self.fc.recover_secret(query_template.binary_vector, h_curr, stored_commitment)
+            if res_trial["success"]:
+                fc_res = res_trial
+                break
+            elif res_trial["errors_corrected"] < fc_res["errors_corrected"]:
+                fc_res = res_trial
+
         # Check minutiae similarity gate before attempting alignment search on non-matching prints
         m_score = match_minutiae_sets(enrolled_minutiae, minutiae) if enrolled_minutiae and minutiae else 0.0
-        
-        # If raw recovery didn't match, only proceed to alignment search if minutiae similarity meets threshold (m_score >= 0.28)
-        if not fc_res["success"] and enrolled_refs and minutiae and m_score >= 0.28:
+
+        # If raw recovery didn't match, proceed to alignment search if minutiae similarity meets threshold (m_score >= 0.22)
+        if not fc_res["success"] and enrolled_refs and minutiae and m_score >= 0.22:
             h, w = query_fingerprint_img.shape[:2]
             step_q = max(1, len(minutiae) // 6)
             q_refs = minutiae[::step_q][:6]
-            
-            for r1 in enrolled_refs[:4]:
-                for r2 in q_refs[:4]:
+
+            for r1 in enrolled_refs[:6]:
+                for r2 in q_refs[:6]:
                     dtheta = r1.orientation - r2.orientation
                     c, s = np.cos(dtheta), np.sin(dtheta)
                     M = np.array([
                         [c, -s, r1.x - (c * r2.x - s * r2.y)],
                         [s,  c, r1.y - (s * r2.x + c * r2.y)]
                     ], dtype=np.float32)
-                    
+
                     img_warped = cv2.warpAffine(query_fingerprint_img, M, (w, h), flags=cv2.INTER_LINEAR, borderValue=255)
                     p_w = preprocess_fingerprint(img_warped)
                     m_w = extract_minutiae(p_w["skeleton"], orientations=p_w["orientations"], mask=p_w["mask"])
                     t_w = build_template(img_warped, p_w, m_w, vector_bits=self.vector_bits)
-                    
-                    res_align = self.fc.recover_secret(t_w.binary_vector, helper_data, stored_commitment)
-                    if res_align["success"]:
-                        fc_res = res_align
+
+                    for h_curr in helpers:
+                        res_align = self.fc.recover_secret(t_w.binary_vector, h_curr, stored_commitment)
+                        if res_align["success"]:
+                            fc_res = res_align
+                            break
+                    if fc_res["success"]:
                         break
                 if fc_res["success"]:
                     break
