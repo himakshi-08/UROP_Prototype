@@ -1,0 +1,20 @@
+{
+  "iso30136": {
+    "d_sys": 0.2645467921585089,
+    "mated_mean": 0.5501736111111112,
+    "mated_std": 0.018141322737429588,
+    "non_mated_mean": 0.5451329022988506,
+    "non_mated_std": 0.016058662608371514
+  },
+  "cross_matching_attack": {
+    "successes": 7,
+    "total": 30,
+    "success_rate": 0.23333333333333334
+  },
+  "work_factor": {
+    "scalar_mult_sec": 5.225119999886374e-05,
+    "hkdf_sec": 1.0206499999185325e-05,
+    "external_attacker_bits": 288,
+    "compromised_k_attacker_cpu_hours": 62.33810976996528
+  }
+}

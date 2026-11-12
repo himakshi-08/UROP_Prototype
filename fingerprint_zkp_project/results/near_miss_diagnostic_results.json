@@ -1,0 +1,858 @@
+{
+  "error_distribution": {
+    "exact_0": 48,
+    "fail_1": 12,
+    "fail_2": 9,
+    "fail_3": 5,
+    "fail_4": 3,
+    "fail_5_8": 10,
+    "fail_gt_8": 13
+  },
+  "cumulative_recovery": {
+    "t_0": 48,
+    "t_1": 60,
+    "t_2": 69,
+    "t_3": 74,
+    "t_4": 77
+  },
+  "bit_fail_counts": [
+    4,
+    6,
+    4,
+    11,
+    8,
+    6,
+    6,
+    7,
+    10,
+    12,
+    2,
+    4,
+    11,
+    9,
+    3,
+    6,
+    5,
+    4,
+    5,
+    5,
+    6,
+    5,
+    6,
+    7,
+    6,
+    4,
+    3,
+    12,
+    4,
+    9,
+    5,
+    2
+  ],
+  "alignment": {
+    "matches": 81,
+    "mismatches": 19,
+    "details": [
+      {
+        "pair_id": 0,
+        "subject_id": "043",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 1,
+        "subject_id": "084",
+        "bio_shift": 8,
+        "ciphertext_shift": 13,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 2,
+        "subject_id": "049",
+        "bio_shift": 1,
+        "ciphertext_shift": 2,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 3,
+        "subject_id": "042",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 4,
+        "subject_id": "079",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 5,
+        "subject_id": "008",
+        "bio_shift": 15,
+        "ciphertext_shift": 7,
+        "shift_matched": false,
+        "recovered": false
+      },
+      {
+        "pair_id": 6,
+        "subject_id": "095",
+        "bio_shift": 15,
+        "ciphertext_shift": 15,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 7,
+        "subject_id": "048",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 8,
+        "subject_id": "042",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 9,
+        "subject_id": "030",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 10,
+        "subject_id": "106",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 11,
+        "subject_id": "044",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 12,
+        "subject_id": "006",
+        "bio_shift": 14,
+        "ciphertext_shift": 14,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 13,
+        "subject_id": "104",
+        "bio_shift": 10,
+        "ciphertext_shift": 10,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 14,
+        "subject_id": "072",
+        "bio_shift": 6,
+        "ciphertext_shift": 6,
+        "shift_matched": true,
+        "recovered": false
+      },
+      {
+        "pair_id": 15,
+        "subject_id": "082",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 16,
+        "subject_id": "040",
+        "bio_shift": 12,
+        "ciphertext_shift": 1,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 17,
+        "subject_id": "014",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 18,
+        "subject_id": "073",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 19,
+        "subject_id": "015",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 20,
+        "subject_id": "101",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 21,
+        "subject_id": "001",
+        "bio_shift": 15,
+        "ciphertext_shift": 15,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 22,
+        "subject_id": "073",
+        "bio_shift": 0,
+        "ciphertext_shift": 1,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 23,
+        "subject_id": "033",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 24,
+        "subject_id": "038",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 25,
+        "subject_id": "118",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 26,
+        "subject_id": "067",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 27,
+        "subject_id": "092",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 28,
+        "subject_id": "105",
+        "bio_shift": 1,
+        "ciphertext_shift": 2,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 29,
+        "subject_id": "006",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 30,
+        "subject_id": "091",
+        "bio_shift": 5,
+        "ciphertext_shift": 15,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 31,
+        "subject_id": "003",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 32,
+        "subject_id": "044",
+        "bio_shift": 14,
+        "ciphertext_shift": 14,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 33,
+        "subject_id": "069",
+        "bio_shift": 9,
+        "ciphertext_shift": 9,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 34,
+        "subject_id": "010",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 35,
+        "subject_id": "087",
+        "bio_shift": 7,
+        "ciphertext_shift": 9,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 36,
+        "subject_id": "105",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 37,
+        "subject_id": "049",
+        "bio_shift": 4,
+        "ciphertext_shift": 4,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 38,
+        "subject_id": "023",
+        "bio_shift": 15,
+        "ciphertext_shift": 15,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 39,
+        "subject_id": "081",
+        "bio_shift": 8,
+        "ciphertext_shift": 7,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 40,
+        "subject_id": "111",
+        "bio_shift": 9,
+        "ciphertext_shift": 8,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 41,
+        "subject_id": "063",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 42,
+        "subject_id": "116",
+        "bio_shift": 5,
+        "ciphertext_shift": 9,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 43,
+        "subject_id": "100",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 44,
+        "subject_id": "037",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 45,
+        "subject_id": "090",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 46,
+        "subject_id": "083",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 47,
+        "subject_id": "093",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 48,
+        "subject_id": "044",
+        "bio_shift": 14,
+        "ciphertext_shift": 14,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 49,
+        "subject_id": "084",
+        "bio_shift": 8,
+        "ciphertext_shift": 11,
+        "shift_matched": false,
+        "recovered": false
+      },
+      {
+        "pair_id": 50,
+        "subject_id": "104",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 51,
+        "subject_id": "064",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 52,
+        "subject_id": "067",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 53,
+        "subject_id": "026",
+        "bio_shift": 8,
+        "ciphertext_shift": 14,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 54,
+        "subject_id": "045",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 55,
+        "subject_id": "020",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 56,
+        "subject_id": "071",
+        "bio_shift": 7,
+        "ciphertext_shift": 7,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 57,
+        "subject_id": "012",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 58,
+        "subject_id": "007",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 59,
+        "subject_id": "079",
+        "bio_shift": 13,
+        "ciphertext_shift": 14,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 60,
+        "subject_id": "065",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 61,
+        "subject_id": "078",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": false
+      },
+      {
+        "pair_id": 62,
+        "subject_id": "104",
+        "bio_shift": 14,
+        "ciphertext_shift": 14,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 63,
+        "subject_id": "055",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 64,
+        "subject_id": "098",
+        "bio_shift": 7,
+        "ciphertext_shift": 7,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 65,
+        "subject_id": "008",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 66,
+        "subject_id": "105",
+        "bio_shift": 10,
+        "ciphertext_shift": 9,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 67,
+        "subject_id": "005",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 68,
+        "subject_id": "001",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 69,
+        "subject_id": "033",
+        "bio_shift": 1,
+        "ciphertext_shift": 0,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 70,
+        "subject_id": "092",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 71,
+        "subject_id": "075",
+        "bio_shift": 7,
+        "ciphertext_shift": 7,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 72,
+        "subject_id": "000",
+        "bio_shift": 3,
+        "ciphertext_shift": 3,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 73,
+        "subject_id": "057",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 74,
+        "subject_id": "100",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 75,
+        "subject_id": "021",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 76,
+        "subject_id": "027",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 77,
+        "subject_id": "099",
+        "bio_shift": 7,
+        "ciphertext_shift": 7,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 78,
+        "subject_id": "113",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 79,
+        "subject_id": "103",
+        "bio_shift": 7,
+        "ciphertext_shift": 7,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 80,
+        "subject_id": "048",
+        "bio_shift": 7,
+        "ciphertext_shift": 7,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 81,
+        "subject_id": "016",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 82,
+        "subject_id": "058",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 83,
+        "subject_id": "058",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 84,
+        "subject_id": "061",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 85,
+        "subject_id": "027",
+        "bio_shift": 0,
+        "ciphertext_shift": 0,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 86,
+        "subject_id": "110",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 87,
+        "subject_id": "084",
+        "bio_shift": 7,
+        "ciphertext_shift": 12,
+        "shift_matched": false,
+        "recovered": false
+      },
+      {
+        "pair_id": 88,
+        "subject_id": "075",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 89,
+        "subject_id": "085",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 90,
+        "subject_id": "037",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 91,
+        "subject_id": "046",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 92,
+        "subject_id": "083",
+        "bio_shift": 15,
+        "ciphertext_shift": 15,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 93,
+        "subject_id": "060",
+        "bio_shift": 11,
+        "ciphertext_shift": 12,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 94,
+        "subject_id": "029",
+        "bio_shift": 1,
+        "ciphertext_shift": 1,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 95,
+        "subject_id": "013",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 96,
+        "subject_id": "072",
+        "bio_shift": 14,
+        "ciphertext_shift": 14,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 97,
+        "subject_id": "090",
+        "bio_shift": 8,
+        "ciphertext_shift": 8,
+        "shift_matched": true,
+        "recovered": true
+      },
+      {
+        "pair_id": 98,
+        "subject_id": "072",
+        "bio_shift": 9,
+        "ciphertext_shift": 8,
+        "shift_matched": false,
+        "recovered": true
+      },
+      {
+        "pair_id": 99,
+        "subject_id": "107",
+        "bio_shift": 5,
+        "ciphertext_shift": 5,
+        "shift_matched": true,
+        "recovered": true
+      }
+    ]
+  }
+}

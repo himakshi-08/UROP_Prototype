@@ -21,26 +21,36 @@ N_RINGS = 8
 N_FILTERS = 8
 BITS_PER_SECTOR = 16  # 8 rings x 2 bits
 GABOR_BANK = None
+QUADRATURE_GABOR_BANK = None
+
+
+def _quadrature_gabor_bank(ksize=21, sigma=4.0, lambd=8.0, gamma=0.5):
+    """
+    Constructs an 8-orientation quadrature Gabor filter bank (even and odd pairs).
+    Orientations theta_k = k * pi / 8 for k in 0..7.
+    Returns:
+        list of (even_kernel, odd_kernel, theta) tuples.
+    """
+    global QUADRATURE_GABOR_BANK
+    if QUADRATURE_GABOR_BANK is not None:
+        return QUADRATURE_GABOR_BANK
+    bank = []
+    for k in range(N_FILTERS):
+        theta = float(k) * np.pi / float(N_FILTERS)
+        # Even (cosine, psi=0)
+        ke = cv2.getGaborKernel((ksize, ksize), sigma, theta + np.pi / 2.0, lambd, gamma, 0.0, ktype=cv2.CV_32F)
+        # Odd (sine, psi=pi/2)
+        ko = cv2.getGaborKernel((ksize, ksize), sigma, theta + np.pi / 2.0, lambd, gamma, np.pi / 2.0, ktype=cv2.CV_32F)
+        # Zero-mean DC removal
+        ke -= ke.mean()
+        ko -= ko.mean()
+        bank.append((ke, ko, theta))
+    QUADRATURE_GABOR_BANK = bank
+    return bank
 
 
 def _gabor_bank(ksize=21):
-    global GABOR_BANK
-    if GABOR_BANK is not None:
-        return GABOR_BANK
-    bank = []
-    for theta in np.linspace(0.0, np.pi, N_FILTERS, endpoint=False):
-        kernel = cv2.getGaborKernel(
-            ksize=(ksize, ksize),
-            sigma=4.0,
-            theta=float(theta) + np.pi / 2.0,
-            lambd=8.0,
-            gamma=0.5,
-            psi=0,
-            ktype=cv2.CV_32F,
-        )
-        bank.append(kernel)
-    GABOR_BANK = bank
-    return bank
+    return [item[0] for item in _quadrature_gabor_bank(ksize=ksize)]
 
 
 def iter_binary_alignments(vec, n_sectors=N_SECTORS, bits_per_sector=BITS_PER_SECTOR):
@@ -75,6 +85,7 @@ class BiometricTemplate:
         self.mask = mask
         self.source_image = source_image
         self.enhanced = enhanced
+        self.coverage_vector = np.ones(self.vector_bits, dtype=np.float32)
         self.binary_vector = self.to_binary_vector()
 
     def to_binary_vector(self):
@@ -110,7 +121,21 @@ class BiometricTemplate:
         rot = cv2.getRotationMatrix2D((cx, cy), np.degrees(mean_th), 1.0)
         img_w = cv2.warpAffine(img_f, rot, (w, h), flags=cv2.INTER_LINEAR, borderValue=0)
         mask_w = cv2.warpAffine(mask.astype(np.float32), rot, (w, h), flags=cv2.INTER_LINEAR, borderValue=0)
-        ori_w = cv2.warpAffine(ori.astype(np.float32), rot, (w, h), flags=cv2.INTER_LINEAR, borderValue=0)
+
+        # Step 1: Double-Angle Orientation Field Transformation
+        # Represent axial orientations as continuous unit vectors u = cos(2*ori), v = sin(2*ori)
+        u = np.cos(2.0 * ori).astype(np.float32)
+        v = np.sin(2.0 * ori).astype(np.float32)
+        # Warp u and v scalar fields independently with linear interpolation (avoids 0 <-> pi jump)
+        u_w = cv2.warpAffine(u, rot, (w, h), flags=cv2.INTER_LINEAR, borderValue=0)
+        v_w = cv2.warpAffine(v, rot, (w, h), flags=cv2.INTER_LINEAR, borderValue=0)
+        # Apply the -mean_th rotation to the double-angle vectors (-2*mean_th in 2*theta space)
+        cos_2a = float(np.cos(2.0 * mean_th))
+        sin_2a = float(np.sin(2.0 * mean_th))
+        u_rot = u_w * cos_2a + v_w * sin_2a
+        v_rot = -u_w * sin_2a + v_w * cos_2a
+        # Reconstruct transformed orientation field modulo pi
+        ori_w = np.mod(0.5 * np.arctan2(v_rot, u_rot), np.pi).astype(np.float32)
 
         ys2, xs2 = np.where(mask_w > 0.35)
         if xs2.size < 40:
@@ -133,26 +158,48 @@ class BiometricTemplate:
         rr = np.sqrt((xx - center[0]) ** 2 + (yy - center[1]) ** 2)
         ring_mask = ((rr >= inner) & (rr <= max_r) & (mask_w > 0.25)).astype(np.float32)
         img_roi = img_w * ring_mask
-        local = img_roi - cv2.GaussianBlur(img_roi, (21, 21), 0)
-
         n_sec, n_ring = 16, 8
         dsize = (n_ring, n_sec)
         flags = cv2.WARP_FILL_OUTLIERS + cv2.INTER_AREA
-        polar_i = cv2.warpPolar(local, dsize, center, max_r, flags)
-        polar_o = cv2.warpPolar(np.mod(ori_w, np.pi).astype(np.float32), dsize, center, max_r, flags)
-        polar_m = cv2.warpPolar(ring_mask, dsize, center, max_r, flags)
 
-        med = float(np.median(polar_i[polar_m > 0.2])) if np.any(polar_m > 0.2) else float(np.median(polar_i))
-        bits_i = (polar_i > med).astype(np.uint8)
-        bits_o = (polar_o > (np.pi / 2.0)).astype(np.uint8)
+        # Step 3: Convolve with the 8-orientation quadrature Gabor bank
+        gabor_bank = _quadrature_gabor_bank()
+        p_energies = []
+        thetas = []
+        for ke, ko, theta_k in gabor_bank:
+            re = cv2.filter2D(img_roi, cv2.CV_32F, ke)
+            ro = cv2.filter2D(img_roi, cv2.CV_32F, ko)
+            energy_k = np.sqrt(re * re + ro * ro) * ring_mask
+            polar_e_k = cv2.warpPolar(energy_k, dsize, center, max_r, flags)
+            p_energies.append(polar_e_k)
+            thetas.append(theta_k)
+
+        polar_m = cv2.warpPolar(ring_mask, dsize, center, max_r, flags)
+        valid_cells = (polar_m > 0.2)
+
+        # 1. Total Directional Ridge Energy per polar cell
+        E_total = np.sum(p_energies, axis=0)
+        med_energy = float(np.median(E_total[valid_cells])) if np.any(valid_cells) else float(np.median(E_total))
+        bits_i = (E_total > med_energy).astype(np.uint8)
+
+        # 2. Dominant Gabor Orientation via vector sum across the 8 orientations
+        U = np.sum([p_energies[k] * np.cos(2.0 * thetas[k]) for k in range(N_FILTERS)], axis=0)
+        V = np.sum([p_energies[k] * np.sin(2.0 * thetas[k]) for k in range(N_FILTERS)], axis=0)
+        theta_gabor = np.mod(0.5 * np.arctan2(V, U), np.pi).astype(np.float32)
+        bits_o = (theta_gabor > (np.pi / 2.0)).astype(np.uint8)
 
         out = []
+        coverage = []
         for s in range(n_sec):
             for r in range(n_ring):
+                cov = float(polar_m[s, r])
                 out.append(int(bits_i[s, r]))
+                coverage.append(cov)
                 out.append(int(bits_o[s, r]))
+                coverage.append(cov)
 
         bits[: min(self.vector_bits, len(out))] = np.array(out[: self.vector_bits], dtype=np.uint8)
+        self.coverage_vector = np.array(coverage[: self.vector_bits], dtype=np.float32)
         return bits
 
     def _orientation_field_vector(self):
@@ -204,6 +251,49 @@ class BiometricTemplate:
         flat = occ.reshape(-1)
         bits[: min(self.vector_bits, flat.size)] = flat[: self.vector_bits]
         return bits
+
+    def get_validity_mask(self, tau=0.7):
+        return (self.coverage_vector >= tau).astype(np.uint8)
+
+    @staticmethod
+    def masked_hamming_distance(v1, v2, m1, m2, min_overlap=0.50):
+        v1 = np.asarray(v1, dtype=np.uint8)
+        v2 = np.asarray(v2, dtype=np.uint8)
+        m = (np.asarray(m1) > 0) & (np.asarray(m2) > 0)
+        n_valid = int(np.sum(m))
+        total_bits = len(v1)
+        overlap = n_valid / float(total_bits) if total_bits > 0 else 0.0
+        if overlap < min_overlap or n_valid == 0:
+            return None
+        errs = int(np.sum(v1[m] != v2[m]))
+        norm_hd = errs / float(n_valid)
+        equiv_bits = norm_hd * float(total_bits)
+        return {
+            "norm_hd": float(norm_hd),
+            "equiv_bits": float(equiv_bits),
+            "errs": errs,
+            "n_valid": n_valid,
+            "overlap": float(overlap)
+        }
+
+    @staticmethod
+    def aligned_masked_hamming_distance(v1, v2, m1, m2, n_sectors=N_SECTORS, bits_per_sector=BITS_PER_SECTOR, min_overlap=0.50):
+        v1 = np.asarray(v1, dtype=np.uint8)
+        v2 = np.asarray(v2, dtype=np.uint8)
+        m1 = np.asarray(m1, dtype=np.uint8)
+        m2 = np.asarray(m2, dtype=np.uint8)
+
+        best_res = None
+        for s in range(n_sectors):
+            sh_v2 = np.roll(v2, s * bits_per_sector)
+            sh_m2 = np.roll(m2, s * bits_per_sector)
+            res = BiometricTemplate.masked_hamming_distance(v1, sh_v2, m1, sh_m2, min_overlap=min_overlap)
+            if res is not None:
+                if best_res is None or res["norm_hd"] < best_res["norm_hd"]:
+                    best_res = dict(res)
+                    best_res["shift_sector"] = s
+
+        return best_res
 
     def get_binary_string(self):
         return "".join(str(int(b)) for b in self.binary_vector)

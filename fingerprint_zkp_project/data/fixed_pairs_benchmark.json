@@ -1,0 +1,1712 @@
+{
+  "metadata": {
+    "random_seed": 42,
+    "dataset_root": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing",
+    "num_genuine": 100,
+    "num_impostor": 100
+  },
+  "genuine_pairs": [
+    {
+      "pair_id": 0,
+      "subject_id": "043",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\043\\043_L0_3.bmp",
+      "sha256_1": "9e09b2eff2608c0d349dc044c6fbad86cd514c56ee8d2eef991b0113a9bdd926",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\043\\043_L0_4.bmp",
+      "sha256_2": "6c0117a5efd3140f9efe20200508620882955ade39711d0cc4b5d59a8f2de35a"
+    },
+    {
+      "pair_id": 1,
+      "subject_id": "084",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_0.bmp",
+      "sha256_1": "7878125629373073f0590328c8e7362637e014e8bd9e066585de473506830432",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_2.bmp",
+      "sha256_2": "00a6b5d619d5a70f7f12b0ace27f3c704a393740fa33bf0ca59d5ff9543d0818"
+    },
+    {
+      "pair_id": 2,
+      "subject_id": "049",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\049\\049_L0_0.bmp",
+      "sha256_1": "43b7dc44db47edd9c52ee747e749d73e7b631c4768e8b59468567e26e4380aeb",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\049\\049_L0_2.bmp",
+      "sha256_2": "f04baf76ab3ed98dd4b0548324b573d66639bc066383255d41fafec64376b232"
+    },
+    {
+      "pair_id": 3,
+      "subject_id": "042",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\042\\042_L0_1.bmp",
+      "sha256_1": "423e7c6aab2150eec6b64faec909668bb55ff66ad54001b1571983f4b43cef6c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\042\\042_L0_4.bmp",
+      "sha256_2": "dcc300525a57a1581d71a992624bfe17fd673e9b7f57285bb4ee8bc518138934"
+    },
+    {
+      "pair_id": 4,
+      "subject_id": "079",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\079\\079_L0_0.bmp",
+      "sha256_1": "bedaac508f1a9e2fd0ee5c45be10691d190dcfe72c163999ef639f4c4a768849",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\079\\079_L0_2.bmp",
+      "sha256_2": "f211a468109f06951abb650c82db6388007a37a01f8451163c454ac0a9c0a681"
+    },
+    {
+      "pair_id": 5,
+      "subject_id": "008",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\008\\008_L0_0.bmp",
+      "sha256_1": "29f71457d0f28b5c7d1babe1ff67e0860ae651959f727060426367bfb37dedfa",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\008\\008_L0_2.bmp",
+      "sha256_2": "550bf7f5951c6bb8696a5b1299167e075095d919b89d7034b444a450ce1866d8"
+    },
+    {
+      "pair_id": 6,
+      "subject_id": "095",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\095\\095_L0_0.bmp",
+      "sha256_1": "b43ed4cf6f114ce125b053dbc0604bb833017185038b95f4d5addcd93d2eae42",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\095\\095_L0_1.bmp",
+      "sha256_2": "4bc9fa23f940aff537da6dc0599924137e043e5c85d6eb752492e83205cf983c"
+    },
+    {
+      "pair_id": 7,
+      "subject_id": "048",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\048\\048_L0_0.bmp",
+      "sha256_1": "74d7e97e0f3fbdca7c5d297e2b07f5221871ab30217d277976f8ac4dfa31cd76",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\048\\048_L0_1.bmp",
+      "sha256_2": "e2e1e655363095674c6ffa609398ebe27793ab41fd6eab2b99bb1493af79c0fe"
+    },
+    {
+      "pair_id": 8,
+      "subject_id": "042",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\042\\042_L0_0.bmp",
+      "sha256_1": "59bb77ab06f49fc084ef16d614a775e71d6371ccafff511ef41fb885b473792b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\042\\042_L0_4.bmp",
+      "sha256_2": "dcc300525a57a1581d71a992624bfe17fd673e9b7f57285bb4ee8bc518138934"
+    },
+    {
+      "pair_id": 9,
+      "subject_id": "030",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\030\\030_L0_1.bmp",
+      "sha256_1": "0ba7c9d110c93e1bc91dab8d36b1a4c14b877c2febbc53638deed91218fb7e62",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\030\\030_L0_2.bmp",
+      "sha256_2": "33d142c2f607b016c57f530ebe2efa90b7fbfa74c04f684a2c53b0111642fb1f"
+    },
+    {
+      "pair_id": 10,
+      "subject_id": "106",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\106\\106_L0_2.bmp",
+      "sha256_1": "f32bd8bfa8cf847f05b4e5b6b16b7763f5bb0ef93a326c0499fd510adc0f6656",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\106\\106_L0_4.bmp",
+      "sha256_2": "8bf0075fe3c78b350ac4d27e21dadcecf826f06166a0e605297d9fa00670c6ca"
+    },
+    {
+      "pair_id": 11,
+      "subject_id": "044",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\044\\044_L0_1.bmp",
+      "sha256_1": "4fac2ef38b64015d898dd3a5cd2aef85acfe5aa7b9f145171ef4b9e6c8486974",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\044\\044_L0_3.bmp",
+      "sha256_2": "9b7ec5eca1aec467fbd330522e5ca63a426edb0e352c2b7ebe4df76fca92a3e1"
+    },
+    {
+      "pair_id": 12,
+      "subject_id": "006",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\006\\006_L0_1.bmp",
+      "sha256_1": "24fa4ef5b069b5946d56322113407ae0051edff080512ee60da396eb081138df",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\006\\006_L0_4.bmp",
+      "sha256_2": "2ea21fe9382735e24f9a4cff839152718f6ffcd6581dcd22c8402b06af741bb8"
+    },
+    {
+      "pair_id": 13,
+      "subject_id": "104",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\104\\104_L0_0.bmp",
+      "sha256_1": "6190a981e9d68b05ff416153b4cb5c229a32254afa3ce826ccf3d20b0bfc7c78",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\104\\104_L0_3.bmp",
+      "sha256_2": "622c66db7ea62600920494cc5a69111965ea3c7a6b5994f354ae6e92d72070a6"
+    },
+    {
+      "pair_id": 14,
+      "subject_id": "072",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\072\\072_L0_0.bmp",
+      "sha256_1": "0729464cb0121a507216595218361582b7fe48061c9fd23e16230be75b6be0e1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\072\\072_L0_4.bmp",
+      "sha256_2": "ea82639a0f2f2104bfa85e46ca7375b3418925486da28729c86c1383d1789d15"
+    },
+    {
+      "pair_id": 15,
+      "subject_id": "082",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\082\\082_L0_0.bmp",
+      "sha256_1": "bcdf59e9ea61803c71de45499666aa356faa0adc507528dbe92646151e6e0b7f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\082\\082_L0_1.bmp",
+      "sha256_2": "e78132b2fce64d01012e0d414d6d6d8d0803fa52c69a70b9090b498a29d1bfd6"
+    },
+    {
+      "pair_id": 16,
+      "subject_id": "040",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\040\\040_L0_0.bmp",
+      "sha256_1": "d38499d27d037ca4f9a3baf88a43c01d94e158c1e937ca9081b0c9f3f645f03e",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\040\\040_L0_3.bmp",
+      "sha256_2": "61841f026ff20920402d2f7e8fb7e4c9bd794edac88b43cc0ffc9091de95371b"
+    },
+    {
+      "pair_id": 17,
+      "subject_id": "014",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\014\\014_L0_2.bmp",
+      "sha256_1": "2f56871a2a65730873b5377ee410b82a406069a4e8b36e52b9cf20449cfa3f50",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\014\\014_L0_4.bmp",
+      "sha256_2": "29efda216cc273f9687b9b99920558a24819a0f19817f6bc3cde1744e9bd7991"
+    },
+    {
+      "pair_id": 18,
+      "subject_id": "073",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\073\\073_L0_1.bmp",
+      "sha256_1": "d1b5b11178cc7be57cf40dd7fa590d23072b63782f0e67ded402883e5a5a288a",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\073\\073_L0_4.bmp",
+      "sha256_2": "b920c1d06c585b329720682e1099b3ece1beaccfc71ac7d538c8caa72edf8ade"
+    },
+    {
+      "pair_id": 19,
+      "subject_id": "015",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\015\\015_L0_2.bmp",
+      "sha256_1": "569348d4d44ed3a829dbbb445e98763e3cf445c370f97c62d79c03db4e7e6988",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\015\\015_L0_3.bmp",
+      "sha256_2": "bffa0f987d2aeb14635c335c8508fddb17f4303f668ce462b32b2aa913feee8b"
+    },
+    {
+      "pair_id": 20,
+      "subject_id": "101",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\101\\101_L0_1.bmp",
+      "sha256_1": "e76d1679374d1fdf0737a3a9c873fe952a79e27073b1b2d4502b62e545c72d7d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\101\\101_L0_2.bmp",
+      "sha256_2": "385e1e7de14b625aebb6356b2b1ce5854639762f15346024d0c8a1f3a071c285"
+    },
+    {
+      "pair_id": 21,
+      "subject_id": "001",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\001\\001_L0_0.bmp",
+      "sha256_1": "53b655ca10efb49ec9bf8328d93cc8e828c66a2bfee1f4961ad50212e4482cb9",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\001\\001_L0_2.bmp",
+      "sha256_2": "2c3fa354e8c43565cef1038a1ceab0081ab26c65339a6e3a880946b717824b11"
+    },
+    {
+      "pair_id": 22,
+      "subject_id": "073",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\073\\073_L0_3.bmp",
+      "sha256_1": "e4e243fa4d5240101656f8988d9a27563d912e52465708958244fb82202947ec",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\073\\073_L0_4.bmp",
+      "sha256_2": "b920c1d06c585b329720682e1099b3ece1beaccfc71ac7d538c8caa72edf8ade"
+    },
+    {
+      "pair_id": 23,
+      "subject_id": "033",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\033\\033_L0_2.bmp",
+      "sha256_1": "7dab60689a1fbe2a4ce7351ddafd5edf54d07b5f4a2c10d4c472a162347de176",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\033\\033_L0_3.bmp",
+      "sha256_2": "e9ef26754ae0a8aad35300bfd18528223e7d4577e3dc3504a60362461b30a41a"
+    },
+    {
+      "pair_id": 24,
+      "subject_id": "038",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\038\\038_L0_1.bmp",
+      "sha256_1": "c8e083129306c7a5356aecca0b3314321101f4e609bfbee5ee3b0d1684565d92",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\038\\038_L0_3.bmp",
+      "sha256_2": "408f3cc9735133433d75b87330c71bc16cf022ff30e6787d981406ab34fa7ac1"
+    },
+    {
+      "pair_id": 25,
+      "subject_id": "118",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\118\\118_L0_1.bmp",
+      "sha256_1": "4cff72fd67d49d5c58a0b5406094429393f6901a518d59e10eae4452095c422b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\118\\118_L0_4.bmp",
+      "sha256_2": "1837033d13272163fd982ccad5d55c459b2d906b99b101ea0f20f67d1e36d400"
+    },
+    {
+      "pair_id": 26,
+      "subject_id": "067",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\067\\067_L0_0.bmp",
+      "sha256_1": "e2c2bee11359cf54a67eda8af8b278fa05f3f61737073a71e0618c9669457329",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\067\\067_L0_1.bmp",
+      "sha256_2": "1ab89ff37156254cc38134eb054748dbabc047339d2bdf484ee98459dfe1d63d"
+    },
+    {
+      "pair_id": 27,
+      "subject_id": "092",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\092\\092_L0_0.bmp",
+      "sha256_1": "fc5b090dc039d94a154ee4a603304541deb354ef7354f237ea8f02b8fabf279b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\092\\092_L0_1.bmp",
+      "sha256_2": "cb0d695fbf1cfb122ecb27ab7084ed4e4cddbd21c6f6eb4bde1590d9df38d373"
+    },
+    {
+      "pair_id": 28,
+      "subject_id": "105",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\105\\105_L0_1.bmp",
+      "sha256_1": "c83bcdb1b7ab8f187db8f28ca6df87ccc885a13efba0d4eab951bb482fe24361",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\105\\105_L0_2.bmp",
+      "sha256_2": "d8b5f805ecb601deb5bbb05270b3eeaccdeaa45f9a76309bda7a534cce1d5ee9"
+    },
+    {
+      "pair_id": 29,
+      "subject_id": "006",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\006\\006_L0_2.bmp",
+      "sha256_1": "f1bfaaf7e1953dc6f0280d4eaeb202b0e56a36fe0f1d9f6df973b9ae40ddb4e7",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\006\\006_L0_3.bmp",
+      "sha256_2": "118206e218f888b53f53cddbfd5008928193babba4261d6181264f9839cd6229"
+    },
+    {
+      "pair_id": 30,
+      "subject_id": "091",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\091\\091_L0_1.bmp",
+      "sha256_1": "a6864fe5f06821f8d0145281c50e6708bc264a369a6567b9a908ba2657d5fc5d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\091\\091_L0_3.bmp",
+      "sha256_2": "2878fa743823f3196459a64265ccd5080165576458264b3ba2e4b8efd9726541"
+    },
+    {
+      "pair_id": 31,
+      "subject_id": "003",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\003\\003_L0_0.bmp",
+      "sha256_1": "6c40cb1815b7a61c28342bd238827eb84db1eb27c20bc2f5a028168b93d77d1c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\003\\003_L0_3.bmp",
+      "sha256_2": "a8b916677c4e30130316ebf7efab58fa9c598e2a6e0a82510bad0a6b7f4d4d49"
+    },
+    {
+      "pair_id": 32,
+      "subject_id": "044",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\044\\044_L0_0.bmp",
+      "sha256_1": "e46c286717daf222d33f10c50d27c47133ab6bc4a65a4678c74de30d19808c4f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\044\\044_L0_3.bmp",
+      "sha256_2": "9b7ec5eca1aec467fbd330522e5ca63a426edb0e352c2b7ebe4df76fca92a3e1"
+    },
+    {
+      "pair_id": 33,
+      "subject_id": "069",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\069\\069_L0_0.bmp",
+      "sha256_1": "776c97e6bfdefdf9e3e811616b86688087a4250a2d70cefc2ddea10bed674895",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\069\\069_L0_4.bmp",
+      "sha256_2": "d221104e80128a54ccb72a2f6fc36ebdec5685937fbb86b0c1ac11c2ed8cbdea"
+    },
+    {
+      "pair_id": 34,
+      "subject_id": "010",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\010\\010_L0_2.bmp",
+      "sha256_1": "fe1fafbbc282bc400c3cdab7368248f09a3acbd9594ee37ed475a457ef97231f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\010\\010_L0_3.bmp",
+      "sha256_2": "a1bc53bb712cf635110df22652f023afd8024b6ded47fe900f90ac3444f01e83"
+    },
+    {
+      "pair_id": 35,
+      "subject_id": "087",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\087\\087_L0_0.bmp",
+      "sha256_1": "7696c538519031312c7194614c589dc52a5d997b843b6e29a2413f7fa7008e37",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\087\\087_L0_3.bmp",
+      "sha256_2": "e94643d897b08460622b9fe5ffd24c2c1a1bb177c25496f57570cbc4212621a2"
+    },
+    {
+      "pair_id": 36,
+      "subject_id": "105",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\105\\105_L0_2.bmp",
+      "sha256_1": "d8b5f805ecb601deb5bbb05270b3eeaccdeaa45f9a76309bda7a534cce1d5ee9",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\105\\105_L0_4.bmp",
+      "sha256_2": "51fee878707ec49dcb4efe5142ef6bf69571da2f79a8c9c8110f5af8b7f151dd"
+    },
+    {
+      "pair_id": 37,
+      "subject_id": "049",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\049\\049_L0_1.bmp",
+      "sha256_1": "6f98554cb36a6d0d842804a2f855ba690e9a74b85b23877a7b7dfff44fb33dc6",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\049\\049_L0_2.bmp",
+      "sha256_2": "f04baf76ab3ed98dd4b0548324b573d66639bc066383255d41fafec64376b232"
+    },
+    {
+      "pair_id": 38,
+      "subject_id": "023",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\023\\023_L0_3.bmp",
+      "sha256_1": "b71ba776a85a235c4dbfd5561e14ebcad3c4981258d5a58092ba1ed483e5d72d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\023\\023_L0_4.bmp",
+      "sha256_2": "86c24908aa70041abe761f44f0051d96fd8676210910c66222bab6285d69c3db"
+    },
+    {
+      "pair_id": 39,
+      "subject_id": "081",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\081\\081_L0_0.bmp",
+      "sha256_1": "fa3c43eb686d4110ee373935ed1b57db768e71fc05277ee2fdef4c7adbc7dd4c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\081\\081_L0_3.bmp",
+      "sha256_2": "4de5924e5bfb96e2164bcc6ddb4c49f5eb7b5b5c0cd407478cc7982ddb9f181e"
+    },
+    {
+      "pair_id": 40,
+      "subject_id": "111",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\111\\111_L0_0.bmp",
+      "sha256_1": "d661a5a55b1d8f67987dd5990eb115d998a91dbf74f370b12ce306e7c456a3ee",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\111\\111_L0_3.bmp",
+      "sha256_2": "c0fa14c9da7591e9e3e8707ef1ffce2cb03288a32c5d9e33ca358ca2387f06e9"
+    },
+    {
+      "pair_id": 41,
+      "subject_id": "063",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\063\\063_L0_0.bmp",
+      "sha256_1": "da026008e8ce97c8688bd7dce36fe826f145f969aa651c764a4188ca0b927c5f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\063\\063_L0_3.bmp",
+      "sha256_2": "f384ae0a1b599c5796a5fc110d3976f76b22e25ed008ce1827157ff8f831be71"
+    },
+    {
+      "pair_id": 42,
+      "subject_id": "116",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\116\\116_L0_1.bmp",
+      "sha256_1": "80c0ff784d14a9720b8636a9cc454049c6e1cbb3383b1a26c9b494cd4fbbd384",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\116\\116_L0_2.bmp",
+      "sha256_2": "177b4a42326d053084955c14a05c8bc72753690fd68cf3f7cb17ff1ac446f5a2"
+    },
+    {
+      "pair_id": 43,
+      "subject_id": "100",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\100\\100_L0_2.bmp",
+      "sha256_1": "c58a2745e9cb79b930895ff6335afd6706c065a06bb72d9b8e2ab1d21396dd25",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\100\\100_L0_4.bmp",
+      "sha256_2": "633fdbb5687cc03e03c79e475b6d1abb76cfbd341829971eb7717a951c2da587"
+    },
+    {
+      "pair_id": 44,
+      "subject_id": "037",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\037\\037_L0_1.bmp",
+      "sha256_1": "b51815f05844032699f113441ce79a9dfb1cf4db5136ad8485c6642be102055c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\037\\037_L0_4.bmp",
+      "sha256_2": "60d0c43f4cffbdeec3c38c078fa83a2e0aca6435d237b3711a77be1ae8722b28"
+    },
+    {
+      "pair_id": 45,
+      "subject_id": "090",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\090\\090_L0_0.bmp",
+      "sha256_1": "e37ff97c92b8127dd23a1001574591202af99479b8f34da31a84f4b1fff01955",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\090\\090_L0_2.bmp",
+      "sha256_2": "7fc3ea2159b26922e83f165fc049712d7ec909eefa44fd140f48216250d2efef"
+    },
+    {
+      "pair_id": 46,
+      "subject_id": "083",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\083\\083_L0_2.bmp",
+      "sha256_1": "c29afc30df47eb1272b5cf7f36f807b18a4197bc6dabf676261225a3472e0815",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\083\\083_L0_3.bmp",
+      "sha256_2": "0e359b8adfafb6c9e04e8421e9fa516e7d937d8c60083b773a2850d1086ed6d4"
+    },
+    {
+      "pair_id": 47,
+      "subject_id": "093",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\093\\093_L0_1.bmp",
+      "sha256_1": "84a93fd912166228753c61692426abb5496424607e7baf19e54525c40020439b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\093\\093_L0_3.bmp",
+      "sha256_2": "16363bfba7fc04365c56709dc2eef514c5a85f7598321906a54dbb0e4897cea8"
+    },
+    {
+      "pair_id": 48,
+      "subject_id": "044",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\044\\044_L0_0.bmp",
+      "sha256_1": "e46c286717daf222d33f10c50d27c47133ab6bc4a65a4678c74de30d19808c4f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\044\\044_L0_4.bmp",
+      "sha256_2": "1edd83c327a2cbc086c93f77b39cfd52e88e1d3fefeec42c11182567238d2cdf"
+    },
+    {
+      "pair_id": 49,
+      "subject_id": "084",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_0.bmp",
+      "sha256_1": "7878125629373073f0590328c8e7362637e014e8bd9e066585de473506830432",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_4.bmp",
+      "sha256_2": "f9c13f041cc1c36e9a46f6d6e9fab75d9b3e2e7a1fcb989164b436de5bed4ea4"
+    },
+    {
+      "pair_id": 50,
+      "subject_id": "104",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\104\\104_L0_1.bmp",
+      "sha256_1": "57b42f6190f00bbb8b4e92fcabe0e360cc8449747fb38ce65970533a64edcdb3",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\104\\104_L0_2.bmp",
+      "sha256_2": "fac6f6e9cd1fc326074e22a189855364039d1c5abbdb0f9d712879c8c53a0968"
+    },
+    {
+      "pair_id": 51,
+      "subject_id": "064",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\064\\064_L0_0.bmp",
+      "sha256_1": "fff6c478eeb67d599399295767ef99d89b02978a0f127600bf852c89c69c70b6",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\064\\064_L0_2.bmp",
+      "sha256_2": "3004f2b1d0969a3b4e1f543497175649a3c63bfd669ff2875a8414a17f7baaf2"
+    },
+    {
+      "pair_id": 52,
+      "subject_id": "067",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\067\\067_L0_0.bmp",
+      "sha256_1": "e2c2bee11359cf54a67eda8af8b278fa05f3f61737073a71e0618c9669457329",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\067\\067_L0_3.bmp",
+      "sha256_2": "36fdac26dd225c52cd362a334862a639e009646a7528ac8e22ccd70bfe48ed32"
+    },
+    {
+      "pair_id": 53,
+      "subject_id": "026",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\026\\026_L0_0.bmp",
+      "sha256_1": "9f58adc06b7dd6f05be09d7a3f5cffc0f786bee6737ec512ecf4a6f30fa1ab7b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\026\\026_L0_2.bmp",
+      "sha256_2": "e56b5292309b69f65862dc38de0628a7d6b88dd159a9d76e89c3a48d6b86da40"
+    },
+    {
+      "pair_id": 54,
+      "subject_id": "045",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\045\\045_L0_2.bmp",
+      "sha256_1": "63e586a411c2467047d518442350c1b3eb5bd08d2be31ae095e83cebe0738211",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\045\\045_L0_4.bmp",
+      "sha256_2": "b13a9896d32b6c4559eba1ce717dd2b598cb2595c78f4777bd830ebc67d7399c"
+    },
+    {
+      "pair_id": 55,
+      "subject_id": "020",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\020\\020_L0_0.bmp",
+      "sha256_1": "ca073486cb84291fde999ab7bf60bf8c61bb1dba0e30491f0b47fc33dab82e9b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\020\\020_L0_1.bmp",
+      "sha256_2": "85d597d2f378a5b0117000983b9ec058fd750ae0f11caed567ffa9e222e5ae98"
+    },
+    {
+      "pair_id": 56,
+      "subject_id": "071",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\071\\071_L0_1.bmp",
+      "sha256_1": "e1423a0de1a3bf0aa0ee0ae5ae5b14b2315cb4f83cafb5a7742f8b4b1a465ba5",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\071\\071_L0_3.bmp",
+      "sha256_2": "0de88a760f2a4a035b648afb036b16484f697c1bc13fa954ae7e36c2cda8e937"
+    },
+    {
+      "pair_id": 57,
+      "subject_id": "012",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\012\\012_L0_0.bmp",
+      "sha256_1": "ae7e8eb35e3a6be14f2939ce0d6410ae8703ae7213cfdf830ccff656b74fcc04",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\012\\012_L0_2.bmp",
+      "sha256_2": "41c35d591f15b1865b72baf00fd6cdc729438c08aab9e555073e201f526ab52a"
+    },
+    {
+      "pair_id": 58,
+      "subject_id": "007",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\007\\007_L0_0.bmp",
+      "sha256_1": "55c93350cb105ca67b9dc47921672298802d0980adeb38fb59a29233aa32c1d0",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\007\\007_L0_3.bmp",
+      "sha256_2": "d6f15e4a9f748cb5bdc17b9437827d28e1c53735fae3ac65f8d3a41de88ba593"
+    },
+    {
+      "pair_id": 59,
+      "subject_id": "079",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\079\\079_L0_2.bmp",
+      "sha256_1": "f211a468109f06951abb650c82db6388007a37a01f8451163c454ac0a9c0a681",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\079\\079_L0_4.bmp",
+      "sha256_2": "00ec495a7255f2382af31507046c35fca251f4e83859bdf260f61e8063464f6f"
+    },
+    {
+      "pair_id": 60,
+      "subject_id": "065",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\065\\065_L0_0.bmp",
+      "sha256_1": "23dd97a1c27298119a6868ecd1c5255832ba5a8596665cec5803f516f71a4ba4",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\065\\065_L0_4.bmp",
+      "sha256_2": "7f77930541a991325a9f7622662c17e9b7a3b1281b135e48148f23dd41851a71"
+    },
+    {
+      "pair_id": 61,
+      "subject_id": "078",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\078\\078_L0_0.bmp",
+      "sha256_1": "7ffdf27c4e8f46798de180239b5b6e4c726c7b01b81afc677bf05d4489d51225",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\078\\078_L0_4.bmp",
+      "sha256_2": "cfa3a1da66d82566becd1d9fe8bcb0ada949cbfd8331891b58a6e5b262dd5b8a"
+    },
+    {
+      "pair_id": 62,
+      "subject_id": "104",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\104\\104_L0_3.bmp",
+      "sha256_1": "622c66db7ea62600920494cc5a69111965ea3c7a6b5994f354ae6e92d72070a6",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\104\\104_L0_4.bmp",
+      "sha256_2": "d9771db82eee2f2f13eaece1b7ea586acda083303807fa920b3117978ce1e972"
+    },
+    {
+      "pair_id": 63,
+      "subject_id": "055",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\055\\055_L0_1.bmp",
+      "sha256_1": "a94f21a2d85dea16f66423b5f11dbe6b5c56ddc7032db4ae3da9fa0b5b8b6561",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\055\\055_L0_2.bmp",
+      "sha256_2": "faa8da490c47be75ba72f2f8126b21a9ab429384401e9b03a43dd115adf2f3a6"
+    },
+    {
+      "pair_id": 64,
+      "subject_id": "098",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\098\\098_L0_3.bmp",
+      "sha256_1": "a257dd61cbc10c731cb2ac68ef069fa37e7a856d876059ce3bf8386cf46f445c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\098\\098_L0_4.bmp",
+      "sha256_2": "5aa58fc398d861ee7db7a3d0de05d048e91da0b8037f27fe71ceed3d3b6c7bcd"
+    },
+    {
+      "pair_id": 65,
+      "subject_id": "008",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\008\\008_L0_2.bmp",
+      "sha256_1": "550bf7f5951c6bb8696a5b1299167e075095d919b89d7034b444a450ce1866d8",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\008\\008_L0_3.bmp",
+      "sha256_2": "79c540c58895b30aca45a55b8f8e9e02f8f35612e70331aaf82c8c054bd429ad"
+    },
+    {
+      "pair_id": 66,
+      "subject_id": "105",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\105\\105_L0_3.bmp",
+      "sha256_1": "c4da4b6f5df5204efacb07a2cb8f34326d779093d2c891dc1cc635770f4a6440",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\105\\105_L0_4.bmp",
+      "sha256_2": "51fee878707ec49dcb4efe5142ef6bf69571da2f79a8c9c8110f5af8b7f151dd"
+    },
+    {
+      "pair_id": 67,
+      "subject_id": "005",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\005\\005_L0_1.bmp",
+      "sha256_1": "acb5973967f2ef30ca1f24465563f9f5277e72c32d6005bfaa324a1112ceb8af",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\005\\005_L0_4.bmp",
+      "sha256_2": "92707e878b6a913adb9e551690976e5bb16ec626632035f1c0634bd07a59a04c"
+    },
+    {
+      "pair_id": 68,
+      "subject_id": "001",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\001\\001_L0_0.bmp",
+      "sha256_1": "53b655ca10efb49ec9bf8328d93cc8e828c66a2bfee1f4961ad50212e4482cb9",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\001\\001_L0_3.bmp",
+      "sha256_2": "5a51d3b8045da8f89cd7459f5d65b396add15f6d0858bd0b9b43ef15402f6f95"
+    },
+    {
+      "pair_id": 69,
+      "subject_id": "033",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\033\\033_L0_0.bmp",
+      "sha256_1": "b4699d2aed73d0a31b6d80f33d6075441adb4e95e9e0599904bf1b2f0171c403",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\033\\033_L0_3.bmp",
+      "sha256_2": "e9ef26754ae0a8aad35300bfd18528223e7d4577e3dc3504a60362461b30a41a"
+    },
+    {
+      "pair_id": 70,
+      "subject_id": "092",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\092\\092_L0_2.bmp",
+      "sha256_1": "2577fd58f2a4936a6496ab7beb2bf41823327cd67a426bd92d10780a9ce18721",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\092\\092_L0_3.bmp",
+      "sha256_2": "0a9576f7ecdcb9fe238ac9c5bc1f2f7c613012e064bb8d4c37896133da1f331c"
+    },
+    {
+      "pair_id": 71,
+      "subject_id": "075",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\075\\075_L0_2.bmp",
+      "sha256_1": "26449becb1dc3625d24b2e605c2fa0a4090abec3aa15d169f1f3df3210c40932",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\075\\075_L0_3.bmp",
+      "sha256_2": "bd83a5257fac944bb22607450c3b6ca1393bd28bc33da8fa97a72fdee69c5747"
+    },
+    {
+      "pair_id": 72,
+      "subject_id": "000",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\000\\000_L0_1.bmp",
+      "sha256_1": "b4c2d48688286ba0a7141a0b14b3f235b1907a504e6a704b17ebdae9aeaef4a1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\000\\000_L0_2.bmp",
+      "sha256_2": "0aaf77817f8fffeb19e81ac44b0d55fdbc09ae4dee03b5e8daf36fbd05a4361b"
+    },
+    {
+      "pair_id": 73,
+      "subject_id": "057",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\057\\057_L0_0.bmp",
+      "sha256_1": "949b71e50b8454466521df9c6f7d77d637c92822312a7b51b80af86cbc5089c2",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\057\\057_L0_2.bmp",
+      "sha256_2": "934d8b4c17135b48b0b80ef32f7de54511b74a51f60769908eff0d07fa2777dd"
+    },
+    {
+      "pair_id": 74,
+      "subject_id": "100",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\100\\100_L0_0.bmp",
+      "sha256_1": "3f1c4b8e78f071a29727e3adbfdc95338a2ebc3538cc254ca50fea98b3f05e38",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\100\\100_L0_3.bmp",
+      "sha256_2": "7c1c2379a81bf6cab3ed24349b8e485a5c3b0f173fbc553be895eefb142e3ca0"
+    },
+    {
+      "pair_id": 75,
+      "subject_id": "021",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\021\\021_L0_0.bmp",
+      "sha256_1": "b631952635809f50e928b5706601c2f3d14191d08e4fc9127915930b49c9aed2",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\021\\021_L0_3.bmp",
+      "sha256_2": "3594f44ebe133391c65b866138089484729132e5e84580cc8d068473b6905d0f"
+    },
+    {
+      "pair_id": 76,
+      "subject_id": "027",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\027\\027_L0_1.bmp",
+      "sha256_1": "b230d890fee3a07ddb48db47d155443220d1b23c8588c2ab41498e9dc6a8e1f3",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\027\\027_L0_4.bmp",
+      "sha256_2": "01db4205be8b4696fef90528da4da547cfdb9930ca35bb5259230712eb846799"
+    },
+    {
+      "pair_id": 77,
+      "subject_id": "099",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\099\\099_L0_1.bmp",
+      "sha256_1": "c185c4254dd8a167c23eadf1b2bd77422899055ca25e8520342b4e486c7ee6e6",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\099\\099_L0_4.bmp",
+      "sha256_2": "dd0730c400c795060b9f020d91e416a5ccc35dc88873df8a29d58c6196dd8a09"
+    },
+    {
+      "pair_id": 78,
+      "subject_id": "113",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\113\\113_L0_1.bmp",
+      "sha256_1": "52b2a9855276a1ae8bf4e128535f0f64965581e36c7e489d8fa0dbadb9907f70",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\113\\113_L0_2.bmp",
+      "sha256_2": "fae246dfe21c7107bdf1cd85373b2a7a9bd693fb8ca0a0a8cbcc005ff8349527"
+    },
+    {
+      "pair_id": 79,
+      "subject_id": "103",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\103\\103_L0_0.bmp",
+      "sha256_1": "27ca8377f83b33e94c59d74f59185f5c68b14935988b44f95a0e2a30448298d1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\103\\103_L0_2.bmp",
+      "sha256_2": "81a53ee1733037fe0c53bf34fdcabfeee1b9c6a1df8130ae8025cf47a411f246"
+    },
+    {
+      "pair_id": 80,
+      "subject_id": "048",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\048\\048_L0_0.bmp",
+      "sha256_1": "74d7e97e0f3fbdca7c5d297e2b07f5221871ab30217d277976f8ac4dfa31cd76",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\048\\048_L0_4.bmp",
+      "sha256_2": "f807007b6f5db5154efee3e81ef89cee03a368e41438f308dc168735c87c93d1"
+    },
+    {
+      "pair_id": 81,
+      "subject_id": "016",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\016\\016_L0_2.bmp",
+      "sha256_1": "bb46402a9b9ec23eefa3068b3ed58ba484086f887e9bcfd7203da96444e925d5",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\016\\016_L0_3.bmp",
+      "sha256_2": "df7db64ac8bfe531fc2605d7df64be5eae5ee9eddea4aa5a27b0db9f7f92d043"
+    },
+    {
+      "pair_id": 82,
+      "subject_id": "058",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\058\\058_L0_1.bmp",
+      "sha256_1": "e33c891da6ba5170c9e246eb614e95083c3fabc8d71ed3cdfde9fa1d98e6013b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\058\\058_L0_4.bmp",
+      "sha256_2": "08d2cfe3bf00f16eb0e3893830c064a9d895527ba5e5181cebc22b26c3fcd756"
+    },
+    {
+      "pair_id": 83,
+      "subject_id": "058",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\058\\058_L0_2.bmp",
+      "sha256_1": "d142502f1412a53b8bb6c1f0ccbb64e3703effdd284c87ce4703a5a68e1ae2cc",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\058\\058_L0_4.bmp",
+      "sha256_2": "08d2cfe3bf00f16eb0e3893830c064a9d895527ba5e5181cebc22b26c3fcd756"
+    },
+    {
+      "pair_id": 84,
+      "subject_id": "061",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\061\\061_L0_2.bmp",
+      "sha256_1": "17f86759703d796c80a89f8c76accd835a6c9498e26fabfbf93bb7ca5f31da7c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\061\\061_L0_3.bmp",
+      "sha256_2": "cfa50d55e954cc641f7de78e42c6c7cb20990910af61b0084dc95687d5c4f77d"
+    },
+    {
+      "pair_id": 85,
+      "subject_id": "027",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\027\\027_L0_2.bmp",
+      "sha256_1": "17b1999d93ad1885adb6c09b46893bd85b1c32828c9b57bc3a11eb699c930c2a",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\027\\027_L0_3.bmp",
+      "sha256_2": "c1194cd163385fc70070bd2b0e1f0116fc9c309cd5ce30f9038babdd5bf22254"
+    },
+    {
+      "pair_id": 86,
+      "subject_id": "110",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\110\\110_L0_1.bmp",
+      "sha256_1": "85aa833ee3f84070f1a2cc6328eb5631a8630d690e2af1bca87ec64e73e1929c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\110\\110_L0_4.bmp",
+      "sha256_2": "df7d842512fdcc9a71879903a848219e73f27ed9cee52a8cb8ff1ede872e1fe7"
+    },
+    {
+      "pair_id": 87,
+      "subject_id": "084",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_1.bmp",
+      "sha256_1": "d08c19531dc1c99064473e929d07cab0bc87c9debc8f1fd8fdda3515f3843b12",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_2.bmp",
+      "sha256_2": "00a6b5d619d5a70f7f12b0ace27f3c704a393740fa33bf0ca59d5ff9543d0818"
+    },
+    {
+      "pair_id": 88,
+      "subject_id": "075",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\075\\075_L0_0.bmp",
+      "sha256_1": "803a5f198346c3ce2abba4fa97e2b1756d7d8229950760bdd610cc78c56b4a9f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\075\\075_L0_2.bmp",
+      "sha256_2": "26449becb1dc3625d24b2e605c2fa0a4090abec3aa15d169f1f3df3210c40932"
+    },
+    {
+      "pair_id": 89,
+      "subject_id": "085",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\085\\085_L0_0.bmp",
+      "sha256_1": "49f00b6ad9db426e0a107ade820c8b2a8f5f8688ea00c24687dc6939200bd386",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\085\\085_L0_3.bmp",
+      "sha256_2": "02dca70b14f4eb7521a2e7de5bd7c4a7d826316dae9b19aefcfc69c015f8955c"
+    },
+    {
+      "pair_id": 90,
+      "subject_id": "037",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\037\\037_L0_0.bmp",
+      "sha256_1": "6804059faaf2b32ef457c91ec77c4a4728c4a912820a1a788aa4ca4bbab4ca70",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\037\\037_L0_2.bmp",
+      "sha256_2": "21ef36e8abc7bb48202d962fd539e7f3f2f9f8c1a73a294ea67d345786060d11"
+    },
+    {
+      "pair_id": 91,
+      "subject_id": "046",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\046\\046_L0_0.bmp",
+      "sha256_1": "724da38c2f58f41e19d62577104aaee066c67d1abd891a12d349b3a99d5cfaa7",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\046\\046_L0_4.bmp",
+      "sha256_2": "b4f2fd10713a8bff23b469bc24785f76a8c813bfe9f3ca0f4568565e82e3919e"
+    },
+    {
+      "pair_id": 92,
+      "subject_id": "083",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\083\\083_L0_1.bmp",
+      "sha256_1": "72ef33a5a6ef4c9194727254a6dcd01b375f68fbb5226a76953e321de66c13c2",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\083\\083_L0_2.bmp",
+      "sha256_2": "c29afc30df47eb1272b5cf7f36f807b18a4197bc6dabf676261225a3472e0815"
+    },
+    {
+      "pair_id": 93,
+      "subject_id": "060",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\060\\060_L0_1.bmp",
+      "sha256_1": "d77696bb47db0c8ef3f5a1c2a37395c24f874273f034343577033974469e125a",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\060\\060_L0_2.bmp",
+      "sha256_2": "0da4435552b1556f95a08f59a784746877a7b6aeda0170752fcc4a4752df7cde"
+    },
+    {
+      "pair_id": 94,
+      "subject_id": "029",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\029\\029_L0_2.bmp",
+      "sha256_1": "ebca04671373c955e22414d52937b78c5a59c52130410858a845735582f4880e",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\029\\029_L0_4.bmp",
+      "sha256_2": "a03856a5a9a3c9d4a8d4a7c87a4d7fd22d3dc9fad0fcc2a90049544b24a98e82"
+    },
+    {
+      "pair_id": 95,
+      "subject_id": "013",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\013\\013_L0_3.bmp",
+      "sha256_1": "7fb46c4b029bfbf96e2fabcb6a0eef12f3d596dc2306e932b8601c2cd2bc7165",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\013\\013_L0_4.bmp",
+      "sha256_2": "a7ded1929e9e0c32506c9e72e95e3a8f997067c54b28f0cff66368404e2dc664"
+    },
+    {
+      "pair_id": 96,
+      "subject_id": "072",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\072\\072_L0_3.bmp",
+      "sha256_1": "3fa915e5fcf4b342907bba7785995cd58a972b1bab274fbba74cc838c6db2b76",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\072\\072_L0_4.bmp",
+      "sha256_2": "ea82639a0f2f2104bfa85e46ca7375b3418925486da28729c86c1383d1789d15"
+    },
+    {
+      "pair_id": 97,
+      "subject_id": "090",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\090\\090_L0_0.bmp",
+      "sha256_1": "e37ff97c92b8127dd23a1001574591202af99479b8f34da31a84f4b1fff01955",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\090\\090_L0_3.bmp",
+      "sha256_2": "01d2706084b47314da5ff9304bd4bacdb1c0e33abab860b3ebc358b05d09cb6a"
+    },
+    {
+      "pair_id": 98,
+      "subject_id": "072",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\072\\072_L0_1.bmp",
+      "sha256_1": "8f74c8f56502508fa4306ea13646065dbdea6369f15fe325bc1336581e35a418",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\072\\072_L0_4.bmp",
+      "sha256_2": "ea82639a0f2f2104bfa85e46ca7375b3418925486da28729c86c1383d1789d15"
+    },
+    {
+      "pair_id": 99,
+      "subject_id": "107",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\107\\107_L0_2.bmp",
+      "sha256_1": "e6794d318c85a5a12ec748f480b834bb02a534f9b80df2d56769925d83d75bfd",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\107\\107_L0_4.bmp",
+      "sha256_2": "62fd360a6cec76ed3376737e1bd120bae2c26afa128337e1ff96c8ede64ec7bb"
+    }
+  ],
+  "impostor_pairs": [
+    {
+      "pair_id": 0,
+      "subject_1": "036",
+      "subject_2": "056",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\036\\036_L0_0.bmp",
+      "sha256_1": "3f66e7023fa7a17f42ba0e1e50b1c628a08359127ed687ef240d10309da2c3de",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\056\\056_L0_0.bmp",
+      "sha256_2": "be74042077cd99519dbab25fc958ab9f0fb574cecb94a3857e3635ebbd8e531b"
+    },
+    {
+      "pair_id": 1,
+      "subject_1": "006",
+      "subject_2": "068",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\006\\006_L0_0.bmp",
+      "sha256_1": "8b3c0d1b04ec1a23b45cfffec7f0d4afc6a0ae040c5c0e8552eb88de61cc96e1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\068\\068_L0_0.bmp",
+      "sha256_2": "09c8e9264f3fa6a7d82b0173e6d06c8360c763c367def699d189bf8971c91351"
+    },
+    {
+      "pair_id": 2,
+      "subject_1": "013",
+      "subject_2": "104",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\013\\013_L0_0.bmp",
+      "sha256_1": "b3f28acefc71bc1f129ca3d68415bc6280c306eb984b24b9c2f99fba194c86c6",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\104\\104_L0_0.bmp",
+      "sha256_2": "6190a981e9d68b05ff416153b4cb5c229a32254afa3ce826ccf3d20b0bfc7c78"
+    },
+    {
+      "pair_id": 3,
+      "subject_1": "036",
+      "subject_2": "049",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\036\\036_L0_0.bmp",
+      "sha256_1": "3f66e7023fa7a17f42ba0e1e50b1c628a08359127ed687ef240d10309da2c3de",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\049\\049_L0_0.bmp",
+      "sha256_2": "43b7dc44db47edd9c52ee747e749d73e7b631c4768e8b59468567e26e4380aeb"
+    },
+    {
+      "pair_id": 4,
+      "subject_1": "060",
+      "subject_2": "097",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\060\\060_L0_0.bmp",
+      "sha256_1": "d7f04774735e8ded017280e60537fb266c12775138a8c07d9dc842a40ad213d7",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\097\\097_L0_0.bmp",
+      "sha256_2": "6c67c734164b6d721d508c696f407cb141878e56708414cd87c6d65d3c0b6829"
+    },
+    {
+      "pair_id": 5,
+      "subject_1": "041",
+      "subject_2": "091",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\041\\041_L0_0.bmp",
+      "sha256_1": "d902dae2f10662abe78040054efe6385eb1dbda48a76e83ceeb52bedcea99f5d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\091\\091_L0_0.bmp",
+      "sha256_2": "6e1b49c5b97e2eee66809204582b7549d572d6501aaf093298fc57a4f1576270"
+    },
+    {
+      "pair_id": 6,
+      "subject_1": "076",
+      "subject_2": "090",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\076\\076_L0_0.bmp",
+      "sha256_1": "e319913baddcb83ed71774959821033108012f2469c08030a40042b91293a65d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\090\\090_L0_0.bmp",
+      "sha256_2": "e37ff97c92b8127dd23a1001574591202af99479b8f34da31a84f4b1fff01955"
+    },
+    {
+      "pair_id": 7,
+      "subject_1": "005",
+      "subject_2": "041",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\005\\005_L0_0.bmp",
+      "sha256_1": "61fe6790a6d7d7c2a1edf7f5d16cf98bf5a38e5aa97fd427552bed180694ffd1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\041\\041_L0_0.bmp",
+      "sha256_2": "d902dae2f10662abe78040054efe6385eb1dbda48a76e83ceeb52bedcea99f5d"
+    },
+    {
+      "pair_id": 8,
+      "subject_1": "072",
+      "subject_2": "091",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\072\\072_L0_0.bmp",
+      "sha256_1": "0729464cb0121a507216595218361582b7fe48061c9fd23e16230be75b6be0e1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\091\\091_L0_0.bmp",
+      "sha256_2": "6e1b49c5b97e2eee66809204582b7549d572d6501aaf093298fc57a4f1576270"
+    },
+    {
+      "pair_id": 9,
+      "subject_1": "028",
+      "subject_2": "062",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\028\\028_L0_0.bmp",
+      "sha256_1": "9bab3d177644a60f021ef23acdd99f38c88629172c66b9e2bdc4fd5b4773cf5d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\062\\062_L0_0.bmp",
+      "sha256_2": "97345358a1b0e76c0886909fd3313b03c63527196e6569ed181fe605568c89ad"
+    },
+    {
+      "pair_id": 10,
+      "subject_1": "009",
+      "subject_2": "020",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\009\\009_L0_0.bmp",
+      "sha256_1": "8725f16e593f128e41570a836eb888f189dfde512b926d6a87893544c778b71a",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\020\\020_L0_0.bmp",
+      "sha256_2": "ca073486cb84291fde999ab7bf60bf8c61bb1dba0e30491f0b47fc33dab82e9b"
+    },
+    {
+      "pair_id": 11,
+      "subject_1": "097",
+      "subject_2": "114",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\097\\097_L0_0.bmp",
+      "sha256_1": "6c67c734164b6d721d508c696f407cb141878e56708414cd87c6d65d3c0b6829",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\114\\114_L0_0.bmp",
+      "sha256_2": "92555feb84e93b69f14e5e9698d0153eb34d7dd8377ac4a1c7304e699a774be3"
+    },
+    {
+      "pair_id": 12,
+      "subject_1": "071",
+      "subject_2": "118",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\071\\071_L0_0.bmp",
+      "sha256_1": "ae5b1b91661660c662f9c1e0f24b32d50bf59eec15dbfb1ac31a3ee1150c2850",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\118\\118_L0_0.bmp",
+      "sha256_2": "518859e53588ef151955af8aa5219ccaca7de84bc14d4966a251db2f6853cd7d"
+    },
+    {
+      "pair_id": 13,
+      "subject_1": "072",
+      "subject_2": "073",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\072\\072_L0_0.bmp",
+      "sha256_1": "0729464cb0121a507216595218361582b7fe48061c9fd23e16230be75b6be0e1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\073\\073_L0_0.bmp",
+      "sha256_2": "074d4830d84aec8f1d0616af12dcc0315bc67ee513f923ab56998ccc5d55ca1c"
+    },
+    {
+      "pair_id": 14,
+      "subject_1": "015",
+      "subject_2": "035",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\015\\015_L0_0.bmp",
+      "sha256_1": "c4ba6d7e0a559b72cf681bdb3cd01caadbd9f4a101e301809fa61ced5143c23e",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\035\\035_L0_0.bmp",
+      "sha256_2": "1e836eb03e1c1b7daa4e390f8c7152da9a01ec13ca17957bdd537389b50ac1df"
+    },
+    {
+      "pair_id": 15,
+      "subject_1": "077",
+      "subject_2": "080",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\077\\077_L0_0.bmp",
+      "sha256_1": "25a7c2a3a52e36bf28d4200edec9784038cd3ecb5b72845e93834311b8f34666",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\080\\080_L0_0.bmp",
+      "sha256_2": "9237581462e476f25b0978add626350042dce6aac8a845c13885eb77028cac58"
+    },
+    {
+      "pair_id": 16,
+      "subject_1": "040",
+      "subject_2": "076",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\040\\040_L0_0.bmp",
+      "sha256_1": "d38499d27d037ca4f9a3baf88a43c01d94e158c1e937ca9081b0c9f3f645f03e",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\076\\076_L0_0.bmp",
+      "sha256_2": "e319913baddcb83ed71774959821033108012f2469c08030a40042b91293a65d"
+    },
+    {
+      "pair_id": 17,
+      "subject_1": "044",
+      "subject_2": "098",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\044\\044_L0_0.bmp",
+      "sha256_1": "e46c286717daf222d33f10c50d27c47133ab6bc4a65a4678c74de30d19808c4f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\098\\098_L0_0.bmp",
+      "sha256_2": "16d539d31f558549f86f7b7d36a449900e8a0e1c34520885dbca42eb9f19c024"
+    },
+    {
+      "pair_id": 18,
+      "subject_1": "053",
+      "subject_2": "071",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\053\\053_L0_0.bmp",
+      "sha256_1": "9ae4a7c7dcd5b2a99f4e09b0f82dea101558fca8e6a7858131ade2197438d75b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\071\\071_L0_0.bmp",
+      "sha256_2": "ae5b1b91661660c662f9c1e0f24b32d50bf59eec15dbfb1ac31a3ee1150c2850"
+    },
+    {
+      "pair_id": 19,
+      "subject_1": "000",
+      "subject_2": "097",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\000\\000_L0_0.bmp",
+      "sha256_1": "9d64f0a6a20ae0346bda3b45342c7e6783142e64dae900caad9f337c4bd3a90f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\097\\097_L0_0.bmp",
+      "sha256_2": "6c67c734164b6d721d508c696f407cb141878e56708414cd87c6d65d3c0b6829"
+    },
+    {
+      "pair_id": 20,
+      "subject_1": "090",
+      "subject_2": "110",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\090\\090_L0_0.bmp",
+      "sha256_1": "e37ff97c92b8127dd23a1001574591202af99479b8f34da31a84f4b1fff01955",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\110\\110_L0_0.bmp",
+      "sha256_2": "9909bf71474b8b27c6ac34726b23e00ee7f09371a3ad4b4d3d5b1ae5611f13d3"
+    },
+    {
+      "pair_id": 21,
+      "subject_1": "099",
+      "subject_2": "117",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\099\\099_L0_0.bmp",
+      "sha256_1": "cd33b5c1b9c625613b8ed302503b0819cafca56e5a1606da66da0552c03ca0ac",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\117\\117_L0_0.bmp",
+      "sha256_2": "8940d3dea34a925d9d2b78b5808fb395602a415f0e6d5e5ec78278f691d82af4"
+    },
+    {
+      "pair_id": 22,
+      "subject_1": "054",
+      "subject_2": "094",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\054\\054_L0_0.bmp",
+      "sha256_1": "02d1c93c6a7eacb667278b54d00a9ac6ef6a1e33718e26565328f5633a8a9f78",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\094\\094_L0_0.bmp",
+      "sha256_2": "ac4337234c0fe8718a6a538aca8cd223a71e43fbd97a7e64451901b80a9e31d2"
+    },
+    {
+      "pair_id": 23,
+      "subject_1": "007",
+      "subject_2": "057",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\007\\007_L0_0.bmp",
+      "sha256_1": "55c93350cb105ca67b9dc47921672298802d0980adeb38fb59a29233aa32c1d0",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\057\\057_L0_0.bmp",
+      "sha256_2": "949b71e50b8454466521df9c6f7d77d637c92822312a7b51b80af86cbc5089c2"
+    },
+    {
+      "pair_id": 24,
+      "subject_1": "075",
+      "subject_2": "107",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\075\\075_L0_0.bmp",
+      "sha256_1": "803a5f198346c3ce2abba4fa97e2b1756d7d8229950760bdd610cc78c56b4a9f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\107\\107_L0_0.bmp",
+      "sha256_2": "2c5060d97b8174b4ecbc7dbe1e55b49044cc85d823df91f817a695e8b7898c92"
+    },
+    {
+      "pair_id": 25,
+      "subject_1": "028",
+      "subject_2": "058",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\028\\028_L0_0.bmp",
+      "sha256_1": "9bab3d177644a60f021ef23acdd99f38c88629172c66b9e2bdc4fd5b4773cf5d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\058\\058_L0_0.bmp",
+      "sha256_2": "4f7b618048fa2ed50dd18b5036f621db8b0a56c4d05684f5607fb40642cd4075"
+    },
+    {
+      "pair_id": 26,
+      "subject_1": "024",
+      "subject_2": "061",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\024\\024_L0_0.bmp",
+      "sha256_1": "8a27a00d094f2cfa1d8306b3903cf585636d365e5ea61914f148e0427b076f64",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\061\\061_L0_0.bmp",
+      "sha256_2": "81d5e2ca7ea330603ad7052f413743e98c50439b1c68d4eff2ac52804bc809e1"
+    },
+    {
+      "pair_id": 27,
+      "subject_1": "016",
+      "subject_2": "065",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\016\\016_L0_0.bmp",
+      "sha256_1": "a5b5cd43515ef6ba853a0bba1e3895e650fd66dd2b67fb3b4212afc07cd8efd1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\065\\065_L0_0.bmp",
+      "sha256_2": "23dd97a1c27298119a6868ecd1c5255832ba5a8596665cec5803f516f71a4ba4"
+    },
+    {
+      "pair_id": 28,
+      "subject_1": "063",
+      "subject_2": "101",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\063\\063_L0_0.bmp",
+      "sha256_1": "da026008e8ce97c8688bd7dce36fe826f145f969aa651c764a4188ca0b927c5f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\101\\101_L0_0.bmp",
+      "sha256_2": "b5c6bef23e4c012dbe47861b6be29ad59316dc32b3dad99c52e21b92830d24fd"
+    },
+    {
+      "pair_id": 29,
+      "subject_1": "037",
+      "subject_2": "069",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\037\\037_L0_0.bmp",
+      "sha256_1": "6804059faaf2b32ef457c91ec77c4a4728c4a912820a1a788aa4ca4bbab4ca70",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\069\\069_L0_0.bmp",
+      "sha256_2": "776c97e6bfdefdf9e3e811616b86688087a4250a2d70cefc2ddea10bed674895"
+    },
+    {
+      "pair_id": 30,
+      "subject_1": "021",
+      "subject_2": "114",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\021\\021_L0_0.bmp",
+      "sha256_1": "b631952635809f50e928b5706601c2f3d14191d08e4fc9127915930b49c9aed2",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\114\\114_L0_0.bmp",
+      "sha256_2": "92555feb84e93b69f14e5e9698d0153eb34d7dd8377ac4a1c7304e699a774be3"
+    },
+    {
+      "pair_id": 31,
+      "subject_1": "076",
+      "subject_2": "089",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\076\\076_L0_0.bmp",
+      "sha256_1": "e319913baddcb83ed71774959821033108012f2469c08030a40042b91293a65d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\089\\089_L0_0.bmp",
+      "sha256_2": "1d6ba53b122e74311262ab487294df90e27382f3a3aca007b832fba18b60da28"
+    },
+    {
+      "pair_id": 32,
+      "subject_1": "041",
+      "subject_2": "042",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\041\\041_L0_0.bmp",
+      "sha256_1": "d902dae2f10662abe78040054efe6385eb1dbda48a76e83ceeb52bedcea99f5d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\042\\042_L0_0.bmp",
+      "sha256_2": "59bb77ab06f49fc084ef16d614a775e71d6371ccafff511ef41fb885b473792b"
+    },
+    {
+      "pair_id": 33,
+      "subject_1": "000",
+      "subject_2": "010",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\000\\000_L0_0.bmp",
+      "sha256_1": "9d64f0a6a20ae0346bda3b45342c7e6783142e64dae900caad9f337c4bd3a90f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\010\\010_L0_0.bmp",
+      "sha256_2": "2fbd1d67007b492c196b58e251bdfd22d76858ef940d8a16b2f92b8039bc936c"
+    },
+    {
+      "pair_id": 34,
+      "subject_1": "042",
+      "subject_2": "092",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\042\\042_L0_0.bmp",
+      "sha256_1": "59bb77ab06f49fc084ef16d614a775e71d6371ccafff511ef41fb885b473792b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\092\\092_L0_0.bmp",
+      "sha256_2": "fc5b090dc039d94a154ee4a603304541deb354ef7354f237ea8f02b8fabf279b"
+    },
+    {
+      "pair_id": 35,
+      "subject_1": "025",
+      "subject_2": "073",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\025\\025_L0_0.bmp",
+      "sha256_1": "0f9e12156b08978da9bf2585d058792ffd99e77b4cb973ac131f69b8804f3bbe",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\073\\073_L0_0.bmp",
+      "sha256_2": "074d4830d84aec8f1d0616af12dcc0315bc67ee513f923ab56998ccc5d55ca1c"
+    },
+    {
+      "pair_id": 36,
+      "subject_1": "067",
+      "subject_2": "100",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\067\\067_L0_0.bmp",
+      "sha256_1": "e2c2bee11359cf54a67eda8af8b278fa05f3f61737073a71e0618c9669457329",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\100\\100_L0_0.bmp",
+      "sha256_2": "3f1c4b8e78f071a29727e3adbfdc95338a2ebc3538cc254ca50fea98b3f05e38"
+    },
+    {
+      "pair_id": 37,
+      "subject_1": "069",
+      "subject_2": "081",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\069\\069_L0_0.bmp",
+      "sha256_1": "776c97e6bfdefdf9e3e811616b86688087a4250a2d70cefc2ddea10bed674895",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\081\\081_L0_0.bmp",
+      "sha256_2": "fa3c43eb686d4110ee373935ed1b57db768e71fc05277ee2fdef4c7adbc7dd4c"
+    },
+    {
+      "pair_id": 38,
+      "subject_1": "038",
+      "subject_2": "070",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\038\\038_L0_0.bmp",
+      "sha256_1": "1b7448551a317d00535026f16a427cd39602871e5d6c62d386842519cd9fc986",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\070\\070_L0_0.bmp",
+      "sha256_2": "95068751937678a07089aacd38b41a1eee341e17173423f04c467d846e671562"
+    },
+    {
+      "pair_id": 39,
+      "subject_1": "038",
+      "subject_2": "053",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\038\\038_L0_0.bmp",
+      "sha256_1": "1b7448551a317d00535026f16a427cd39602871e5d6c62d386842519cd9fc986",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\053\\053_L0_0.bmp",
+      "sha256_2": "9ae4a7c7dcd5b2a99f4e09b0f82dea101558fca8e6a7858131ade2197438d75b"
+    },
+    {
+      "pair_id": 40,
+      "subject_1": "017",
+      "subject_2": "094",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\017\\017_L0_0.bmp",
+      "sha256_1": "3baaa015807122745efca9dfb7a2662bd0a0d9a9a4d826fe1c3e7d9b5000a95d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\094\\094_L0_0.bmp",
+      "sha256_2": "ac4337234c0fe8718a6a538aca8cd223a71e43fbd97a7e64451901b80a9e31d2"
+    },
+    {
+      "pair_id": 41,
+      "subject_1": "004",
+      "subject_2": "107",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\004\\004_L0_0.bmp",
+      "sha256_1": "e96243d69aa3ba7a226f871f8e22ef907115640568f34a946a14fe592a261162",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\107\\107_L0_0.bmp",
+      "sha256_2": "2c5060d97b8174b4ecbc7dbe1e55b49044cc85d823df91f817a695e8b7898c92"
+    },
+    {
+      "pair_id": 42,
+      "subject_1": "000",
+      "subject_2": "033",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\000\\000_L0_0.bmp",
+      "sha256_1": "9d64f0a6a20ae0346bda3b45342c7e6783142e64dae900caad9f337c4bd3a90f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\033\\033_L0_0.bmp",
+      "sha256_2": "b4699d2aed73d0a31b6d80f33d6075441adb4e95e9e0599904bf1b2f0171c403"
+    },
+    {
+      "pair_id": 43,
+      "subject_1": "012",
+      "subject_2": "022",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\012\\012_L0_0.bmp",
+      "sha256_1": "ae7e8eb35e3a6be14f2939ce0d6410ae8703ae7213cfdf830ccff656b74fcc04",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\022\\022_L0_0.bmp",
+      "sha256_2": "404f3316b4740843b504bf27699abfe938afa20e3b7a7b5d2cf42dfef2caaf17"
+    },
+    {
+      "pair_id": 44,
+      "subject_1": "056",
+      "subject_2": "064",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\056\\056_L0_0.bmp",
+      "sha256_1": "be74042077cd99519dbab25fc958ab9f0fb574cecb94a3857e3635ebbd8e531b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\064\\064_L0_0.bmp",
+      "sha256_2": "fff6c478eeb67d599399295767ef99d89b02978a0f127600bf852c89c69c70b6"
+    },
+    {
+      "pair_id": 45,
+      "subject_1": "018",
+      "subject_2": "064",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\018\\018_L0_0.bmp",
+      "sha256_1": "c0e50a767931a8f91afa47f6a423d7c03554edcb7fa6e51b645198fffd9fbb66",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\064\\064_L0_0.bmp",
+      "sha256_2": "fff6c478eeb67d599399295767ef99d89b02978a0f127600bf852c89c69c70b6"
+    },
+    {
+      "pair_id": 46,
+      "subject_1": "007",
+      "subject_2": "060",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\007\\007_L0_0.bmp",
+      "sha256_1": "55c93350cb105ca67b9dc47921672298802d0980adeb38fb59a29233aa32c1d0",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\060\\060_L0_0.bmp",
+      "sha256_2": "d7f04774735e8ded017280e60537fb266c12775138a8c07d9dc842a40ad213d7"
+    },
+    {
+      "pair_id": 47,
+      "subject_1": "051",
+      "subject_2": "091",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\051\\051_L0_0.bmp",
+      "sha256_1": "24a303a4f0a8d39a5bfc585687a33745ab276be20994ae4746db7bb98cfd68e4",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\091\\091_L0_0.bmp",
+      "sha256_2": "6e1b49c5b97e2eee66809204582b7549d572d6501aaf093298fc57a4f1576270"
+    },
+    {
+      "pair_id": 48,
+      "subject_1": "042",
+      "subject_2": "099",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\042\\042_L0_0.bmp",
+      "sha256_1": "59bb77ab06f49fc084ef16d614a775e71d6371ccafff511ef41fb885b473792b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\099\\099_L0_0.bmp",
+      "sha256_2": "cd33b5c1b9c625613b8ed302503b0819cafca56e5a1606da66da0552c03ca0ac"
+    },
+    {
+      "pair_id": 49,
+      "subject_1": "023",
+      "subject_2": "098",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\023\\023_L0_0.bmp",
+      "sha256_1": "b843ef07087a7d83d69bcb3e4a272e7a96b4ffbdfb0aa3723f9689c7e615d629",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\098\\098_L0_0.bmp",
+      "sha256_2": "16d539d31f558549f86f7b7d36a449900e8a0e1c34520885dbca42eb9f19c024"
+    },
+    {
+      "pair_id": 50,
+      "subject_1": "015",
+      "subject_2": "107",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\015\\015_L0_0.bmp",
+      "sha256_1": "c4ba6d7e0a559b72cf681bdb3cd01caadbd9f4a101e301809fa61ced5143c23e",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\107\\107_L0_0.bmp",
+      "sha256_2": "2c5060d97b8174b4ecbc7dbe1e55b49044cc85d823df91f817a695e8b7898c92"
+    },
+    {
+      "pair_id": 51,
+      "subject_1": "020",
+      "subject_2": "106",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\020\\020_L0_0.bmp",
+      "sha256_1": "ca073486cb84291fde999ab7bf60bf8c61bb1dba0e30491f0b47fc33dab82e9b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\106\\106_L0_0.bmp",
+      "sha256_2": "d8c984c6a55f77d9aee9d8d6336a8f258f47b15aed1a3c7216f08107ad153c85"
+    },
+    {
+      "pair_id": 52,
+      "subject_1": "011",
+      "subject_2": "037",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\011\\011_L0_0.bmp",
+      "sha256_1": "4a3d0be6ad736f3a7a2ea3c267de145dc45ea7660a594b2d79880c82c0b08076",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\037\\037_L0_0.bmp",
+      "sha256_2": "6804059faaf2b32ef457c91ec77c4a4728c4a912820a1a788aa4ca4bbab4ca70"
+    },
+    {
+      "pair_id": 53,
+      "subject_1": "004",
+      "subject_2": "054",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\004\\004_L0_0.bmp",
+      "sha256_1": "e96243d69aa3ba7a226f871f8e22ef907115640568f34a946a14fe592a261162",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\054\\054_L0_0.bmp",
+      "sha256_2": "02d1c93c6a7eacb667278b54d00a9ac6ef6a1e33718e26565328f5633a8a9f78"
+    },
+    {
+      "pair_id": 54,
+      "subject_1": "038",
+      "subject_2": "108",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\038\\038_L0_0.bmp",
+      "sha256_1": "1b7448551a317d00535026f16a427cd39602871e5d6c62d386842519cd9fc986",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\108\\108_L0_0.bmp",
+      "sha256_2": "8e39145f3ac718242991cd875528274e4298228313b3f6a9cf5781dbfe2f439f"
+    },
+    {
+      "pair_id": 55,
+      "subject_1": "079",
+      "subject_2": "109",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\079\\079_L0_0.bmp",
+      "sha256_1": "bedaac508f1a9e2fd0ee5c45be10691d190dcfe72c163999ef639f4c4a768849",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\109\\109_L0_0.bmp",
+      "sha256_2": "33ffa4f036ee2858c7eef0b4b131ccda50dfa8691cc63776c86d72bff43596f2"
+    },
+    {
+      "pair_id": 56,
+      "subject_1": "070",
+      "subject_2": "073",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\070\\070_L0_0.bmp",
+      "sha256_1": "95068751937678a07089aacd38b41a1eee341e17173423f04c467d846e671562",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\073\\073_L0_0.bmp",
+      "sha256_2": "074d4830d84aec8f1d0616af12dcc0315bc67ee513f923ab56998ccc5d55ca1c"
+    },
+    {
+      "pair_id": 57,
+      "subject_1": "001",
+      "subject_2": "083",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\001\\001_L0_0.bmp",
+      "sha256_1": "53b655ca10efb49ec9bf8328d93cc8e828c66a2bfee1f4961ad50212e4482cb9",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\083\\083_L0_0.bmp",
+      "sha256_2": "67deaf06cc15b79f2b93109f9119f276dfbba80ebf34c5659a7b67e0022b6dc2"
+    },
+    {
+      "pair_id": 58,
+      "subject_1": "092",
+      "subject_2": "097",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\092\\092_L0_0.bmp",
+      "sha256_1": "fc5b090dc039d94a154ee4a603304541deb354ef7354f237ea8f02b8fabf279b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\097\\097_L0_0.bmp",
+      "sha256_2": "6c67c734164b6d721d508c696f407cb141878e56708414cd87c6d65d3c0b6829"
+    },
+    {
+      "pair_id": 59,
+      "subject_1": "025",
+      "subject_2": "077",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\025\\025_L0_0.bmp",
+      "sha256_1": "0f9e12156b08978da9bf2585d058792ffd99e77b4cb973ac131f69b8804f3bbe",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\077\\077_L0_0.bmp",
+      "sha256_2": "25a7c2a3a52e36bf28d4200edec9784038cd3ecb5b72845e93834311b8f34666"
+    },
+    {
+      "pair_id": 60,
+      "subject_1": "032",
+      "subject_2": "074",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\032\\032_L0_0.bmp",
+      "sha256_1": "82b3c0da0779e8a9e3fec84131953a37e55f3d77f213ef6e58516515fce277c5",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\074\\074_L0_0.bmp",
+      "sha256_2": "3629df66483a972f396a6a2daf04a92677525ebd7ca7ddb686115d1937a98467"
+    },
+    {
+      "pair_id": 61,
+      "subject_1": "037",
+      "subject_2": "084",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\037\\037_L0_0.bmp",
+      "sha256_1": "6804059faaf2b32ef457c91ec77c4a4728c4a912820a1a788aa4ca4bbab4ca70",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_0.bmp",
+      "sha256_2": "7878125629373073f0590328c8e7362637e014e8bd9e066585de473506830432"
+    },
+    {
+      "pair_id": 62,
+      "subject_1": "004",
+      "subject_2": "071",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\004\\004_L0_0.bmp",
+      "sha256_1": "e96243d69aa3ba7a226f871f8e22ef907115640568f34a946a14fe592a261162",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\071\\071_L0_0.bmp",
+      "sha256_2": "ae5b1b91661660c662f9c1e0f24b32d50bf59eec15dbfb1ac31a3ee1150c2850"
+    },
+    {
+      "pair_id": 63,
+      "subject_1": "032",
+      "subject_2": "084",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\032\\032_L0_0.bmp",
+      "sha256_1": "82b3c0da0779e8a9e3fec84131953a37e55f3d77f213ef6e58516515fce277c5",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_0.bmp",
+      "sha256_2": "7878125629373073f0590328c8e7362637e014e8bd9e066585de473506830432"
+    },
+    {
+      "pair_id": 64,
+      "subject_1": "082",
+      "subject_2": "099",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\082\\082_L0_0.bmp",
+      "sha256_1": "bcdf59e9ea61803c71de45499666aa356faa0adc507528dbe92646151e6e0b7f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\099\\099_L0_0.bmp",
+      "sha256_2": "cd33b5c1b9c625613b8ed302503b0819cafca56e5a1606da66da0552c03ca0ac"
+    },
+    {
+      "pair_id": 65,
+      "subject_1": "021",
+      "subject_2": "066",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\021\\021_L0_0.bmp",
+      "sha256_1": "b631952635809f50e928b5706601c2f3d14191d08e4fc9127915930b49c9aed2",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\066\\066_L0_0.bmp",
+      "sha256_2": "ce4a18650a1fa5ede236928dbc4c03334bb44066851b556cfb32a21da2920ae3"
+    },
+    {
+      "pair_id": 66,
+      "subject_1": "084",
+      "subject_2": "113",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_0.bmp",
+      "sha256_1": "7878125629373073f0590328c8e7362637e014e8bd9e066585de473506830432",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\113\\113_L0_0.bmp",
+      "sha256_2": "e199cf7d7d08b728b0dca0ae2501cfafea6973202a3e4cb68a19efa385c219a5"
+    },
+    {
+      "pair_id": 67,
+      "subject_1": "113",
+      "subject_2": "118",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\113\\113_L0_0.bmp",
+      "sha256_1": "e199cf7d7d08b728b0dca0ae2501cfafea6973202a3e4cb68a19efa385c219a5",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\118\\118_L0_0.bmp",
+      "sha256_2": "518859e53588ef151955af8aa5219ccaca7de84bc14d4966a251db2f6853cd7d"
+    },
+    {
+      "pair_id": 68,
+      "subject_1": "101",
+      "subject_2": "115",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\101\\101_L0_0.bmp",
+      "sha256_1": "b5c6bef23e4c012dbe47861b6be29ad59316dc32b3dad99c52e21b92830d24fd",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\115\\115_L0_0.bmp",
+      "sha256_2": "ccfc5c797a38b2dfcbe4fa71e16d188577577b135d684b333d3e66afb35e6037"
+    },
+    {
+      "pair_id": 69,
+      "subject_1": "008",
+      "subject_2": "099",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\008\\008_L0_0.bmp",
+      "sha256_1": "29f71457d0f28b5c7d1babe1ff67e0860ae651959f727060426367bfb37dedfa",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\099\\099_L0_0.bmp",
+      "sha256_2": "cd33b5c1b9c625613b8ed302503b0819cafca56e5a1606da66da0552c03ca0ac"
+    },
+    {
+      "pair_id": 70,
+      "subject_1": "081",
+      "subject_2": "084",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\081\\081_L0_0.bmp",
+      "sha256_1": "fa3c43eb686d4110ee373935ed1b57db768e71fc05277ee2fdef4c7adbc7dd4c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_0.bmp",
+      "sha256_2": "7878125629373073f0590328c8e7362637e014e8bd9e066585de473506830432"
+    },
+    {
+      "pair_id": 71,
+      "subject_1": "085",
+      "subject_2": "095",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\085\\085_L0_0.bmp",
+      "sha256_1": "49f00b6ad9db426e0a107ade820c8b2a8f5f8688ea00c24687dc6939200bd386",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\095\\095_L0_0.bmp",
+      "sha256_2": "b43ed4cf6f114ce125b053dbc0604bb833017185038b95f4d5addcd93d2eae42"
+    },
+    {
+      "pair_id": 72,
+      "subject_1": "013",
+      "subject_2": "029",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\013\\013_L0_0.bmp",
+      "sha256_1": "b3f28acefc71bc1f129ca3d68415bc6280c306eb984b24b9c2f99fba194c86c6",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\029\\029_L0_0.bmp",
+      "sha256_2": "dfa98ea66a0af8c3715902e443a4dd88b6efe80df49a882ffae88692295867ca"
+    },
+    {
+      "pair_id": 73,
+      "subject_1": "033",
+      "subject_2": "088",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\033\\033_L0_0.bmp",
+      "sha256_1": "b4699d2aed73d0a31b6d80f33d6075441adb4e95e9e0599904bf1b2f0171c403",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\088\\088_L0_0.bmp",
+      "sha256_2": "d56d566bb180c06333685908d88a11817ca4756ffa7a515427c54ce1c00e9b8e"
+    },
+    {
+      "pair_id": 74,
+      "subject_1": "010",
+      "subject_2": "107",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\010\\010_L0_0.bmp",
+      "sha256_1": "2fbd1d67007b492c196b58e251bdfd22d76858ef940d8a16b2f92b8039bc936c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\107\\107_L0_0.bmp",
+      "sha256_2": "2c5060d97b8174b4ecbc7dbe1e55b49044cc85d823df91f817a695e8b7898c92"
+    },
+    {
+      "pair_id": 75,
+      "subject_1": "083",
+      "subject_2": "113",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\083\\083_L0_0.bmp",
+      "sha256_1": "67deaf06cc15b79f2b93109f9119f276dfbba80ebf34c5659a7b67e0022b6dc2",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\113\\113_L0_0.bmp",
+      "sha256_2": "e199cf7d7d08b728b0dca0ae2501cfafea6973202a3e4cb68a19efa385c219a5"
+    },
+    {
+      "pair_id": 76,
+      "subject_1": "069",
+      "subject_2": "092",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\069\\069_L0_0.bmp",
+      "sha256_1": "776c97e6bfdefdf9e3e811616b86688087a4250a2d70cefc2ddea10bed674895",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\092\\092_L0_0.bmp",
+      "sha256_2": "fc5b090dc039d94a154ee4a603304541deb354ef7354f237ea8f02b8fabf279b"
+    },
+    {
+      "pair_id": 77,
+      "subject_1": "042",
+      "subject_2": "100",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\042\\042_L0_0.bmp",
+      "sha256_1": "59bb77ab06f49fc084ef16d614a775e71d6371ccafff511ef41fb885b473792b",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\100\\100_L0_0.bmp",
+      "sha256_2": "3f1c4b8e78f071a29727e3adbfdc95338a2ebc3538cc254ca50fea98b3f05e38"
+    },
+    {
+      "pair_id": 78,
+      "subject_1": "006",
+      "subject_2": "114",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\006\\006_L0_0.bmp",
+      "sha256_1": "8b3c0d1b04ec1a23b45cfffec7f0d4afc6a0ae040c5c0e8552eb88de61cc96e1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\114\\114_L0_0.bmp",
+      "sha256_2": "92555feb84e93b69f14e5e9698d0153eb34d7dd8377ac4a1c7304e699a774be3"
+    },
+    {
+      "pair_id": 79,
+      "subject_1": "060",
+      "subject_2": "104",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\060\\060_L0_0.bmp",
+      "sha256_1": "d7f04774735e8ded017280e60537fb266c12775138a8c07d9dc842a40ad213d7",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\104\\104_L0_0.bmp",
+      "sha256_2": "6190a981e9d68b05ff416153b4cb5c229a32254afa3ce826ccf3d20b0bfc7c78"
+    },
+    {
+      "pair_id": 80,
+      "subject_1": "017",
+      "subject_2": "048",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\017\\017_L0_0.bmp",
+      "sha256_1": "3baaa015807122745efca9dfb7a2662bd0a0d9a9a4d826fe1c3e7d9b5000a95d",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\048\\048_L0_0.bmp",
+      "sha256_2": "74d7e97e0f3fbdca7c5d297e2b07f5221871ab30217d277976f8ac4dfa31cd76"
+    },
+    {
+      "pair_id": 81,
+      "subject_1": "061",
+      "subject_2": "100",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\061\\061_L0_0.bmp",
+      "sha256_1": "81d5e2ca7ea330603ad7052f413743e98c50439b1c68d4eff2ac52804bc809e1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\100\\100_L0_0.bmp",
+      "sha256_2": "3f1c4b8e78f071a29727e3adbfdc95338a2ebc3538cc254ca50fea98b3f05e38"
+    },
+    {
+      "pair_id": 82,
+      "subject_1": "014",
+      "subject_2": "106",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\014\\014_L0_0.bmp",
+      "sha256_1": "58e12c7ce82ab425d16398d07ab291043d09194875a45e98327efc3ecfe26ced",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\106\\106_L0_0.bmp",
+      "sha256_2": "d8c984c6a55f77d9aee9d8d6336a8f258f47b15aed1a3c7216f08107ad153c85"
+    },
+    {
+      "pair_id": 83,
+      "subject_1": "001",
+      "subject_2": "014",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\001\\001_L0_0.bmp",
+      "sha256_1": "53b655ca10efb49ec9bf8328d93cc8e828c66a2bfee1f4961ad50212e4482cb9",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\014\\014_L0_0.bmp",
+      "sha256_2": "58e12c7ce82ab425d16398d07ab291043d09194875a45e98327efc3ecfe26ced"
+    },
+    {
+      "pair_id": 84,
+      "subject_1": "003",
+      "subject_2": "118",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\003\\003_L0_0.bmp",
+      "sha256_1": "6c40cb1815b7a61c28342bd238827eb84db1eb27c20bc2f5a028168b93d77d1c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\118\\118_L0_0.bmp",
+      "sha256_2": "518859e53588ef151955af8aa5219ccaca7de84bc14d4966a251db2f6853cd7d"
+    },
+    {
+      "pair_id": 85,
+      "subject_1": "014",
+      "subject_2": "045",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\014\\014_L0_0.bmp",
+      "sha256_1": "58e12c7ce82ab425d16398d07ab291043d09194875a45e98327efc3ecfe26ced",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\045\\045_L0_0.bmp",
+      "sha256_2": "8a73abd56b46b43ba9be6740c4835b4c124622d09f7a648c931be65f77580f76"
+    },
+    {
+      "pair_id": 86,
+      "subject_1": "006",
+      "subject_2": "060",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\006\\006_L0_0.bmp",
+      "sha256_1": "8b3c0d1b04ec1a23b45cfffec7f0d4afc6a0ae040c5c0e8552eb88de61cc96e1",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\060\\060_L0_0.bmp",
+      "sha256_2": "d7f04774735e8ded017280e60537fb266c12775138a8c07d9dc842a40ad213d7"
+    },
+    {
+      "pair_id": 87,
+      "subject_1": "001",
+      "subject_2": "087",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\001\\001_L0_0.bmp",
+      "sha256_1": "53b655ca10efb49ec9bf8328d93cc8e828c66a2bfee1f4961ad50212e4482cb9",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\087\\087_L0_0.bmp",
+      "sha256_2": "7696c538519031312c7194614c589dc52a5d997b843b6e29a2413f7fa7008e37"
+    },
+    {
+      "pair_id": 88,
+      "subject_1": "052",
+      "subject_2": "107",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\052\\052_L0_0.bmp",
+      "sha256_1": "a6573cc5f05131350a0852e93454ddc5af9998f62ee0de944d98f45df641960a",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\107\\107_L0_0.bmp",
+      "sha256_2": "2c5060d97b8174b4ecbc7dbe1e55b49044cc85d823df91f817a695e8b7898c92"
+    },
+    {
+      "pair_id": 89,
+      "subject_1": "081",
+      "subject_2": "100",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\081\\081_L0_0.bmp",
+      "sha256_1": "fa3c43eb686d4110ee373935ed1b57db768e71fc05277ee2fdef4c7adbc7dd4c",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\100\\100_L0_0.bmp",
+      "sha256_2": "3f1c4b8e78f071a29727e3adbfdc95338a2ebc3538cc254ca50fea98b3f05e38"
+    },
+    {
+      "pair_id": 90,
+      "subject_1": "001",
+      "subject_2": "051",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\001\\001_L0_0.bmp",
+      "sha256_1": "53b655ca10efb49ec9bf8328d93cc8e828c66a2bfee1f4961ad50212e4482cb9",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\051\\051_L0_0.bmp",
+      "sha256_2": "24a303a4f0a8d39a5bfc585687a33745ab276be20994ae4746db7bb98cfd68e4"
+    },
+    {
+      "pair_id": 91,
+      "subject_1": "071",
+      "subject_2": "081",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\071\\071_L0_0.bmp",
+      "sha256_1": "ae5b1b91661660c662f9c1e0f24b32d50bf59eec15dbfb1ac31a3ee1150c2850",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\081\\081_L0_0.bmp",
+      "sha256_2": "fa3c43eb686d4110ee373935ed1b57db768e71fc05277ee2fdef4c7adbc7dd4c"
+    },
+    {
+      "pair_id": 92,
+      "subject_1": "015",
+      "subject_2": "061",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\015\\015_L0_0.bmp",
+      "sha256_1": "c4ba6d7e0a559b72cf681bdb3cd01caadbd9f4a101e301809fa61ced5143c23e",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\061\\061_L0_0.bmp",
+      "sha256_2": "81d5e2ca7ea330603ad7052f413743e98c50439b1c68d4eff2ac52804bc809e1"
+    },
+    {
+      "pair_id": 93,
+      "subject_1": "007",
+      "subject_2": "028",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\007\\007_L0_0.bmp",
+      "sha256_1": "55c93350cb105ca67b9dc47921672298802d0980adeb38fb59a29233aa32c1d0",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\028\\028_L0_0.bmp",
+      "sha256_2": "9bab3d177644a60f021ef23acdd99f38c88629172c66b9e2bdc4fd5b4773cf5d"
+    },
+    {
+      "pair_id": 94,
+      "subject_1": "000",
+      "subject_2": "016",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\000\\000_L0_0.bmp",
+      "sha256_1": "9d64f0a6a20ae0346bda3b45342c7e6783142e64dae900caad9f337c4bd3a90f",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\016\\016_L0_0.bmp",
+      "sha256_2": "a5b5cd43515ef6ba853a0bba1e3895e650fd66dd2b67fb3b4212afc07cd8efd1"
+    },
+    {
+      "pair_id": 95,
+      "subject_1": "027",
+      "subject_2": "088",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\027\\027_L0_0.bmp",
+      "sha256_1": "6dc769dd22af442b2e5b4f8be452cbc505cfcc1b8cd8fcc26689d2efda42335a",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\088\\088_L0_0.bmp",
+      "sha256_2": "d56d566bb180c06333685908d88a11817ca4756ffa7a515427c54ce1c00e9b8e"
+    },
+    {
+      "pair_id": 96,
+      "subject_1": "024",
+      "subject_2": "035",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\024\\024_L0_0.bmp",
+      "sha256_1": "8a27a00d094f2cfa1d8306b3903cf585636d365e5ea61914f148e0427b076f64",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\035\\035_L0_0.bmp",
+      "sha256_2": "1e836eb03e1c1b7daa4e390f8c7152da9a01ec13ca17957bdd537389b50ac1df"
+    },
+    {
+      "pair_id": 97,
+      "subject_1": "077",
+      "subject_2": "084",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\077\\077_L0_0.bmp",
+      "sha256_1": "25a7c2a3a52e36bf28d4200edec9784038cd3ecb5b72845e93834311b8f34666",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\084\\084_L0_0.bmp",
+      "sha256_2": "7878125629373073f0590328c8e7362637e014e8bd9e066585de473506830432"
+    },
+    {
+      "pair_id": 98,
+      "subject_1": "031",
+      "subject_2": "117",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\031\\031_L0_0.bmp",
+      "sha256_1": "2ba4482fe38d1f90f15ee1fdc97978e022ffb8ccd1cffe0846b8384768b71165",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\117\\117_L0_0.bmp",
+      "sha256_2": "8940d3dea34a925d9d2b78b5808fb395602a415f0e6d5e5ec78278f691d82af4"
+    },
+    {
+      "pair_id": 99,
+      "subject_1": "054",
+      "subject_2": "107",
+      "path_1": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\054\\054_L0_0.bmp",
+      "sha256_1": "02d1c93c6a7eacb667278b54d00a9ac6ef6a1e33718e26565328f5633a8a9f78",
+      "path_2": "C:\\Users\\sofia\\Downloads\\fp_testing\\fp_testing\\107\\107_L0_0.bmp",
+      "sha256_2": "2c5060d97b8174b4ecbc7dbe1e55b49044cc85d823df91f817a695e8b7898c92"
+    }
+  ]
+}

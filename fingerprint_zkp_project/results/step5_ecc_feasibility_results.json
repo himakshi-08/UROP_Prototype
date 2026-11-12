@@ -1,0 +1,147 @@
+{
+  "B1-A": {
+    "cfg_name": "B1-A",
+    "total_bits": 512,
+    "rep_factor": 16,
+    "topology": "consecutive",
+    "genuine_recovery_rate_pct": 6.0,
+    "genuine_frr_pct": 94.0,
+    "genuine_failed_bits_mean": 5.93,
+    "genuine_failed_bits_std": 4.037957404431107,
+    "genuine_ties_mean": 2.79,
+    "genuine_ties_std": 1.9559907975243644,
+    "genuine_erased_replicas_mean": 161.56,
+    "genuine_erased_replicas_std": 27.538453115598195,
+    "impostor_output_complete_pct": 4.0,
+    "impostor_secret_match_pct": 0.0,
+    "impostor_far_pct": 0.0,
+    "impostor_far_95_ci": [
+      0.0,
+      3.6216692645176405
+    ],
+    "impostor_failed_bits_mean": 8.36,
+    "impostor_failed_bits_std": 3.5651647928251506,
+    "impostor_ties_mean": 3.36,
+    "failed_bits_histogram": {
+      "0": 6,
+      "1": 10,
+      "2": 10,
+      "3": 7,
+      "4": 9,
+      "5+": 58
+    },
+    "successful_shifts_distribution": {
+      "8": 1,
+      "1": 2,
+      "0": 2,
+      "7": 1
+    }
+  },
+  "B1-B": {
+    "cfg_name": "B1-B",
+    "total_bits": 512,
+    "rep_factor": 16,
+    "topology": "interleaved",
+    "genuine_recovery_rate_pct": 11.0,
+    "genuine_frr_pct": 89.0,
+    "genuine_failed_bits_mean": 4.41,
+    "genuine_failed_bits_std": 3.4931218129346706,
+    "genuine_ties_mean": 1.49,
+    "genuine_ties_std": 1.3152566289511716,
+    "genuine_erased_replicas_mean": 161.32,
+    "genuine_erased_replicas_std": 27.370378148648218,
+    "impostor_output_complete_pct": 10.0,
+    "impostor_secret_match_pct": 0.0,
+    "impostor_far_pct": 0.0,
+    "impostor_far_95_ci": [
+      0.0,
+      3.6216692645176405
+    ],
+    "impostor_failed_bits_mean": 6.17,
+    "impostor_failed_bits_std": 3.271253582344236,
+    "impostor_ties_mean": 1.9,
+    "failed_bits_histogram": {
+      "0": 11,
+      "1": 12,
+      "2": 12,
+      "3": 13,
+      "4": 10,
+      "5+": 42
+    },
+    "successful_shifts_distribution": {
+      "0": 9,
+      "1": 1,
+      "7": 1
+    }
+  },
+  "B2-A": {
+    "cfg_name": "B2-A",
+    "total_bits": 256,
+    "rep_factor": 8,
+    "topology": "consecutive",
+    "genuine_recovery_rate_pct": 1.0,
+    "genuine_frr_pct": 99.0,
+    "genuine_failed_bits_mean": 8.54,
+    "genuine_failed_bits_std": 4.391856099646253,
+    "genuine_ties_mean": 5.11,
+    "genuine_ties_std": 2.6566708490138558,
+    "genuine_erased_replicas_mean": 88.64,
+    "genuine_erased_replicas_std": 18.527557853100877,
+    "impostor_output_complete_pct": 0.0,
+    "impostor_secret_match_pct": 0.0,
+    "impostor_far_pct": 0.0,
+    "impostor_far_95_ci": [
+      0.0,
+      3.6216692645176405
+    ],
+    "impostor_failed_bits_mean": 10.63,
+    "impostor_failed_bits_std": 3.590696311302308,
+    "impostor_ties_mean": 6.16,
+    "failed_bits_histogram": {
+      "0": 1,
+      "1": 3,
+      "2": 7,
+      "3": 5,
+      "4": 5,
+      "5+": 79
+    },
+    "successful_shifts_distribution": {
+      "0": 1
+    }
+  },
+  "B2-B": {
+    "cfg_name": "B2-B",
+    "total_bits": 256,
+    "rep_factor": 8,
+    "topology": "interleaved",
+    "genuine_recovery_rate_pct": 2.0,
+    "genuine_frr_pct": 98.0,
+    "genuine_failed_bits_mean": 6.27,
+    "genuine_failed_bits_std": 3.402513776606937,
+    "genuine_ties_mean": 2.6,
+    "genuine_ties_std": 1.6431676725154984,
+    "genuine_erased_replicas_mean": 88.2,
+    "genuine_erased_replicas_std": 18.246095472730598,
+    "impostor_output_complete_pct": 4.0,
+    "impostor_secret_match_pct": 0.0,
+    "impostor_far_pct": 0.0,
+    "impostor_far_95_ci": [
+      0.0,
+      3.6216692645176405
+    ],
+    "impostor_failed_bits_mean": 8.28,
+    "impostor_failed_bits_std": 3.003597842588119,
+    "impostor_ties_mean": 3.09,
+    "failed_bits_histogram": {
+      "0": 2,
+      "1": 4,
+      "2": 7,
+      "3": 9,
+      "4": 12,
+      "5+": 66
+    },
+    "successful_shifts_distribution": {
+      "0": 2
+    }
+  }
+}

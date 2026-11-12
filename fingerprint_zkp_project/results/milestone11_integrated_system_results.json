@@ -1,0 +1,3945 @@
+{
+  "metadata": {
+    "milestone": "Milestone 11: End-to-End Fingerprint-ZKP Authentication",
+    "benchmark": "fixed_pairs_benchmark.json (SHA-256 verified)",
+    "curve": "Ristretto255 (RFC 9496 via libsodium)",
+    "template_bits": 384,
+    "repetition_factor": 12,
+    "secret_bits": 32,
+    "credential_bits": 256
+  },
+  "model1_legitimate_user": {
+    "genuine_acceptance_rate": 0.48,
+    "genuine_acceptance_ci": [
+      38.46455168617764,
+      57.68342230889836
+    ],
+    "secret_recovery_rate": 0.95,
+    "frr": 0.52,
+    "latency_ms_summary": {
+      "feature_extraction": 263.0481509998208,
+      "ecc_decoding": 5.988023999743746,
+      "witness_derivation": 0.1415536845007936,
+      "zkp_protocol": 0.3159768418730604,
+      "total": 269.4734410001547
+    },
+    "records": [
+      {
+        "pair_id": 0,
+        "subject_id": "043",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 357,
+        "overlap_ratio": 0.9296875,
+        "latency_ms": {
+          "feature_extraction": 258.1713999970816,
+          "ecc_decoding": 5.302599998685764,
+          "witness_derivation": 0.16210000103455968,
+          "zkp_protocol": 0.32500000088475645,
+          "total": 263.9651000026788
+        }
+      },
+      {
+        "pair_id": 1,
+        "subject_id": "084",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 13,
+        "num_valid_bits": 336,
+        "overlap_ratio": 0.875,
+        "latency_ms": {
+          "feature_extraction": 236.43340000126045,
+          "ecc_decoding": 6.214799999725074,
+          "witness_derivation": 0.15600000187987462,
+          "zkp_protocol": 0.3113999991910532,
+          "total": 243.11909999960335
+        }
+      },
+      {
+        "pair_id": 2,
+        "subject_id": "049",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 2,
+        "num_valid_bits": 369,
+        "overlap_ratio": 0.9609375,
+        "latency_ms": {
+          "feature_extraction": 242.22350000127335,
+          "ecc_decoding": 6.589200002053985,
+          "witness_derivation": 0.12080000306013972,
+          "zkp_protocol": 0.283800000033807,
+          "total": 249.21969999923022
+        }
+      },
+      {
+        "pair_id": 3,
+        "subject_id": "042",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 0,
+        "num_valid_bits": 363,
+        "overlap_ratio": 0.9453125,
+        "latency_ms": {
+          "feature_extraction": 259.9583999981405,
+          "ecc_decoding": 6.115899999713292,
+          "witness_derivation": 0.11989999984507449,
+          "zkp_protocol": 0.2982000005431473,
+          "total": 266.4947999983269
+        }
+      },
+      {
+        "pair_id": 4,
+        "subject_id": "079",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 249,
+        "overlap_ratio": 0.6484375,
+        "latency_ms": {
+          "feature_extraction": 244.69390000012936,
+          "ecc_decoding": 5.36419999843929,
+          "witness_derivation": 0.14910000027157366,
+          "zkp_protocol": 0.2879999992728699,
+          "total": 250.49729999955161
+        }
+      },
+      {
+        "pair_id": 5,
+        "subject_id": "008",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false,
+        "optimal_shift": 7,
+        "num_valid_bits": 360,
+        "overlap_ratio": 0.9375,
+        "latency_ms": {
+          "feature_extraction": 244.41900000238093,
+          "ecc_decoding": 5.713799997465685,
+          "total": 250.1349999984086
+        }
+      },
+      {
+        "pair_id": 6,
+        "subject_id": "095",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 15,
+        "num_valid_bits": 297,
+        "overlap_ratio": 0.7734375,
+        "latency_ms": {
+          "feature_extraction": 247.77669999821228,
+          "ecc_decoding": 5.387500001234002,
+          "witness_derivation": 0.10859999747481197,
+          "zkp_protocol": 0.289100000372855,
+          "total": 253.56449999890174
+        }
+      },
+      {
+        "pair_id": 7,
+        "subject_id": "048",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 360,
+        "overlap_ratio": 0.9375,
+        "latency_ms": {
+          "feature_extraction": 254.80479999896488,
+          "ecc_decoding": 5.9159000011277385,
+          "witness_derivation": 0.15110000094864517,
+          "zkp_protocol": 0.29319999885046855,
+          "total": 261.16730000285315
+        }
+      },
+      {
+        "pair_id": 8,
+        "subject_id": "042",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 1,
+        "num_valid_bits": 360,
+        "overlap_ratio": 0.9375,
+        "latency_ms": {
+          "feature_extraction": 254.4796000001952,
+          "ecc_decoding": 5.507199999556178,
+          "witness_derivation": 0.11480000102892518,
+          "zkp_protocol": 0.2961999998660758,
+          "total": 260.40070000090054
+        }
+      },
+      {
+        "pair_id": 9,
+        "subject_id": "030",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 321,
+        "overlap_ratio": 0.8359375,
+        "latency_ms": {
+          "feature_extraction": 270.1015000020561,
+          "ecc_decoding": 6.411999998817919,
+          "witness_derivation": 0.16260000120382756,
+          "zkp_protocol": 0.3269000008003786,
+          "total": 277.0060000002559
+        }
+      },
+      {
+        "pair_id": 10,
+        "subject_id": "106",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 8,
+        "num_valid_bits": 306,
+        "overlap_ratio": 0.796875,
+        "latency_ms": {
+          "feature_extraction": 248.38069999896106,
+          "ecc_decoding": 5.208000002312474,
+          "witness_derivation": 0.12350000179139897,
+          "zkp_protocol": 0.28340000062598847,
+          "total": 253.99750000360655
+        }
+      },
+      {
+        "pair_id": 11,
+        "subject_id": "044",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 357,
+        "overlap_ratio": 0.9296875,
+        "latency_ms": {
+          "feature_extraction": 239.2961000005016,
+          "ecc_decoding": 5.4075999978522304,
+          "witness_derivation": 0.11620000077527948,
+          "zkp_protocol": 0.2812999991874676,
+          "total": 245.10359999840148
+        }
+      },
+      {
+        "pair_id": 12,
+        "subject_id": "006",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 14,
+        "num_valid_bits": 345,
+        "overlap_ratio": 0.8984375,
+        "latency_ms": {
+          "feature_extraction": 242.84840000109398,
+          "ecc_decoding": 5.48710000293795,
+          "witness_derivation": 0.1281000004382804,
+          "zkp_protocol": 0.29630000062752515,
+          "total": 248.76210000002175
+        }
+      },
+      {
+        "pair_id": 13,
+        "subject_id": "104",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 10,
+        "num_valid_bits": 312,
+        "overlap_ratio": 0.8125,
+        "latency_ms": {
+          "feature_extraction": 257.8386000022874,
+          "ecc_decoding": 6.672200001048623,
+          "witness_derivation": 0.1464000015403144,
+          "zkp_protocol": 0.307400001474889,
+          "total": 264.967399998568
+        }
+      },
+      {
+        "pair_id": 14,
+        "subject_id": "072",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false,
+        "optimal_shift": 6,
+        "num_valid_bits": 303,
+        "overlap_ratio": 0.7890625,
+        "latency_ms": {
+          "feature_extraction": 250.6266999989748,
+          "ecc_decoding": 5.333799999789335,
+          "total": 255.96320000113337
+        }
+      },
+      {
+        "pair_id": 15,
+        "subject_id": "082",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 372,
+        "overlap_ratio": 0.96875,
+        "latency_ms": {
+          "feature_extraction": 248.37040000056732,
+          "ecc_decoding": 5.339499999536201,
+          "witness_derivation": 0.12870000136899762,
+          "zkp_protocol": 0.29400000130408444,
+          "total": 254.1348000013386
+        }
+      },
+      {
+        "pair_id": 16,
+        "subject_id": "040",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 282,
+        "overlap_ratio": 0.734375,
+        "latency_ms": {
+          "feature_extraction": 276.4670999968075,
+          "ecc_decoding": 5.730299999413546,
+          "witness_derivation": 0.1650000012887176,
+          "zkp_protocol": 0.3060000017285347,
+          "total": 282.6703999999154
+        }
+      },
+      {
+        "pair_id": 17,
+        "subject_id": "014",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 345,
+        "overlap_ratio": 0.8984375,
+        "latency_ms": {
+          "feature_extraction": 259.47960000121384,
+          "ecc_decoding": 5.461900000227615,
+          "witness_derivation": 0.11460000314400531,
+          "zkp_protocol": 0.2969999986817129,
+          "total": 265.35530000182916
+        }
+      },
+      {
+        "pair_id": 18,
+        "subject_id": "073",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 8,
+        "num_valid_bits": 267,
+        "overlap_ratio": 0.6953125,
+        "latency_ms": {
+          "feature_extraction": 258.4738000005018,
+          "ecc_decoding": 5.445999999210471,
+          "witness_derivation": 0.13940000280854292,
+          "zkp_protocol": 0.2798999994411133,
+          "total": 264.34100000187755
+        }
+      },
+      {
+        "pair_id": 19,
+        "subject_id": "015",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 282,
+        "overlap_ratio": 0.734375,
+        "latency_ms": {
+          "feature_extraction": 244.5774000007077,
+          "ecc_decoding": 6.291999998211395,
+          "witness_derivation": 0.17549999756738544,
+          "zkp_protocol": 0.3409999990253709,
+          "total": 251.3885999978811
+        }
+      },
+      {
+        "pair_id": 20,
+        "subject_id": "101",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 345,
+        "overlap_ratio": 0.8984375,
+        "latency_ms": {
+          "feature_extraction": 263.8936000003014,
+          "ecc_decoding": 5.494199998793192,
+          "witness_derivation": 0.12620000052265823,
+          "zkp_protocol": 0.2998999989358708,
+          "total": 269.8169000032067
+        }
+      },
+      {
+        "pair_id": 21,
+        "subject_id": "001",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 15,
+        "num_valid_bits": 348,
+        "overlap_ratio": 0.90625,
+        "latency_ms": {
+          "feature_extraction": 249.0883999998914,
+          "ecc_decoding": 7.048999999824446,
+          "witness_derivation": 0.1348999976471532,
+          "zkp_protocol": 0.3212999981769826,
+          "total": 256.5963999986707
+        }
+      },
+      {
+        "pair_id": 22,
+        "subject_id": "073",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 252,
+        "overlap_ratio": 0.65625,
+        "latency_ms": {
+          "feature_extraction": 253.0901999998605,
+          "ecc_decoding": 5.291699999361299,
+          "witness_derivation": 0.13889999900129624,
+          "zkp_protocol": 0.27999999656458385,
+          "total": 258.80310000138707
+        }
+      },
+      {
+        "pair_id": 23,
+        "subject_id": "033",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 8,
+        "num_valid_bits": 303,
+        "overlap_ratio": 0.7890625,
+        "latency_ms": {
+          "feature_extraction": 236.03329999968992,
+          "ecc_decoding": 5.870799999684095,
+          "witness_derivation": 0.15160000111791305,
+          "zkp_protocol": 0.2764999990176875,
+          "total": 242.3345999995945
+        }
+      },
+      {
+        "pair_id": 24,
+        "subject_id": "038",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 366,
+        "overlap_ratio": 0.953125,
+        "latency_ms": {
+          "feature_extraction": 240.41209999995772,
+          "ecc_decoding": 7.370999999693595,
+          "witness_derivation": 0.13209999815444462,
+          "zkp_protocol": 0.2998000018124003,
+          "total": 248.21779999911087
+        }
+      },
+      {
+        "pair_id": 25,
+        "subject_id": "118",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 8,
+        "num_valid_bits": 336,
+        "overlap_ratio": 0.875,
+        "latency_ms": {
+          "feature_extraction": 255.02989999949932,
+          "ecc_decoding": 5.509499998879619,
+          "witness_derivation": 0.15359999815700576,
+          "zkp_protocol": 0.29630000062752515,
+          "total": 260.9919999995327
+        }
+      },
+      {
+        "pair_id": 26,
+        "subject_id": "067",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 363,
+        "overlap_ratio": 0.9453125,
+        "latency_ms": {
+          "feature_extraction": 255.02879999839934,
+          "ecc_decoding": 5.512499999895226,
+          "witness_derivation": 0.11450000238255598,
+          "zkp_protocol": 0.28920000113430433,
+          "total": 260.9472999974969
+        }
+      },
+      {
+        "pair_id": 27,
+        "subject_id": "092",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 348,
+        "overlap_ratio": 0.90625,
+        "latency_ms": {
+          "feature_extraction": 244.01790000047185,
+          "ecc_decoding": 6.032099998265039,
+          "witness_derivation": 0.10929999916697852,
+          "zkp_protocol": 0.2880000029108487,
+          "total": 250.44980000166106
+        }
+      },
+      {
+        "pair_id": 28,
+        "subject_id": "105",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 2,
+        "num_valid_bits": 357,
+        "overlap_ratio": 0.9296875,
+        "latency_ms": {
+          "feature_extraction": 245.91729999883682,
+          "ecc_decoding": 5.522299998119706,
+          "witness_derivation": 0.1253000009455718,
+          "zkp_protocol": 0.30640000113635324,
+          "total": 251.87390000064624
+        }
+      },
+      {
+        "pair_id": 29,
+        "subject_id": "006",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 363,
+        "overlap_ratio": 0.9453125,
+        "latency_ms": {
+          "feature_extraction": 262.09820000076434,
+          "ecc_decoding": 5.286899999191519,
+          "witness_derivation": 0.12970000170753337,
+          "zkp_protocol": 0.29240000003483146,
+          "total": 267.8094999973837
+        }
+      },
+      {
+        "pair_id": 30,
+        "subject_id": "091",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 15,
+        "num_valid_bits": 252,
+        "overlap_ratio": 0.65625,
+        "latency_ms": {
+          "feature_extraction": 253.81709999783197,
+          "ecc_decoding": 5.815199998323806,
+          "witness_derivation": 0.14349999764817767,
+          "zkp_protocol": 0.29379999978118576,
+          "total": 260.072000000946
+        }
+      },
+      {
+        "pair_id": 31,
+        "subject_id": "003",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 369,
+        "overlap_ratio": 0.9609375,
+        "latency_ms": {
+          "feature_extraction": 263.9545000020007,
+          "ecc_decoding": 5.644000000756932,
+          "witness_derivation": 0.12140000035287812,
+          "zkp_protocol": 0.3073999978369102,
+          "total": 270.02920000086306
+        }
+      },
+      {
+        "pair_id": 32,
+        "subject_id": "044",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 14,
+        "num_valid_bits": 348,
+        "overlap_ratio": 0.90625,
+        "latency_ms": {
+          "feature_extraction": 241.00839999664458,
+          "ecc_decoding": 6.377200003043981,
+          "witness_derivation": 0.12210000204504468,
+          "zkp_protocol": 0.2941999991890043,
+          "total": 247.8043000010075
+        }
+      },
+      {
+        "pair_id": 33,
+        "subject_id": "069",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 9,
+        "num_valid_bits": 339,
+        "overlap_ratio": 0.8828125,
+        "latency_ms": {
+          "feature_extraction": 251.1382999982743,
+          "ecc_decoding": 5.395499996666331,
+          "witness_derivation": 0.1489000023866538,
+          "zkp_protocol": 0.29129999893484637,
+          "total": 256.976399999985
+        }
+      },
+      {
+        "pair_id": 34,
+        "subject_id": "010",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 324,
+        "overlap_ratio": 0.84375,
+        "latency_ms": {
+          "feature_extraction": 256.0827999986941,
+          "ecc_decoding": 6.086299999878975,
+          "witness_derivation": 0.12210000204504468,
+          "zkp_protocol": 0.32450000071548857,
+          "total": 262.6178999998956
+        }
+      },
+      {
+        "pair_id": 35,
+        "subject_id": "087",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 9,
+        "num_valid_bits": 324,
+        "overlap_ratio": 0.84375,
+        "latency_ms": {
+          "feature_extraction": 255.52949999837438,
+          "ecc_decoding": 5.678900000930298,
+          "witness_derivation": 0.12969999806955457,
+          "zkp_protocol": 0.29209999775048345,
+          "total": 261.632700003247
+        }
+      },
+      {
+        "pair_id": 36,
+        "subject_id": "105",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 342,
+        "overlap_ratio": 0.890625,
+        "latency_ms": {
+          "feature_extraction": 256.1569999998028,
+          "ecc_decoding": 6.291000001510838,
+          "witness_derivation": 0.15469999925699085,
+          "zkp_protocol": 0.3049000006285496,
+          "total": 262.91029999993043
+        }
+      },
+      {
+        "pair_id": 37,
+        "subject_id": "049",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 4,
+        "num_valid_bits": 366,
+        "overlap_ratio": 0.953125,
+        "latency_ms": {
+          "feature_extraction": 264.6795000000566,
+          "ecc_decoding": 5.930799998168368,
+          "witness_derivation": 0.11699999959091656,
+          "zkp_protocol": 0.30279999919002876,
+          "total": 271.03279999937513
+        }
+      },
+      {
+        "pair_id": 38,
+        "subject_id": "023",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 15,
+        "num_valid_bits": 297,
+        "overlap_ratio": 0.7734375,
+        "latency_ms": {
+          "feature_extraction": 247.40329999985988,
+          "ecc_decoding": 5.935299999691779,
+          "witness_derivation": 0.13079999916953966,
+          "zkp_protocol": 0.30609999885200523,
+          "total": 253.77879999723518
+        }
+      },
+      {
+        "pair_id": 39,
+        "subject_id": "081",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 7,
+        "num_valid_bits": 345,
+        "overlap_ratio": 0.8984375,
+        "latency_ms": {
+          "feature_extraction": 253.25769999835757,
+          "ecc_decoding": 5.519700000149896,
+          "witness_derivation": 0.15869999697315507,
+          "zkp_protocol": 0.3096000000368804,
+          "total": 259.247800000594
+        }
+      },
+      {
+        "pair_id": 40,
+        "subject_id": "111",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 8,
+        "num_valid_bits": 309,
+        "overlap_ratio": 0.8046875,
+        "latency_ms": {
+          "feature_extraction": 251.16740000157733,
+          "ecc_decoding": 5.626899997878354,
+          "witness_derivation": 0.13780000153928995,
+          "zkp_protocol": 0.294400000711903,
+          "total": 257.2288999981538
+        }
+      },
+      {
+        "pair_id": 41,
+        "subject_id": "063",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 348,
+        "overlap_ratio": 0.90625,
+        "latency_ms": {
+          "feature_extraction": 251.40720000126748,
+          "ecc_decoding": 6.230799997865688,
+          "witness_derivation": 0.10990000009769574,
+          "zkp_protocol": 0.2888999988499563,
+          "total": 258.038600000873
+        }
+      },
+      {
+        "pair_id": 42,
+        "subject_id": "116",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 9,
+        "num_valid_bits": 309,
+        "overlap_ratio": 0.8046875,
+        "latency_ms": {
+          "feature_extraction": 256.67800000155694,
+          "ecc_decoding": 6.987700002355268,
+          "witness_derivation": 0.16320000213454477,
+          "zkp_protocol": 0.43250000089756213,
+          "total": 264.26379999975325
+        }
+      },
+      {
+        "pair_id": 43,
+        "subject_id": "100",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 8,
+        "num_valid_bits": 297,
+        "overlap_ratio": 0.7734375,
+        "latency_ms": {
+          "feature_extraction": 260.2237999999488,
+          "ecc_decoding": 5.364900000131456,
+          "witness_derivation": 0.13760000001639128,
+          "zkp_protocol": 0.3001000004587695,
+          "total": 266.02940000157105
+        }
+      },
+      {
+        "pair_id": 44,
+        "subject_id": "037",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 312,
+        "overlap_ratio": 0.8125,
+        "latency_ms": {
+          "feature_extraction": 292.39030000098865,
+          "ecc_decoding": 6.067499998607673,
+          "witness_derivation": 0.13109999781590886,
+          "zkp_protocol": 0.3313000015623402,
+          "total": 298.92280000058236
+        }
+      },
+      {
+        "pair_id": 45,
+        "subject_id": "090",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 1,
+        "num_valid_bits": 315,
+        "overlap_ratio": 0.8203125,
+        "latency_ms": {
+          "feature_extraction": 272.24220000061905,
+          "ecc_decoding": 8.340699998370837,
+          "witness_derivation": 0.18389999968349002,
+          "zkp_protocol": 0.4177000009804033,
+          "total": 281.1887999996543
+        }
+      },
+      {
+        "pair_id": 46,
+        "subject_id": "083",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 312,
+        "overlap_ratio": 0.8125,
+        "latency_ms": {
+          "feature_extraction": 300.80870000165305,
+          "ecc_decoding": 6.591600002138875,
+          "witness_derivation": 0.1554000009491574,
+          "zkp_protocol": 0.34610000147949904,
+          "total": 307.90500000148313
+        }
+      },
+      {
+        "pair_id": 47,
+        "subject_id": "093",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 8,
+        "num_valid_bits": 351,
+        "overlap_ratio": 0.9140625,
+        "latency_ms": {
+          "feature_extraction": 276.484400001209,
+          "ecc_decoding": 6.549099998665042,
+          "witness_derivation": 0.1218999968841672,
+          "zkp_protocol": 0.30609999885200523,
+          "total": 283.464100000856
+        }
+      },
+      {
+        "pair_id": 48,
+        "subject_id": "044",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 14,
+        "num_valid_bits": 345,
+        "overlap_ratio": 0.8984375,
+        "latency_ms": {
+          "feature_extraction": 255.88719999723253,
+          "ecc_decoding": 6.044799996743677,
+          "witness_derivation": 0.11820000145235099,
+          "zkp_protocol": 0.4407999986142386,
+          "total": 262.4934999985271
+        }
+      },
+      {
+        "pair_id": 49,
+        "subject_id": "084",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false,
+        "optimal_shift": 11,
+        "num_valid_bits": 357,
+        "overlap_ratio": 0.9296875,
+        "latency_ms": {
+          "feature_extraction": 266.9214999987162,
+          "ecc_decoding": 6.640300001890864,
+          "total": 273.565100000269
+        }
+      },
+      {
+        "pair_id": 50,
+        "subject_id": "104",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 8,
+        "num_valid_bits": 339,
+        "overlap_ratio": 0.8828125,
+        "latency_ms": {
+          "feature_extraction": 266.42119999814895,
+          "ecc_decoding": 6.014900001900969,
+          "witness_derivation": 0.1747999995131977,
+          "zkp_protocol": 0.3237000018998515,
+          "total": 272.93709999867133
+        }
+      },
+      {
+        "pair_id": 51,
+        "subject_id": "064",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 1,
+        "num_valid_bits": 315,
+        "overlap_ratio": 0.8203125,
+        "latency_ms": {
+          "feature_extraction": 245.92810000103782,
+          "ecc_decoding": 5.4209000008995645,
+          "witness_derivation": 0.12460000289138407,
+          "zkp_protocol": 0.2913999996962957,
+          "total": 251.76750000173342
+        }
+      },
+      {
+        "pair_id": 52,
+        "subject_id": "067",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 342,
+        "overlap_ratio": 0.890625,
+        "latency_ms": {
+          "feature_extraction": 249.54480000087642,
+          "ecc_decoding": 5.59380000049714,
+          "witness_derivation": 0.11539999832166359,
+          "zkp_protocol": 0.29770000037387945,
+          "total": 255.5538999986311
+        }
+      },
+      {
+        "pair_id": 53,
+        "subject_id": "026",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 14,
+        "num_valid_bits": 324,
+        "overlap_ratio": 0.84375,
+        "latency_ms": {
+          "feature_extraction": 269.2658999985724,
+          "ecc_decoding": 5.597600000328384,
+          "witness_derivation": 0.17350000052829273,
+          "zkp_protocol": 0.3074999985983595,
+          "total": 275.34729999752017
+        }
+      },
+      {
+        "pair_id": 54,
+        "subject_id": "045",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 0,
+        "num_valid_bits": 336,
+        "overlap_ratio": 0.875,
+        "latency_ms": {
+          "feature_extraction": 243.45159999938915,
+          "ecc_decoding": 5.069899998488836,
+          "witness_derivation": 0.11530000119819306,
+          "zkp_protocol": 0.27570000020205043,
+          "total": 248.91439999919385
+        }
+      },
+      {
+        "pair_id": 55,
+        "subject_id": "020",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 351,
+        "overlap_ratio": 0.9140625,
+        "latency_ms": {
+          "feature_extraction": 247.7251000018441,
+          "ecc_decoding": 5.784400000266032,
+          "witness_derivation": 0.1551000023027882,
+          "zkp_protocol": 0.2858000007108785,
+          "total": 253.95239999852492
+        }
+      },
+      {
+        "pair_id": 56,
+        "subject_id": "071",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 7,
+        "num_valid_bits": 342,
+        "overlap_ratio": 0.890625,
+        "latency_ms": {
+          "feature_extraction": 267.84200000111014,
+          "ecc_decoding": 5.740600001445273,
+          "witness_derivation": 0.1633000028959941,
+          "zkp_protocol": 0.3040000010514632,
+          "total": 274.05219999855035
+        }
+      },
+      {
+        "pair_id": 57,
+        "subject_id": "012",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 0,
+        "num_valid_bits": 354,
+        "overlap_ratio": 0.921875,
+        "latency_ms": {
+          "feature_extraction": 257.049999996525,
+          "ecc_decoding": 5.9302000008756295,
+          "witness_derivation": 0.15809999968041666,
+          "zkp_protocol": 0.28499999825726263,
+          "total": 263.42570000269916
+        }
+      },
+      {
+        "pair_id": 58,
+        "subject_id": "007",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 366,
+        "overlap_ratio": 0.953125,
+        "latency_ms": {
+          "feature_extraction": 236.8726999993669,
+          "ecc_decoding": 5.361700001230929,
+          "witness_derivation": 0.11040000026696362,
+          "zkp_protocol": 0.2806999982567504,
+          "total": 242.6277000013215
+        }
+      },
+      {
+        "pair_id": 59,
+        "subject_id": "079",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 14,
+        "num_valid_bits": 246,
+        "overlap_ratio": 0.640625,
+        "latency_ms": {
+          "feature_extraction": 242.64810000022408,
+          "ecc_decoding": 5.3222999995341524,
+          "witness_derivation": 0.1278000017919112,
+          "zkp_protocol": 0.2953000002889894,
+          "total": 248.3955000025162
+        }
+      },
+      {
+        "pair_id": 60,
+        "subject_id": "065",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 339,
+        "overlap_ratio": 0.8828125,
+        "latency_ms": {
+          "feature_extraction": 258.68549999722745,
+          "ecc_decoding": 5.5342999985441566,
+          "witness_derivation": 0.11820000145235099,
+          "zkp_protocol": 0.296499998512445,
+          "total": 264.6367999986978
+        }
+      },
+      {
+        "pair_id": 61,
+        "subject_id": "078",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false,
+        "optimal_shift": 0,
+        "num_valid_bits": 330,
+        "overlap_ratio": 0.859375,
+        "latency_ms": {
+          "feature_extraction": 255.9414999996079,
+          "ecc_decoding": 5.525900000066031,
+          "total": 261.4696999989974
+        }
+      },
+      {
+        "pair_id": 62,
+        "subject_id": "104",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 14,
+        "num_valid_bits": 315,
+        "overlap_ratio": 0.8203125,
+        "latency_ms": {
+          "feature_extraction": 240.25439999968512,
+          "ecc_decoding": 5.3793000006407965,
+          "witness_derivation": 0.15519999942625873,
+          "zkp_protocol": 0.3501999999571126,
+          "total": 246.14110000038636
+        }
+      },
+      {
+        "pair_id": 63,
+        "subject_id": "055",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 345,
+        "overlap_ratio": 0.8984375,
+        "latency_ms": {
+          "feature_extraction": 237.4102000030689,
+          "ecc_decoding": 5.873300000530435,
+          "witness_derivation": 0.12210000204504468,
+          "zkp_protocol": 0.29319999885046855,
+          "total": 243.70170000111102
+        }
+      },
+      {
+        "pair_id": 64,
+        "subject_id": "098",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 7,
+        "num_valid_bits": 315,
+        "overlap_ratio": 0.8203125,
+        "latency_ms": {
+          "feature_extraction": 264.32779999959166,
+          "ecc_decoding": 5.645099998218939,
+          "witness_derivation": 0.12849999984609894,
+          "zkp_protocol": 0.31409999792231247,
+          "total": 270.41790000293986
+        }
+      },
+      {
+        "pair_id": 65,
+        "subject_id": "008",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 0,
+        "num_valid_bits": 363,
+        "overlap_ratio": 0.9453125,
+        "latency_ms": {
+          "feature_extraction": 258.7368000022252,
+          "ecc_decoding": 5.296499999531079,
+          "witness_derivation": 0.11510000331327319,
+          "zkp_protocol": 0.28930000189575367,
+          "total": 264.44009999977425
+        }
+      },
+      {
+        "pair_id": 66,
+        "subject_id": "105",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 9,
+        "num_valid_bits": 306,
+        "overlap_ratio": 0.796875,
+        "latency_ms": {
+          "feature_extraction": 248.3195999993768,
+          "ecc_decoding": 5.220900002314011,
+          "witness_derivation": 0.14730000111740083,
+          "zkp_protocol": 0.2810000005410984,
+          "total": 253.9708000003884
+        }
+      },
+      {
+        "pair_id": 67,
+        "subject_id": "005",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 342,
+        "overlap_ratio": 0.890625,
+        "latency_ms": {
+          "feature_extraction": 244.25999999948544,
+          "ecc_decoding": 5.307900002662791,
+          "witness_derivation": 0.1264000020455569,
+          "zkp_protocol": 0.29859999995096587,
+          "total": 249.99510000270675
+        }
+      },
+      {
+        "pair_id": 68,
+        "subject_id": "001",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 312,
+        "overlap_ratio": 0.8125,
+        "latency_ms": {
+          "feature_extraction": 267.5481000005675,
+          "ecc_decoding": 6.2527000009140465,
+          "witness_derivation": 0.12620000052265823,
+          "zkp_protocol": 0.3057000030821655,
+          "total": 274.235699998826
+        }
+      },
+      {
+        "pair_id": 69,
+        "subject_id": "033",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 0,
+        "num_valid_bits": 309,
+        "overlap_ratio": 0.8046875,
+        "latency_ms": {
+          "feature_extraction": 253.33129999853554,
+          "ecc_decoding": 5.195999998250045,
+          "witness_derivation": 0.13499999840860255,
+          "zkp_protocol": 0.2777999980025925,
+          "total": 258.94249999691965
+        }
+      },
+      {
+        "pair_id": 70,
+        "subject_id": "092",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 324,
+        "overlap_ratio": 0.84375,
+        "latency_ms": {
+          "feature_extraction": 245.04110000270884,
+          "ecc_decoding": 5.34930000139866,
+          "witness_derivation": 0.17139999908977188,
+          "zkp_protocol": 0.35339999885763973,
+          "total": 250.9219999992638
+        }
+      },
+      {
+        "pair_id": 71,
+        "subject_id": "075",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 7,
+        "num_valid_bits": 282,
+        "overlap_ratio": 0.734375,
+        "latency_ms": {
+          "feature_extraction": 264.4313000018883,
+          "ecc_decoding": 6.358000002364861,
+          "witness_derivation": 0.1267000006919261,
+          "zkp_protocol": 0.31429999944521114,
+          "total": 271.2333999988914
+        }
+      },
+      {
+        "pair_id": 72,
+        "subject_id": "000",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 3,
+        "num_valid_bits": 351,
+        "overlap_ratio": 0.9140625,
+        "latency_ms": {
+          "feature_extraction": 269.7231999991345,
+          "ecc_decoding": 6.153499998617917,
+          "witness_derivation": 0.16080000204965472,
+          "zkp_protocol": 0.33009999970090576,
+          "total": 276.37010000034934
+        }
+      },
+      {
+        "pair_id": 73,
+        "subject_id": "057",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 372,
+        "overlap_ratio": 0.96875,
+        "latency_ms": {
+          "feature_extraction": 260.368399998697,
+          "ecc_decoding": 5.641600000672042,
+          "witness_derivation": 0.12199999764561653,
+          "zkp_protocol": 0.2948000001197215,
+          "total": 266.42980000178795
+        }
+      },
+      {
+        "pair_id": 74,
+        "subject_id": "100",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 0,
+        "num_valid_bits": 309,
+        "overlap_ratio": 0.8046875,
+        "latency_ms": {
+          "feature_extraction": 282.38100000089617,
+          "ecc_decoding": 7.4590999975043815,
+          "witness_derivation": 0.1768000001902692,
+          "zkp_protocol": 0.3459999970800709,
+          "total": 290.3654000001552
+        }
+      },
+      {
+        "pair_id": 75,
+        "subject_id": "021",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 246,
+        "overlap_ratio": 0.640625,
+        "latency_ms": {
+          "feature_extraction": 286.177800000587,
+          "ecc_decoding": 7.424200000968995,
+          "witness_derivation": 0.1540000012028031,
+          "zkp_protocol": 0.4002999994554557,
+          "total": 294.1592000024684
+        }
+      },
+      {
+        "pair_id": 76,
+        "subject_id": "027",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 1,
+        "num_valid_bits": 342,
+        "overlap_ratio": 0.890625,
+        "latency_ms": {
+          "feature_extraction": 344.28119999938644,
+          "ecc_decoding": 6.392899998900248,
+          "witness_derivation": 0.12910000077681616,
+          "zkp_protocol": 0.3724999987753108,
+          "total": 351.1784999973315
+        }
+      },
+      {
+        "pair_id": 77,
+        "subject_id": "099",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 7,
+        "num_valid_bits": 327,
+        "overlap_ratio": 0.8515625,
+        "latency_ms": {
+          "feature_extraction": 281.9638999972085,
+          "ecc_decoding": 6.454399997892324,
+          "witness_derivation": 0.1359999987471383,
+          "zkp_protocol": 0.3400999994482845,
+          "total": 288.89690000141854
+        }
+      },
+      {
+        "pair_id": 78,
+        "subject_id": "113",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 351,
+        "overlap_ratio": 0.9140625,
+        "latency_ms": {
+          "feature_extraction": 309.18759999985923,
+          "ecc_decoding": 7.552099999884376,
+          "witness_derivation": 0.13929999840911478,
+          "zkp_protocol": 0.3687999997055158,
+          "total": 317.2511000011582
+        }
+      },
+      {
+        "pair_id": 79,
+        "subject_id": "103",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 7,
+        "num_valid_bits": 318,
+        "overlap_ratio": 0.828125,
+        "latency_ms": {
+          "feature_extraction": 355.7041999993089,
+          "ecc_decoding": 8.394000000407686,
+          "witness_derivation": 0.1961999987543095,
+          "zkp_protocol": 0.405399998271605,
+          "total": 364.7032000008039
+        }
+      },
+      {
+        "pair_id": 80,
+        "subject_id": "048",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 7,
+        "num_valid_bits": 360,
+        "overlap_ratio": 0.9375,
+        "latency_ms": {
+          "feature_extraction": 343.5446999974374,
+          "ecc_decoding": 7.078399998135865,
+          "witness_derivation": 0.18819999968400225,
+          "zkp_protocol": 0.3856999974232167,
+          "total": 351.1999999973341
+        }
+      },
+      {
+        "pair_id": 81,
+        "subject_id": "016",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 333,
+        "overlap_ratio": 0.8671875,
+        "latency_ms": {
+          "feature_extraction": 296.1513999980525,
+          "ecc_decoding": 6.273099999816623,
+          "witness_derivation": 0.12770000103046186,
+          "zkp_protocol": 0.3367000026628375,
+          "total": 302.89149999953224
+        }
+      },
+      {
+        "pair_id": 82,
+        "subject_id": "058",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 357,
+        "overlap_ratio": 0.9296875,
+        "latency_ms": {
+          "feature_extraction": 324.4267000009131,
+          "ecc_decoding": 7.5087000004714355,
+          "witness_derivation": 0.1449999981559813,
+          "zkp_protocol": 0.40249999801744707,
+          "total": 332.4858999985736
+        }
+      },
+      {
+        "pair_id": 83,
+        "subject_id": "058",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 0,
+        "num_valid_bits": 369,
+        "overlap_ratio": 0.9609375,
+        "latency_ms": {
+          "feature_extraction": 333.4279000009701,
+          "ecc_decoding": 7.764300000417279,
+          "witness_derivation": 0.3350000006321352,
+          "zkp_protocol": 0.4154999987804331,
+          "total": 341.946900000039
+        }
+      },
+      {
+        "pair_id": 84,
+        "subject_id": "061",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 321,
+        "overlap_ratio": 0.8359375,
+        "latency_ms": {
+          "feature_extraction": 289.57850000006147,
+          "ecc_decoding": 6.054899997252505,
+          "witness_derivation": 0.14700000247103162,
+          "zkp_protocol": 0.32049999936134554,
+          "total": 296.1033000028692
+        }
+      },
+      {
+        "pair_id": 85,
+        "subject_id": "027",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 0,
+        "num_valid_bits": 336,
+        "overlap_ratio": 0.875,
+        "latency_ms": {
+          "feature_extraction": 299.62330000125803,
+          "ecc_decoding": 6.415100000594975,
+          "witness_derivation": 0.1391000005241949,
+          "zkp_protocol": 0.35480000224197283,
+          "total": 306.53520000123535
+        }
+      },
+      {
+        "pair_id": 86,
+        "subject_id": "110",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 330,
+        "overlap_ratio": 0.859375,
+        "latency_ms": {
+          "feature_extraction": 292.94589999699383,
+          "ecc_decoding": 6.461599998146994,
+          "witness_derivation": 0.1602000011189375,
+          "zkp_protocol": 0.30669999978272244,
+          "total": 299.87679999976535
+        }
+      },
+      {
+        "pair_id": 87,
+        "subject_id": "084",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false,
+        "optimal_shift": 12,
+        "num_valid_bits": 309,
+        "overlap_ratio": 0.8046875,
+        "latency_ms": {
+          "feature_extraction": 256.7712999989453,
+          "ecc_decoding": 5.4918999994697515,
+          "total": 262.2650999983307
+        }
+      },
+      {
+        "pair_id": 88,
+        "subject_id": "075",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 8,
+        "num_valid_bits": 354,
+        "overlap_ratio": 0.921875,
+        "latency_ms": {
+          "feature_extraction": 251.08689999979106,
+          "ecc_decoding": 5.859599998075282,
+          "witness_derivation": 0.14089999967836775,
+          "zkp_protocol": 0.28620000011869706,
+          "total": 257.375500001217
+        }
+      },
+      {
+        "pair_id": 89,
+        "subject_id": "085",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 258,
+        "overlap_ratio": 0.671875,
+        "latency_ms": {
+          "feature_extraction": 242.5586999997904,
+          "ecc_decoding": 5.832499999087304,
+          "witness_derivation": 0.14290000035543926,
+          "zkp_protocol": 0.2934000003733672,
+          "total": 248.8297000018065
+        }
+      },
+      {
+        "pair_id": 90,
+        "subject_id": "037",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 1,
+        "num_valid_bits": 303,
+        "overlap_ratio": 0.7890625,
+        "latency_ms": {
+          "feature_extraction": 265.6641000030504,
+          "ecc_decoding": 5.720199998904718,
+          "witness_derivation": 0.15469999925699085,
+          "zkp_protocol": 0.30340000012074597,
+          "total": 271.8447000006563
+        }
+      },
+      {
+        "pair_id": 91,
+        "subject_id": "046",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 1,
+        "num_valid_bits": 315,
+        "overlap_ratio": 0.8203125,
+        "latency_ms": {
+          "feature_extraction": 291.97959999874,
+          "ecc_decoding": 6.52529999933904,
+          "witness_derivation": 0.12830000196117908,
+          "zkp_protocol": 0.3233999996155035,
+          "total": 298.95960000067134
+        }
+      },
+      {
+        "pair_id": 92,
+        "subject_id": "083",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 15,
+        "num_valid_bits": 339,
+        "overlap_ratio": 0.8828125,
+        "latency_ms": {
+          "feature_extraction": 262.4692000026698,
+          "ecc_decoding": 5.483499997353647,
+          "witness_derivation": 0.12240000069141388,
+          "zkp_protocol": 0.30929999775253236,
+          "total": 268.38670000142884
+        }
+      },
+      {
+        "pair_id": 93,
+        "subject_id": "060",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 12,
+        "num_valid_bits": 324,
+        "overlap_ratio": 0.84375,
+        "latency_ms": {
+          "feature_extraction": 260.104400000273,
+          "ecc_decoding": 5.9808000005432405,
+          "witness_derivation": 0.1407999989169184,
+          "zkp_protocol": 0.3166999995301012,
+          "total": 266.5452000001096
+        }
+      },
+      {
+        "pair_id": 94,
+        "subject_id": "029",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 1,
+        "num_valid_bits": 315,
+        "overlap_ratio": 0.8203125,
+        "latency_ms": {
+          "feature_extraction": 280.605399999331,
+          "ecc_decoding": 6.039099996996811,
+          "witness_derivation": 0.12859999696956947,
+          "zkp_protocol": 0.33959999927901663,
+          "total": 287.1153000014601
+        }
+      },
+      {
+        "pair_id": 95,
+        "subject_id": "013",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 8,
+        "num_valid_bits": 342,
+        "overlap_ratio": 0.890625,
+        "latency_ms": {
+          "feature_extraction": 272.4219000010635,
+          "ecc_decoding": 5.810800001199823,
+          "witness_derivation": 0.15519999942625873,
+          "zkp_protocol": 0.30949999927543104,
+          "total": 278.69970000028843
+        }
+      },
+      {
+        "pair_id": 96,
+        "subject_id": "072",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 14,
+        "num_valid_bits": 291,
+        "overlap_ratio": 0.7578125,
+        "latency_ms": {
+          "feature_extraction": 255.90449999799603,
+          "ecc_decoding": 6.401899998309091,
+          "witness_derivation": 0.1491999973950442,
+          "zkp_protocol": 0.30189999961294234,
+          "total": 262.7599999977974
+        }
+      },
+      {
+        "pair_id": 97,
+        "subject_id": "090",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true,
+        "optimal_shift": 8,
+        "num_valid_bits": 288,
+        "overlap_ratio": 0.75,
+        "latency_ms": {
+          "feature_extraction": 254.66559999767924,
+          "ecc_decoding": 5.722599998989608,
+          "witness_derivation": 0.13519999993150122,
+          "zkp_protocol": 0.3104999996139668,
+          "total": 260.83680000010645
+        }
+      },
+      {
+        "pair_id": 98,
+        "subject_id": "072",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 8,
+        "num_valid_bits": 258,
+        "overlap_ratio": 0.671875,
+        "latency_ms": {
+          "feature_extraction": 258.89919999826816,
+          "ecc_decoding": 5.575200000748737,
+          "witness_derivation": 0.12229999992996454,
+          "zkp_protocol": 0.30390000029001385,
+          "total": 264.9031000000832
+        }
+      },
+      {
+        "pair_id": 99,
+        "subject_id": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false,
+        "optimal_shift": 5,
+        "num_valid_bits": 306,
+        "overlap_ratio": 0.796875,
+        "latency_ms": {
+          "feature_extraction": 245.89199999900302,
+          "ecc_decoding": 5.595900001935661,
+          "witness_derivation": 0.17389999993611127,
+          "zkp_protocol": 0.3861999975924846,
+          "total": 252.05149999965215
+        }
+      }
+    ]
+  },
+  "model2_zkp_impostor_attack": {
+    "cryptographic_far": 0.0,
+    "cryptographic_far_ci": [
+      0.0,
+      3.699349876899627
+    ],
+    "biometric_collision_rate": 0.89,
+    "records": [
+      {
+        "pair_id": 0,
+        "subject_1": "036",
+        "subject_2": "056",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 1,
+        "subject_1": "006",
+        "subject_2": "068",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 2,
+        "subject_1": "013",
+        "subject_2": "104",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 3,
+        "subject_1": "036",
+        "subject_2": "049",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 4,
+        "subject_1": "060",
+        "subject_2": "097",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 5,
+        "subject_1": "041",
+        "subject_2": "091",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 6,
+        "subject_1": "076",
+        "subject_2": "090",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 7,
+        "subject_1": "005",
+        "subject_2": "041",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 8,
+        "subject_1": "072",
+        "subject_2": "091",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 9,
+        "subject_1": "028",
+        "subject_2": "062",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 10,
+        "subject_1": "009",
+        "subject_2": "020",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 11,
+        "subject_1": "097",
+        "subject_2": "114",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 12,
+        "subject_1": "071",
+        "subject_2": "118",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 13,
+        "subject_1": "072",
+        "subject_2": "073",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 14,
+        "subject_1": "015",
+        "subject_2": "035",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 15,
+        "subject_1": "077",
+        "subject_2": "080",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 16,
+        "subject_1": "040",
+        "subject_2": "076",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 17,
+        "subject_1": "044",
+        "subject_2": "098",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 18,
+        "subject_1": "053",
+        "subject_2": "071",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 19,
+        "subject_1": "000",
+        "subject_2": "097",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 20,
+        "subject_1": "090",
+        "subject_2": "110",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 21,
+        "subject_1": "099",
+        "subject_2": "117",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 22,
+        "subject_1": "054",
+        "subject_2": "094",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 23,
+        "subject_1": "007",
+        "subject_2": "057",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 24,
+        "subject_1": "075",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 25,
+        "subject_1": "028",
+        "subject_2": "058",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 26,
+        "subject_1": "024",
+        "subject_2": "061",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 27,
+        "subject_1": "016",
+        "subject_2": "065",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 28,
+        "subject_1": "063",
+        "subject_2": "101",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 29,
+        "subject_1": "037",
+        "subject_2": "069",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 30,
+        "subject_1": "021",
+        "subject_2": "114",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 31,
+        "subject_1": "076",
+        "subject_2": "089",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 32,
+        "subject_1": "041",
+        "subject_2": "042",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 33,
+        "subject_1": "000",
+        "subject_2": "010",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 34,
+        "subject_1": "042",
+        "subject_2": "092",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 35,
+        "subject_1": "025",
+        "subject_2": "073",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 36,
+        "subject_1": "067",
+        "subject_2": "100",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 37,
+        "subject_1": "069",
+        "subject_2": "081",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 38,
+        "subject_1": "038",
+        "subject_2": "070",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 39,
+        "subject_1": "038",
+        "subject_2": "053",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 40,
+        "subject_1": "017",
+        "subject_2": "094",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 41,
+        "subject_1": "004",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 42,
+        "subject_1": "000",
+        "subject_2": "033",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 43,
+        "subject_1": "012",
+        "subject_2": "022",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 44,
+        "subject_1": "056",
+        "subject_2": "064",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 45,
+        "subject_1": "018",
+        "subject_2": "064",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 46,
+        "subject_1": "007",
+        "subject_2": "060",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 47,
+        "subject_1": "051",
+        "subject_2": "091",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 48,
+        "subject_1": "042",
+        "subject_2": "099",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 49,
+        "subject_1": "023",
+        "subject_2": "098",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 50,
+        "subject_1": "015",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 51,
+        "subject_1": "020",
+        "subject_2": "106",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 52,
+        "subject_1": "011",
+        "subject_2": "037",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 53,
+        "subject_1": "004",
+        "subject_2": "054",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 54,
+        "subject_1": "038",
+        "subject_2": "108",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 55,
+        "subject_1": "079",
+        "subject_2": "109",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 56,
+        "subject_1": "070",
+        "subject_2": "073",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 57,
+        "subject_1": "001",
+        "subject_2": "083",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 58,
+        "subject_1": "092",
+        "subject_2": "097",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 59,
+        "subject_1": "025",
+        "subject_2": "077",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 60,
+        "subject_1": "032",
+        "subject_2": "074",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 61,
+        "subject_1": "037",
+        "subject_2": "084",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 62,
+        "subject_1": "004",
+        "subject_2": "071",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 63,
+        "subject_1": "032",
+        "subject_2": "084",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 64,
+        "subject_1": "082",
+        "subject_2": "099",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 65,
+        "subject_1": "021",
+        "subject_2": "066",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 66,
+        "subject_1": "084",
+        "subject_2": "113",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 67,
+        "subject_1": "113",
+        "subject_2": "118",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 68,
+        "subject_1": "101",
+        "subject_2": "115",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 69,
+        "subject_1": "008",
+        "subject_2": "099",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 70,
+        "subject_1": "081",
+        "subject_2": "084",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 71,
+        "subject_1": "085",
+        "subject_2": "095",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 72,
+        "subject_1": "013",
+        "subject_2": "029",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 73,
+        "subject_1": "033",
+        "subject_2": "088",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 74,
+        "subject_1": "010",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 75,
+        "subject_1": "083",
+        "subject_2": "113",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 76,
+        "subject_1": "069",
+        "subject_2": "092",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 77,
+        "subject_1": "042",
+        "subject_2": "100",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 78,
+        "subject_1": "006",
+        "subject_2": "114",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 79,
+        "subject_1": "060",
+        "subject_2": "104",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 80,
+        "subject_1": "017",
+        "subject_2": "048",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 81,
+        "subject_1": "061",
+        "subject_2": "100",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 82,
+        "subject_1": "014",
+        "subject_2": "106",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 83,
+        "subject_1": "001",
+        "subject_2": "014",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 84,
+        "subject_1": "003",
+        "subject_2": "118",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 85,
+        "subject_1": "014",
+        "subject_2": "045",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 86,
+        "subject_1": "006",
+        "subject_2": "060",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 87,
+        "subject_1": "001",
+        "subject_2": "087",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 88,
+        "subject_1": "052",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 89,
+        "subject_1": "081",
+        "subject_2": "100",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 90,
+        "subject_1": "001",
+        "subject_2": "051",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 91,
+        "subject_1": "071",
+        "subject_2": "081",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 92,
+        "subject_1": "015",
+        "subject_2": "061",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 93,
+        "subject_1": "007",
+        "subject_2": "028",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 94,
+        "subject_1": "000",
+        "subject_2": "016",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 95,
+        "subject_1": "027",
+        "subject_2": "088",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 96,
+        "subject_1": "024",
+        "subject_2": "035",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 97,
+        "subject_1": "077",
+        "subject_2": "084",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 98,
+        "subject_1": "031",
+        "subject_2": "117",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 99,
+        "subject_1": "054",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      }
+    ]
+  },
+  "model3_stolen_credential_attack": {
+    "cryptographic_far": 0.21,
+    "cryptographic_far_ci": [
+      14.165654017044627,
+      29.979968911557158
+    ],
+    "biometric_collision_rate": 0.89,
+    "records": [
+      {
+        "pair_id": 0,
+        "subject_1": "036",
+        "subject_2": "056",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 1,
+        "subject_1": "006",
+        "subject_2": "068",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 2,
+        "subject_1": "013",
+        "subject_2": "104",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 3,
+        "subject_1": "036",
+        "subject_2": "049",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 4,
+        "subject_1": "060",
+        "subject_2": "097",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 5,
+        "subject_1": "041",
+        "subject_2": "091",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 6,
+        "subject_1": "076",
+        "subject_2": "090",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 7,
+        "subject_1": "005",
+        "subject_2": "041",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 8,
+        "subject_1": "072",
+        "subject_2": "091",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 9,
+        "subject_1": "028",
+        "subject_2": "062",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 10,
+        "subject_1": "009",
+        "subject_2": "020",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 11,
+        "subject_1": "097",
+        "subject_2": "114",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 12,
+        "subject_1": "071",
+        "subject_2": "118",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 13,
+        "subject_1": "072",
+        "subject_2": "073",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 14,
+        "subject_1": "015",
+        "subject_2": "035",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 15,
+        "subject_1": "077",
+        "subject_2": "080",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 16,
+        "subject_1": "040",
+        "subject_2": "076",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 17,
+        "subject_1": "044",
+        "subject_2": "098",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 18,
+        "subject_1": "053",
+        "subject_2": "071",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 19,
+        "subject_1": "000",
+        "subject_2": "097",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 20,
+        "subject_1": "090",
+        "subject_2": "110",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 21,
+        "subject_1": "099",
+        "subject_2": "117",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 22,
+        "subject_1": "054",
+        "subject_2": "094",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 23,
+        "subject_1": "007",
+        "subject_2": "057",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 24,
+        "subject_1": "075",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 25,
+        "subject_1": "028",
+        "subject_2": "058",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 26,
+        "subject_1": "024",
+        "subject_2": "061",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 27,
+        "subject_1": "016",
+        "subject_2": "065",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 28,
+        "subject_1": "063",
+        "subject_2": "101",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 29,
+        "subject_1": "037",
+        "subject_2": "069",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 30,
+        "subject_1": "021",
+        "subject_2": "114",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 31,
+        "subject_1": "076",
+        "subject_2": "089",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 32,
+        "subject_1": "041",
+        "subject_2": "042",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 33,
+        "subject_1": "000",
+        "subject_2": "010",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 34,
+        "subject_1": "042",
+        "subject_2": "092",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 35,
+        "subject_1": "025",
+        "subject_2": "073",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 36,
+        "subject_1": "067",
+        "subject_2": "100",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 37,
+        "subject_1": "069",
+        "subject_2": "081",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 38,
+        "subject_1": "038",
+        "subject_2": "070",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 39,
+        "subject_1": "038",
+        "subject_2": "053",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 40,
+        "subject_1": "017",
+        "subject_2": "094",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 41,
+        "subject_1": "004",
+        "subject_2": "107",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 42,
+        "subject_1": "000",
+        "subject_2": "033",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 43,
+        "subject_1": "012",
+        "subject_2": "022",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 44,
+        "subject_1": "056",
+        "subject_2": "064",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 45,
+        "subject_1": "018",
+        "subject_2": "064",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 46,
+        "subject_1": "007",
+        "subject_2": "060",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 47,
+        "subject_1": "051",
+        "subject_2": "091",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 48,
+        "subject_1": "042",
+        "subject_2": "099",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 49,
+        "subject_1": "023",
+        "subject_2": "098",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 50,
+        "subject_1": "015",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 51,
+        "subject_1": "020",
+        "subject_2": "106",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 52,
+        "subject_1": "011",
+        "subject_2": "037",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 53,
+        "subject_1": "004",
+        "subject_2": "054",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 54,
+        "subject_1": "038",
+        "subject_2": "108",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 55,
+        "subject_1": "079",
+        "subject_2": "109",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 56,
+        "subject_1": "070",
+        "subject_2": "073",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 57,
+        "subject_1": "001",
+        "subject_2": "083",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 58,
+        "subject_1": "092",
+        "subject_2": "097",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 59,
+        "subject_1": "025",
+        "subject_2": "077",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 60,
+        "subject_1": "032",
+        "subject_2": "074",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 61,
+        "subject_1": "037",
+        "subject_2": "084",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 62,
+        "subject_1": "004",
+        "subject_2": "071",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 63,
+        "subject_1": "032",
+        "subject_2": "084",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 64,
+        "subject_1": "082",
+        "subject_2": "099",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 65,
+        "subject_1": "021",
+        "subject_2": "066",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 66,
+        "subject_1": "084",
+        "subject_2": "113",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 67,
+        "subject_1": "113",
+        "subject_2": "118",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 68,
+        "subject_1": "101",
+        "subject_2": "115",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 69,
+        "subject_1": "008",
+        "subject_2": "099",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 70,
+        "subject_1": "081",
+        "subject_2": "084",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 71,
+        "subject_1": "085",
+        "subject_2": "095",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 72,
+        "subject_1": "013",
+        "subject_2": "029",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 73,
+        "subject_1": "033",
+        "subject_2": "088",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 74,
+        "subject_1": "010",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 75,
+        "subject_1": "083",
+        "subject_2": "113",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 76,
+        "subject_1": "069",
+        "subject_2": "092",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 77,
+        "subject_1": "042",
+        "subject_2": "100",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 78,
+        "subject_1": "006",
+        "subject_2": "114",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 79,
+        "subject_1": "060",
+        "subject_2": "104",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 80,
+        "subject_1": "017",
+        "subject_2": "048",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 81,
+        "subject_1": "061",
+        "subject_2": "100",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 82,
+        "subject_1": "014",
+        "subject_2": "106",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 83,
+        "subject_1": "001",
+        "subject_2": "014",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 84,
+        "subject_1": "003",
+        "subject_2": "118",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 85,
+        "subject_1": "014",
+        "subject_2": "045",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 86,
+        "subject_1": "006",
+        "subject_2": "060",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 87,
+        "subject_1": "001",
+        "subject_2": "087",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 88,
+        "subject_1": "052",
+        "subject_2": "107",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 89,
+        "subject_1": "081",
+        "subject_2": "100",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 90,
+        "subject_1": "001",
+        "subject_2": "051",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 91,
+        "subject_1": "071",
+        "subject_2": "081",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 92,
+        "subject_1": "015",
+        "subject_2": "061",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 93,
+        "subject_1": "007",
+        "subject_2": "028",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 94,
+        "subject_1": "000",
+        "subject_2": "016",
+        "is_authenticated": true,
+        "secret_recovered": true,
+        "zkp_verified": true
+      },
+      {
+        "pair_id": 95,
+        "subject_1": "027",
+        "subject_2": "088",
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 96,
+        "subject_1": "024",
+        "subject_2": "035",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 97,
+        "subject_1": "077",
+        "subject_2": "084",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 98,
+        "subject_1": "031",
+        "subject_2": "117",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 99,
+        "subject_1": "054",
+        "subject_2": "107",
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      }
+    ]
+  },
+  "model4_credential_mismatch": {
+    "acceptance_rate": 0.0,
+    "secret_recovery_rate": 0.95,
+    "records": [
+      {
+        "pair_id": 0,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 1,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 2,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 3,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 4,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 5,
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 6,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 7,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 8,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 9,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 10,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 11,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 12,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 13,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 14,
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 15,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 16,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 17,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 18,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 19,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 20,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 21,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 22,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 23,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 24,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 25,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 26,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 27,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 28,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 29,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 30,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 31,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 32,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 33,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 34,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 35,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 36,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 37,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 38,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 39,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 40,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 41,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 42,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 43,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 44,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 45,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 46,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 47,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 48,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 49,
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 50,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 51,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 52,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 53,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 54,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 55,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 56,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 57,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 58,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 59,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 60,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 61,
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 62,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 63,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 64,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 65,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 66,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 67,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 68,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 69,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 70,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 71,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 72,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 73,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 74,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 75,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 76,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 77,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 78,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 79,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 80,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 81,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 82,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 83,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 84,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 85,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 86,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 87,
+        "is_authenticated": false,
+        "secret_recovered": false,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 88,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 89,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 90,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 91,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 92,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 93,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 94,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 95,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 96,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 97,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 98,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      },
+      {
+        "pair_id": 99,
+        "is_authenticated": false,
+        "secret_recovered": true,
+        "zkp_verified": false
+      }
+    ]
+  }
+}

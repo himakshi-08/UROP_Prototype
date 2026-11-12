@@ -1,0 +1,186 @@
+{
+  "dataset": "fp_training (30 disjoint development subjects)",
+  "n_genuine": 300,
+  "n_impostor": 300,
+  "metrics": {
+    "m0": {
+      "name": "M0: Baseline (Unnormalized Sum of Replica Weights)",
+      "alignment_accuracy": 75.66666666666667,
+      "exact_recovery": 33.0,
+      "recovery_t1": 47.66666666666667,
+      "recovery_t2": 57.99999999999999,
+      "top2_recovery": 37.333333333333336,
+      "impostor_collision_t0": 20.0,
+      "impostor_collision_t1": 33.33333333333333,
+      "impostor_collision_t2": 42.0,
+      "error_distribution": {
+        "0": 99,
+        "1": 44,
+        "2": 31,
+        "3": 23,
+        "4": 19,
+        "5_8": 30,
+        "gt_8": 54
+      }
+    },
+    "m1": {
+      "name": "M1: Normalized Conviction (|sum| / total_weight)",
+      "alignment_accuracy": 75.66666666666667,
+      "exact_recovery": 33.0,
+      "recovery_t1": 48.0,
+      "recovery_t2": 57.99999999999999,
+      "top2_recovery": 37.666666666666664,
+      "impostor_collision_t0": 20.333333333333332,
+      "impostor_collision_t1": 32.666666666666664,
+      "impostor_collision_t2": 42.333333333333336,
+      "error_distribution": {
+        "0": 99,
+        "1": 45,
+        "2": 30,
+        "3": 24,
+        "4": 20,
+        "5_8": 31,
+        "gt_8": 51
+      }
+    },
+    "m2": {
+      "name": "M2: Squared Conviction ((|sum| / total_weight)^2)",
+      "alignment_accuracy": 75.0,
+      "exact_recovery": 30.0,
+      "recovery_t1": 44.333333333333336,
+      "recovery_t2": 55.666666666666664,
+      "top2_recovery": 36.0,
+      "impostor_collision_t0": 19.333333333333332,
+      "impostor_collision_t1": 33.33333333333333,
+      "impostor_collision_t2": 42.0,
+      "error_distribution": {
+        "0": 90,
+        "1": 43,
+        "2": 34,
+        "3": 23,
+        "4": 20,
+        "5_8": 31,
+        "gt_8": 59
+      }
+    },
+    "m3": {
+      "name": "M3: Cubed Conviction ((|sum| / total_weight)^3)",
+      "alignment_accuracy": 69.33333333333334,
+      "exact_recovery": 28.999999999999996,
+      "recovery_t1": 44.0,
+      "recovery_t2": 54.0,
+      "top2_recovery": 36.0,
+      "impostor_collision_t0": 18.666666666666668,
+      "impostor_collision_t1": 33.0,
+      "impostor_collision_t2": 42.0,
+      "error_distribution": {
+        "0": 87,
+        "1": 45,
+        "2": 30,
+        "3": 23,
+        "4": 21,
+        "5_8": 30,
+        "gt_8": 64
+      }
+    },
+    "m4": {
+      "name": "M4: High-Conviction Count (bits with >= 60% agreement)",
+      "alignment_accuracy": 56.666666666666664,
+      "exact_recovery": 28.333333333333332,
+      "recovery_t1": 44.0,
+      "recovery_t2": 54.333333333333336,
+      "top2_recovery": 34.333333333333336,
+      "impostor_collision_t0": 17.0,
+      "impostor_collision_t1": 29.666666666666668,
+      "impostor_collision_t2": 41.66666666666667,
+      "error_distribution": {
+        "0": 85,
+        "1": 47,
+        "2": 31,
+        "3": 22,
+        "4": 15,
+        "5_8": 30,
+        "gt_8": 70
+      }
+    },
+    "m5": {
+      "name": "M5: Joint Ring x Channel Squared Conviction",
+      "alignment_accuracy": 74.66666666666667,
+      "exact_recovery": 31.0,
+      "recovery_t1": 44.666666666666664,
+      "recovery_t2": 55.666666666666664,
+      "top2_recovery": 36.0,
+      "impostor_collision_t0": 19.333333333333332,
+      "impostor_collision_t1": 33.33333333333333,
+      "impostor_collision_t2": 41.66666666666667,
+      "error_distribution": {
+        "0": 93,
+        "1": 41,
+        "2": 33,
+        "3": 24,
+        "4": 21,
+        "5_8": 30,
+        "gt_8": 58
+      }
+    }
+  },
+  "spatial_ring_analysis": {
+    "ring_0": {
+      "error_rate": 0.2256538675570395,
+      "errors": 2433,
+      "total": 10782
+    },
+    "ring_1": {
+      "error_rate": 0.19806763285024154,
+      "errors": 2132,
+      "total": 10764
+    },
+    "ring_2": {
+      "error_rate": 0.1941638608305275,
+      "errors": 2076,
+      "total": 10692
+    },
+    "ring_3": {
+      "error_rate": 0.22041133100504462,
+      "errors": 2272,
+      "total": 10308
+    },
+    "ring_4": {
+      "error_rate": 0.2510130091703988,
+      "errors": 2354,
+      "total": 9378
+    },
+    "ring_5": {
+      "error_rate": 0.2803507471903174,
+      "errors": 2270,
+      "total": 8097
+    },
+    "ring_6": {
+      "error_rate": 0.3196803196803197,
+      "errors": 1920,
+      "total": 6006
+    },
+    "ring_7": {
+      "error_rate": 0.2918095238095238,
+      "errors": 766,
+      "total": 2625
+    }
+  },
+  "channel_analysis": {
+    "Gray-b2 (MSB)": {
+      "error_rate": 0.2298112218143681,
+      "errors": 5259,
+      "total": 22884
+    },
+    "Gray-b1 (MID)": {
+      "error_rate": 0.17960146827477713,
+      "errors": 4110,
+      "total": 22884
+    },
+    "Gray-b0 (LSB)": {
+      "error_rate": 0.2995105750742877,
+      "errors": 6854,
+      "total": 22884
+    }
+  }
+}

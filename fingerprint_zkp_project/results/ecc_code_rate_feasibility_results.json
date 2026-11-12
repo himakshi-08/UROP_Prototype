@@ -1,0 +1,155 @@
+{
+  "experiment": "ECC Code-Rate Feasibility (32 vs 48 vs 64-bit secret, fp_training only)",
+  "dataset": "fp_training (30 disjoint development subjects, NOT fp_testing)",
+  "n_genuine": 300,
+  "n_impostor": 300,
+  "configurations": [
+    {
+      "label": "Cfg-32",
+      "k_bits": 32,
+      "rep_factor": 12,
+      "majority_t": 5,
+      "n_genuine": 300,
+      "n_impostor": 300,
+      "genuine": {
+        "exact_recovery": 102,
+        "exact_recovery_rate": 0.34,
+        "exact_ci": [
+          28.872020371227475,
+          39.53255471425979
+        ],
+        "rec_t1": 148,
+        "rec_t2": 179,
+        "rec_t3": 204,
+        "rec_t4": 227,
+        "n_erasure_events": 0,
+        "n_tie_events": 22,
+        "error_distribution": {
+          "0": 102,
+          "1": 46,
+          "2": 31,
+          "3": 25,
+          "4": 23,
+          "5_8": 38,
+          "gt8": 35
+        },
+        "mean_conviction": 0.5299242123490351
+      },
+      "impostor": {
+        "exact_recovery": 61,
+        "exact_recovery_rate": 0.20333333333333334,
+        "exact_ci": [
+          16.167385134400632,
+          25.249431169940316
+        ],
+        "rec_t1": 100,
+        "rec_t2": 130
+      },
+      "latency_ms_per_pair": 7.572461666665427,
+      "security": {
+        "search_space_bits": 32,
+        "cpu_hours_single_core": 74.56540444444444,
+        "gpu_hours_1000core": 0.07456540444444444,
+        "note": "2^32 is not a 128-bit security level"
+      }
+    },
+    {
+      "label": "Cfg-48",
+      "k_bits": 48,
+      "rep_factor": 8,
+      "majority_t": 3,
+      "n_genuine": 300,
+      "n_impostor": 300,
+      "genuine": {
+        "exact_recovery": 31,
+        "exact_recovery_rate": 0.10333333333333333,
+        "exact_ci": [
+          7.375658454158848,
+          14.294017278611634
+        ],
+        "rec_t1": 65,
+        "rec_t2": 91,
+        "rec_t3": 121,
+        "rec_t4": 140,
+        "n_erasure_events": 0,
+        "n_tie_events": 81,
+        "error_distribution": {
+          "0": 31,
+          "1": 34,
+          "2": 26,
+          "3": 30,
+          "4": 19,
+          "5_8": 63,
+          "gt8": 97
+        },
+        "mean_conviction": 0.5557623722373655
+      },
+      "impostor": {
+        "exact_recovery": 8,
+        "exact_recovery_rate": 0.02666666666666667,
+        "exact_ci": [
+          1.3573069738659564,
+          5.1728943207005
+        ],
+        "rec_t1": 34,
+        "rec_t2": 48
+      },
+      "latency_ms_per_pair": 11.730353833330204,
+      "security": {
+        "search_space_bits": 48,
+        "cpu_hours_single_core": 4886718.345671111,
+        "gpu_hours_1000core": 4886.718345671111,
+        "note": "2^48 is not a 128-bit security level"
+      }
+    },
+    {
+      "label": "Cfg-64",
+      "k_bits": 64,
+      "rep_factor": 6,
+      "majority_t": 2,
+      "n_genuine": 300,
+      "n_impostor": 300,
+      "genuine": {
+        "exact_recovery": 19,
+        "exact_recovery_rate": 0.06333333333333334,
+        "exact_ci": [
+          4.091688224383249,
+          9.679131279759046
+        ],
+        "rec_t1": 29,
+        "rec_t2": 48,
+        "rec_t3": 64,
+        "rec_t4": 86,
+        "n_erasure_events": 1,
+        "n_tie_events": 194,
+        "error_distribution": {
+          "0": 19,
+          "1": 10,
+          "2": 19,
+          "3": 16,
+          "4": 22,
+          "5_8": 64,
+          "gt8": 150
+        },
+        "mean_conviction": 0.5840082148231299
+      },
+      "impostor": {
+        "exact_recovery": 3,
+        "exact_recovery_rate": 0.01,
+        "exact_ci": [
+          0.340661841124046,
+          2.8983493581806665
+        ],
+        "rec_t1": 10,
+        "rec_t2": 23
+      },
+      "latency_ms_per_pair": 15.272418999999596,
+      "security": {
+        "search_space_bits": 64,
+        "cpu_hours_single_core": 320255973501.9019,
+        "gpu_hours_1000core": 320255973.5019019,
+        "note": "2^64 is not a 128-bit security level"
+      }
+    }
+  ]
+}
