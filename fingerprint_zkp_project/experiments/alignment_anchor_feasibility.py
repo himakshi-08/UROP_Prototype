@@ -446,7 +446,12 @@ def compute_linkability(mated_sims, nonmated_sims, n_bins=50):
 # Main
 # ──────────────────────────────────────────────────────────────────────────────
 def main():
-    train_dir = r"C:\Users\sofia\Downloads\fp_training\fp_training"
+    train_dir = os.path.join(os.path.expanduser("~"), "Downloads", "fp_training", "fp_training")
+    if not os.path.exists(train_dir):
+        train_dir = r"C:\Users\sofia\Downloads\fp_training\fp_training"
+    if not os.path.exists(train_dir):
+        from data.dataset_loader import default_split_dirs
+        train_dir = default_split_dirs()["train"]
     if not os.path.exists(train_dir):
         print(f"[!] Cannot find fp_training at {train_dir}")
         return

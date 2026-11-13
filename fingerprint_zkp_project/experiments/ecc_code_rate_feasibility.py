@@ -395,7 +395,9 @@ def run_config(cfg, dev_genuine, dev_impostor, weights_384):
 
 
 def main():
-    train_dir = r"C:\Users\sofia\Downloads\fp_training\fp_training"
+    train_dir = os.path.join(os.path.expanduser("~"), "Downloads", "fp_training", "fp_training")
+    if not os.path.exists(train_dir):
+        train_dir = r"C:\Users\sofia\Downloads\fp_training\fp_training"
     if not os.path.exists(train_dir):
         print(f"[!] Cannot find fp_training at: {train_dir}")
         return

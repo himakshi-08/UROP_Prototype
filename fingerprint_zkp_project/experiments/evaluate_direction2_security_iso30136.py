@@ -72,7 +72,9 @@ def compute_iso30136_unlinkability(mated_scores, non_mated_scores, num_bins=100)
     }
 
 def main():
-    train_dir = r"C:\Users\sofia\Downloads\fp_training\fp_training"
+    train_dir = os.path.join(os.path.expanduser("~"), "Downloads", "fp_training", "fp_training")
+    if not os.path.exists(train_dir):
+        train_dir = r"C:\Users\sofia\Downloads\fp_training\fp_training"
     subjs = sorted([d for d in os.listdir(train_dir) if os.path.isdir(os.path.join(train_dir, d))])[:30]
     print(f"[*] Direction 2 Security Evaluation on 30 Development Subjects: {subjs[0]} to {subjs[-1]}")
 

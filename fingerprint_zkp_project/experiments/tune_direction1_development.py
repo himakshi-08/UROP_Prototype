@@ -138,7 +138,9 @@ def decode_at_shift(cand_cw, mut_m, inv_perm, weights_384, k_bits=32, rep_factor
     return np.array(recovered, dtype=np.uint8), n_erasures, n_ties
 
 def main():
-    train_dir = r"C:\Users\sofia\Downloads\fp_training\fp_training"
+    train_dir = os.path.join(os.path.expanduser("~"), "Downloads", "fp_training", "fp_training")
+    if not os.path.exists(train_dir):
+        train_dir = r"C:\Users\sofia\Downloads\fp_training\fp_training"
     if not os.path.exists(train_dir):
         print(f"[!] Directory not found: {train_dir}")
         return

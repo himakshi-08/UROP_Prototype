@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "experiment": "Single-Image vs Five-Image Fingerprint Enrollment Comparison",
+    "dataset": "fp_training development cohort (30 subjects)",
+    "n_genuine": 150,
+    "n_impostor": 300,
+    "locked_benchmark_accessed": false
+  },
+  "single_image": {
+    "gar": 44.666666666666664,
+    "gar_ci": [
+      36.942800983112775,
+      52.656881627576965
+    ],
+    "frr": 55.333333333333336,
+    "exact_secret_rate": 0.44666666666666666,
+    "tie_rate": 0.05333333333333334,
+    "mean_overlap": 0.82765625,
+    "mean_coverage": 0.93828125,
+    "far_model2": 0.0,
+    "far_model3_stolen_k": 23.0,
+    "d_sys": 0.7659081683172342,
+    "mean_enrollment_ms": 0.9054633361908296,
+    "mean_auth_ms": 19.55983200110495
+  },
+  "five_image_fused": {
+    "gar": 74.66666666666667,
+    "gar_ci": [
+      67.15059061062735,
+      80.95087731493254
+    ],
+    "frr": 25.33333333333333,
+    "exact_secret_rate": 0.7466666666666667,
+    "tie_rate": 0.02,
+    "mean_overlap": 0.8689583333333334,
+    "mean_coverage": 0.97578125,
+    "far_model2": 0.0,
+    "far_model3_stolen_k": 25.333333333333336,
+    "d_sys": 0.793014202582887,
+    "mean_enrollment_ms": 19.328103330917656,
+    "mean_auth_ms": 19.407455335215975
+  }
+}
